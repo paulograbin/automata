@@ -4,15 +4,33 @@
       layout:decorator="layout/layout"
       lang="en">
 <head>
+    <script src="http://localhost:35729/livereload.js"></script>
     <title>test 222</title>
 </head>
 <body>
 
 <div class="container">
-    <h1 th:text="${aaaa}">${aaaa}</h1>
     <!--    <div th:each="a : ${}">-->
     <!---->
     <!--    </div>-->
+
+    <table>
+        <thead>
+        <tr>
+            <th>11111</th>
+            <th>22222</th>
+            <th>33333</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="build: ${builds.value}">
+          <td th:text="${build.code}">
+          <td th:text="${build.name}">
+          <td th:text="${build.branch}">
+        </tr>
+        </tbody>
+    </table>
+
 </div>
 </body>
 
@@ -21,3 +39,20 @@
 <script defer src="http://localhost:35729/livereload.js"></script>
 
 </html>
+<script>
+    var objeto = {
+        teste: "aaaa",
+        segundo: 1111,
+        aa: "bbb"
+    };
+
+    // const replacerFunction = function(key, value) {
+    //     console.log(key, value);
+    //
+    //     return value;
+    // }
+
+    const replacerFunction = ['aa'];
+
+    console.log(JSON.stringify(objeto, replacerFunction));
+</script>
