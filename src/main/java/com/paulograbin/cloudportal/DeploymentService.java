@@ -4,6 +4,8 @@ import com.paulograbin.ccv2api.model.CreateDeploymentRequestDTO;
 import com.paulograbin.ccv2api.model.CreateDeploymentResponseDTO;
 import com.paulograbin.ccv2api.model.DeploymentDetailDTO;
 import com.paulograbin.ccv2api.model.DeploymentDetailsDTO;
+import com.paulograbin.cloudportal.ccv2.CloudPortalAPI;
+import com.paulograbin.cloudportal.ccv2.CloudPortalOperations;
 import jakarta.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,8 +18,12 @@ public class DeploymentService
 
 	private final Logger LOG = LoggerFactory.getLogger(DeploymentService.class);
 
-	@Resource
-	CloudPortalAPI cloudPortalAPI;
+	private final CloudPortalOperations cloudPortalOperations;
+
+
+	public DeploymentService(CloudPortalOperations cloudPortalOperations) {
+		this.cloudPortalOperations = cloudPortalOperations;
+	}
 
 	public void makeDeployment(String buildCode)
 	{
@@ -27,7 +33,7 @@ public class DeploymentService
 		request.setDatabaseUpdateMode(CreateDeploymentRequestDTO.DatabaseUpdateModeEnum.NONE);
 		request.setEnvironmentCode("d1");
 
-		CreateDeploymentResponseDTO deployments = cloudPortalAPI.sendPostRequest("deployments", request, CreateDeploymentResponseDTO.class);
+		CreateDeploymentResponseDTO deployments = cloudPortalOperations.sendPostRequest("deployments", request, CreateDeploymentResponseDTO.class);
 
 		LOG.info("Deployment created: ");
 		LOG.info(" Code: {}", deployments.getCode());
@@ -38,7 +44,7 @@ public class DeploymentService
 		{
 			LOG.info("Fetching all recent builds...");
 
-			DeploymentDetailsDTO buildDetailsDTO = cloudPortalAPI.sendRequest("deployments", DeploymentDetailsDTO.class);
+			DeploymentDetailsDTO buildDetailsDTO = cloudPortalOperations.getDeployments("deployments");
 
 			for (DeploymentDetailDTO buildDetailDTO : buildDetailsDTO.getValue())
 			{

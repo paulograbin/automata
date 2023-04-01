@@ -1,0 +1,3890 @@
+{
+  "value": [
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-10",
+      "branch": "develop",
+      "name": "develop 30-03-23 08-44",
+      "code": "20230330.1",
+      "buildStartTimestamp": "2023-03-30T11:44:33.937Z",
+      "buildEndTimestamp": "2023-03-30T12:19:22.868Z",
+      "buildVersion": "2205.10-2205-20230309-020232-20230330.1-65eb114-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230309-020232"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230309-020241"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230309-020232"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "65eb114"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-10",
+      "branch": "globale_experiment",
+      "name": "globale_experiment 29-03-23 14-55",
+      "code": "20230329.4",
+      "buildStartTimestamp": "2023-03-29T17:55:25.177Z",
+      "buildEndTimestamp": "2023-03-29T18:22:26.533Z",
+      "buildVersion": "2205.10-2205-20230309-020232-20230329.4-a2a589e-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230309-020232"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230309-020241"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230309-020232"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "a2a589e"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-10",
+      "branch": "bugfix/LKBENCL-3786-Issues-with-checkout",
+      "name": "bugfix-LKBENCL-3786-Issues-with-checkout",
+      "code": "20230329.3",
+      "buildStartTimestamp": "2023-03-29T16:45:18.480Z",
+      "buildEndTimestamp": "2023-03-29T17:17:03.305Z",
+      "buildVersion": "2205.10-2205-20230309-020232-20230329.3-446fa9b-bugfix/LKBENCL-3786-Issues-with-checkout",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230309-020232"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230309-020241"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230309-020232"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "446fa9b"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-10",
+      "branch": "globale_experiment",
+      "name": "globale_experiment 29-03-23 08-36",
+      "code": "20230329.2",
+      "buildStartTimestamp": "2023-03-29T11:36:50.078Z",
+      "buildEndTimestamp": "2023-03-29T12:04:52.473Z",
+      "buildVersion": "2205.10-2205-20230309-020232-20230329.2-460dcd6-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230309-020232"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230309-020241"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230309-020232"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "460dcd6"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-10",
+      "branch": "globale_experiment",
+      "name": "globale_experiment 29-03-23 07-02",
+      "code": "20230329.1",
+      "buildStartTimestamp": "2023-03-29T10:02:34.646Z",
+      "buildEndTimestamp": "2023-03-29T10:33:50.459Z",
+      "buildVersion": null,
+      "createdBy": "S0024124997",
+      "status": "FAIL",
+      "properties": []
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale_experiment 28-03-23 09-49",
+      "code": "20230328.4",
+      "buildStartTimestamp": "2023-03-28T12:49:50.116Z",
+      "buildEndTimestamp": "2023-03-28T13:21:43.902Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230328.4-31970e5-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "31970e5"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "develop",
+      "name": "develop 28-03-23 09-49",
+      "code": "20230328.3",
+      "buildStartTimestamp": "2023-03-28T12:49:48.305Z",
+      "buildEndTimestamp": "2023-03-28T13:24:19.111Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230328.3-6a94f82-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "6a94f82"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale_experiment 28-03-23 08-36",
+      "code": "20230328.2",
+      "buildStartTimestamp": "2023-03-28T11:36:30.466Z",
+      "buildEndTimestamp": "2023-03-28T12:02:58.426Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230328.2-31970e5-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "31970e5"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "develop",
+      "name": "develop 28-03-23 08-36",
+      "code": "20230328.1",
+      "buildStartTimestamp": "2023-03-28T11:36:28.941Z",
+      "buildEndTimestamp": "2023-03-28T12:05:45.641Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230328.1-6a94f82-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "6a94f82"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale_experiment 27-03-23 10-11",
+      "code": "20230327.2",
+      "buildStartTimestamp": "2023-03-27T13:11:31.440Z",
+      "buildEndTimestamp": "2023-03-27T13:36:59.548Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230327.2-cf666be-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "cf666be"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "develop",
+      "name": "develop 27-03-23 10-11",
+      "code": "20230327.1",
+      "buildStartTimestamp": "2023-03-27T13:11:30.088Z",
+      "buildEndTimestamp": "2023-03-27T13:37:36.040Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230327.1-db5a2f2-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "db5a2f2"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale_experiment 26-03-23 17-19",
+      "code": "20230326.2",
+      "buildStartTimestamp": "2023-03-26T20:19:20.924Z",
+      "buildEndTimestamp": "2023-03-26T20:47:00.630Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230326.2-cd49094-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "cd49094"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "develop",
+      "name": "develop 26-03-23 17-18",
+      "code": "20230326.1",
+      "buildStartTimestamp": "2023-03-26T20:18:29.780Z",
+      "buildEndTimestamp": "2023-03-26T20:45:18.154Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230326.1-aa92427-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "aa92427"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "develop",
+      "name": "develop 23-03-2023",
+      "code": "20230323.1",
+      "buildStartTimestamp": "2023-03-23T15:37:12.360Z",
+      "buildEndTimestamp": "2023-03-23T16:02:45.414Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230323.1-aa92427-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "aa92427"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale 22-03-2023 v2",
+      "code": "20230322.2",
+      "buildStartTimestamp": "2023-03-22T18:52:18.463Z",
+      "buildEndTimestamp": "2023-03-22T19:20:45.528Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230322.2-756ba0a-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "756ba0a"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale 22-03-2023",
+      "code": "20230322.1",
+      "buildStartTimestamp": "2023-03-22T11:23:22.322Z",
+      "buildEndTimestamp": "2023-03-22T11:48:41.241Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230322.1-7036e6b-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "7036e6b"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale 21-03-2023 v2",
+      "code": "20230321.2",
+      "buildStartTimestamp": "2023-03-21T23:05:00.087Z",
+      "buildEndTimestamp": "2023-03-21T23:20:34.362Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230321.2-7036e6b-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "FAIL",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "7036e6b"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale 21-03-2023",
+      "code": "20230321.1",
+      "buildStartTimestamp": "2023-03-21T14:36:41.139Z",
+      "buildEndTimestamp": "2023-03-21T15:03:43.915Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230321.1-938580f-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "938580f"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale 17-03-2023 v2",
+      "code": "20230317.3",
+      "buildStartTimestamp": "2023-03-17T16:57:45.070Z",
+      "buildEndTimestamp": "2023-03-17T17:31:30.218Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230317.3-5b9d5da-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "5b9d5da"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "feature/LKBENCL-3621-Optimising-JS-and-CSS",
+      "name": "LKBENCL-3621 17-03-2023",
+      "code": "20230317.2",
+      "buildStartTimestamp": "2023-03-17T13:06:55.816Z",
+      "buildEndTimestamp": "2023-03-17T13:31:58.176Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230317.2-2cfa6df-feature/LKBENCL-3621-Optimising-JS-and-CSS",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "2cfa6df"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale 17-03-2023",
+      "code": "20230317.1",
+      "buildStartTimestamp": "2023-03-17T13:06:21.480Z",
+      "buildEndTimestamp": "2023-03-17T13:32:53.033Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230317.1-6fc221c-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "6fc221c"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale 16-03-2023",
+      "code": "20230316.1",
+      "buildStartTimestamp": "2023-03-16T21:17:51.101Z",
+      "buildEndTimestamp": "2023-03-16T21:44:25.786Z",
+      "buildVersion": "2205.10-2205-20230228-020238-20230316.1-7babd73-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.10"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.10-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "7babd73"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale 13-03-2023v2 ",
+      "code": "20230313.5",
+      "buildStartTimestamp": "2023-03-13T17:38:03.483Z",
+      "buildEndTimestamp": "2023-03-13T18:03:10.369Z",
+      "buildVersion": "2205.9-2205-20230228-020238-20230313.5-b73f960-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "b73f960"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale 13-03-2023",
+      "code": "20230313.4",
+      "buildStartTimestamp": "2023-03-13T15:26:14.642Z",
+      "buildEndTimestamp": "2023-03-13T15:53:29.885Z",
+      "buildVersion": "2205.9-2205-20230228-020238-20230313.4-655449c-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "655449c"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "develop",
+      "name": "develop 13-03-2023 v2",
+      "code": "20230313.3",
+      "buildStartTimestamp": "2023-03-13T15:23:03.344Z",
+      "buildEndTimestamp": "2023-03-13T15:52:55.662Z",
+      "buildVersion": "2205.9-2205-20230228-020238-20230313.3-9153834-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "9153834"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "release/release-6.9.0",
+      "name": "Release 6.9.0",
+      "code": "20230313.2",
+      "buildStartTimestamp": "2023-03-13T15:20:03.931Z",
+      "buildEndTimestamp": "2023-03-13T15:46:48.839Z",
+      "buildVersion": "2205.9-2205-20230228-020238-20230313.2-a8d09ef-release/release-6.9.0",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "a8d09ef"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "develop",
+      "name": "develop 13-03-2023",
+      "code": "20230313.1",
+      "buildStartTimestamp": "2023-03-13T12:15:22.341Z",
+      "buildEndTimestamp": "2023-03-13T12:44:34.802Z",
+      "buildVersion": "2205.9-2205-20230228-020238-20230313.1-17cf000-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "17cf000"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "develop",
+      "name": "develop 10-03-2023 v2",
+      "code": "20230310.2",
+      "buildStartTimestamp": "2023-03-10T14:32:18.896Z",
+      "buildEndTimestamp": "2023-03-10T14:57:57.526Z",
+      "buildVersion": "2205.9-2205-20230228-020238-20230310.2-053eabe-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "053eabe"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "develop",
+      "name": "develop 10-03-2023",
+      "code": "20230310.1",
+      "buildStartTimestamp": "2023-03-10T12:37:31.608Z",
+      "buildEndTimestamp": "2023-03-10T13:02:08.613Z",
+      "buildVersion": "2205.9-2205-20230228-020238-20230310.1-09df9b6-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "09df9b6"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "develop",
+      "name": "develop 09-03-2023",
+      "code": "20230309.3",
+      "buildStartTimestamp": "2023-03-09T18:58:32.070Z",
+      "buildEndTimestamp": "2023-03-09T19:26:26.352Z",
+      "buildVersion": "2205.9-2205-20230228-020238-20230309.3-6df3d4e-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "6df3d4e"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale 09-03-2023",
+      "code": "20230309.2",
+      "buildStartTimestamp": "2023-03-09T18:58:23.661Z",
+      "buildEndTimestamp": "2023-03-09T19:09:39.902Z",
+      "buildVersion": "2205.9-2205-20230228-020238-20230309.2-9422317-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "FAIL",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "9422317"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-8",
+      "branch": "globale_experiment",
+      "name": "globale 09-03-2023",
+      "code": "20230309.1",
+      "buildStartTimestamp": "2023-03-09T13:32:22.629Z",
+      "buildEndTimestamp": "2023-03-09T14:00:57.955Z",
+      "buildVersion": "2205.9-2205-20230228-020238-20230309.1-5ca5660-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230228-020238"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230228-020238"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "5ca5660"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-6",
+      "branch": "develop",
+      "name": "develop 08-03-2023",
+      "code": "20230308.1",
+      "buildStartTimestamp": "2023-03-08T13:19:19.394Z",
+      "buildEndTimestamp": "2023-03-08T13:43:35.087Z",
+      "buildVersion": "2205.9-2205-20230218-020246-20230308.1-6df3d4e-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230218-020246"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230218-020246"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "6df3d4e"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-6",
+      "branch": "globale_experiment",
+      "name": "globale 07-03-2023",
+      "code": "20230307.2",
+      "buildStartTimestamp": "2023-03-07T18:50:25.159Z",
+      "buildEndTimestamp": "2023-03-07T19:17:08.268Z",
+      "buildVersion": "2205.9-2205-20230218-020246-20230307.2-f4c5d36-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230218-020246"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230218-020246"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "f4c5d36"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-6",
+      "branch": "develop",
+      "name": "develop 07-03-2023",
+      "code": "20230307.1",
+      "buildStartTimestamp": "2023-03-07T18:50:01.201Z",
+      "buildEndTimestamp": "2023-03-07T19:15:02.314Z",
+      "buildVersion": "2205.9-2205-20230218-020246-20230307.1-bd7be6d-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230218-020246"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230218-020246"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "bd7be6d"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-6",
+      "branch": "globale_experiment",
+      "name": "globale 03-03-2023",
+      "code": "20230303.2",
+      "buildStartTimestamp": "2023-03-03T17:42:33.924Z",
+      "buildEndTimestamp": "2023-03-03T18:09:04.525Z",
+      "buildVersion": "2205.9-2205-20230218-020246-20230303.2-09f1bcd-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230218-020246"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230218-020246"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "09f1bcd"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-6",
+      "branch": "develop",
+      "name": "develop 03-03-2023",
+      "code": "20230303.1",
+      "buildStartTimestamp": "2023-03-03T10:53:23.788Z",
+      "buildEndTimestamp": "2023-03-03T11:20:08.641Z",
+      "buildVersion": "2205.9-2205-20230218-020246-20230303.1-caef560-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230218-020246"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230218-020246"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "caef560"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-6",
+      "branch": "globale_experiment",
+      "name": "globale 02-03-2023 v2",
+      "code": "20230302.3",
+      "buildStartTimestamp": "2023-03-02T20:47:15.795Z",
+      "buildEndTimestamp": "2023-03-02T21:16:39.655Z",
+      "buildVersion": "2205.9-2205-20230218-020246-20230302.3-db351a1-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230218-020246"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230218-020246"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "db351a1"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-6",
+      "branch": "globale_experiment",
+      "name": "globale 02-03-2023",
+      "code": "20230302.2",
+      "buildStartTimestamp": "2023-03-02T13:45:48.247Z",
+      "buildEndTimestamp": "2023-03-02T14:13:08.364Z",
+      "buildVersion": "2205.9-2205-20230218-020246-20230302.2-cdb98be-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230218-020246"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230218-020246"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "cdb98be"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-6",
+      "branch": "develop",
+      "name": "develop 02-03-2023",
+      "code": "20230302.1",
+      "buildStartTimestamp": "2023-03-02T12:20:17.005Z",
+      "buildEndTimestamp": "2023-03-02T12:47:50.516Z",
+      "buildVersion": "2205.9-2205-20230218-020246-20230302.1-c5cd732-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230218-020246"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230218-020246"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "c5cd732"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-6",
+      "branch": "develop",
+      "name": "develop 28-02-2023 v2",
+      "code": "20230228.5",
+      "buildStartTimestamp": "2023-02-28T15:42:47.047Z",
+      "buildEndTimestamp": "2023-02-28T16:14:07.821Z",
+      "buildVersion": "2205.9-2205-20230218-020246-20230228.5-a766187-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230218-020246"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230218-020246"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "a766187"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-6",
+      "branch": "release/Release-6.8.1",
+      "name": "Release 6.8.1",
+      "code": "20230228.4",
+      "buildStartTimestamp": "2023-02-28T13:46:06.867Z",
+      "buildEndTimestamp": "2023-02-28T14:06:11.939Z",
+      "buildVersion": "2205.9-2205-20230218-020246-20230228.4-50c3913-release/Release-6.8.1",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230218-020246"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230218-020246"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "50c3913"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-6",
+      "branch": "globale_experiment",
+      "name": "globale 28-02-2023",
+      "code": "20230228.3",
+      "buildStartTimestamp": "2023-02-28T13:26:32.384Z",
+      "buildEndTimestamp": "2023-02-28T13:49:51.745Z",
+      "buildVersion": "2205.9-2205-20230218-020246-20230228.3-23c4022-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230218-020246"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230218-020246"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "23c4022"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-6",
+      "branch": "develop",
+      "name": "develop 28-02-2023",
+      "code": "20230228.2",
+      "buildStartTimestamp": "2023-02-28T13:17:50.901Z",
+      "buildEndTimestamp": "2023-02-28T13:47:01.605Z",
+      "buildVersion": "2205.9-2205-20230218-020246-20230228.2-daae32e-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230218-020246"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230218-020246"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "daae32e"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-6",
+      "branch": "develop",
+      "name": "develop echo 28-02-2023",
+      "code": "20230228.1",
+      "buildStartTimestamp": "2023-02-28T13:13:01.554Z",
+      "buildEndTimestamp": "2023-02-28T13:48:49.788Z",
+      "buildVersion": "2205.9-2205-20230218-020246-20230228.1-daae32e-develop",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-20230218-020246"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-20230223-020234"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.6"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-20230218-020246"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "daae32e"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-2",
+      "branch": "bugfix/LKBENCL-3673-call-dressipi-events_issue",
+      "name": "DressipiEvent",
+      "code": "20230224.1",
+      "buildStartTimestamp": "2023-02-24T09:28:05.173Z",
+      "buildEndTimestamp": "2023-02-24T09:58:30.601Z",
+      "buildVersion": "2205.9-2205-2212.36-20230224.1-5c0c4ba-bugfix/LKBENCL-3673-call-dressipi-events_issue",
+      "createdBy": "S0024317826",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-2212.36"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-2212.29"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-2212.36"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "5c0c4ba"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-2",
+      "branch": "bugfix/LKBENCL-3673-call-dressipi-events_issue",
+      "name": "Dressipi",
+      "code": "20230223.3",
+      "buildStartTimestamp": "2023-02-23T22:25:08.003Z",
+      "buildEndTimestamp": "2023-02-23T22:55:14.528Z",
+      "buildVersion": "2205.9-2205-2212.36-20230223.3-dcd4b8e-bugfix/LKBENCL-3673-call-dressipi-events_issue",
+      "createdBy": "S0024317826",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-2212.36"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-2212.29"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-2212.36"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "dcd4b8e"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-2",
+      "branch": "bugfix/LKBENCL-3673-call-dressipi-events_issue",
+      "name": "Dressipi",
+      "code": "20230223.2",
+      "buildStartTimestamp": "2023-02-23T22:24:52.978Z",
+      "buildEndTimestamp": "2023-02-23T22:54:07.363Z",
+      "buildVersion": "2205.9-2205-2212.36-20230223.2-dcd4b8e-bugfix/LKBENCL-3673-call-dressipi-events_issue",
+      "createdBy": "S0024317826",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-2212.36"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-2212.29"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-2212.36"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "dcd4b8e"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-2",
+      "branch": "bugfix/LKBENCL-3673-call-dressipi-events_issue",
+      "name": "Dressipi 3673",
+      "code": "20230223.1",
+      "buildStartTimestamp": "2023-02-23T20:56:15.623Z",
+      "buildEndTimestamp": "2023-02-23T21:27:59.069Z",
+      "buildVersion": "2205.9-2205-2212.36-20230223.1-3c3b4dc-bugfix/LKBENCL-3673-call-dressipi-events_issue",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-2212.36"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-2212.29"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-2212.36"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "3c3b4dc"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    },
+    {
+      "subscriptionCode": "00000000011111111111222222222",
+      "applicationCode": "commerce-cloud",
+      "applicationDefinitionVersion": "2304-2",
+      "branch": "globale_experiment",
+      "name": "Globale 22-02-2023 v2",
+      "code": "20230222.4",
+      "buildStartTimestamp": "2023-02-22T12:50:09.530Z",
+      "buildEndTimestamp": "2023-02-22T13:18:22.177Z",
+      "buildVersion": "2205.9-2205-2212.36-20230222.4-23c4022-globale_experiment",
+      "createdBy": "S0024124997",
+      "status": "SUCCESS",
+      "properties": [
+        {
+          "key": "product.images.platform.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.platform.components.commerce-suite.version",
+          "value": "2205.9"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-module.version",
+          "value": "2205-2212.36"
+        },
+        {
+          "key": "product.images.platform.components.ccv2-internal-module.version",
+          "value": "2205-2212.29"
+        },
+        {
+          "key": "product.images.solr.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.solr.components.ccv2-solr-module.version",
+          "value": "2206.3"
+        },
+        {
+          "key": "product.images.solr.components.solr.version",
+          "value": "8.11"
+        },
+        {
+          "key": "product.images.zookeeper.components.java.version",
+          "value": "17.0.5"
+        },
+        {
+          "key": "product.images.zookeeper.components.zookeeper.version",
+          "value": "3.8.0"
+        },
+        {
+          "key": "product.version",
+          "value": "2205.9-2205-2212.36"
+        },
+        {
+          "key": "project.repository.revision",
+          "value": "23c4022"
+        },
+        {
+          "key": "product.builder.memory.os.reserved",
+          "value": "536870912"
+        },
+        {
+          "key": "product.builder.memory.limit.builder",
+          "value": "3500146688"
+        },
+        {
+          "key": "product.builder.memory.available",
+          "value": "-1"
+        },
+        {
+          "key": "product.builder.memory.additional.factor.platform.ant",
+          "value": "0.25"
+        },
+        {
+          "key": "product.images.platform.buildtime.java.version",
+          "value": "11.0.18"
+        }
+      ]
+    }
+  ],
+  "count": null
+}

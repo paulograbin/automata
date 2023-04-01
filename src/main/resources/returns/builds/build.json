@@ -1,0 +1,79 @@
+{
+  "subscriptionCode": "00000000011111111111222222222",
+  "applicationCode": "commerce-cloud",
+  "applicationDefinitionVersion": "2304-8",
+  "branch": "develop",
+  "name": "develop 23-03-2023",
+  "code": "20230323.1",
+  "buildStartTimestamp": "2023-03-23T15:37:12.360Z",
+  "buildEndTimestamp": "2023-03-23T16:02:45.414Z",
+  "buildVersion": "2205.10-2205-20230228-020238-20230323.1-aa92427-develop",
+  "createdBy": "S0024124997",
+  "status": "SUCCESS",
+  "properties": [
+    {
+      "key": "product.images.platform.components.java.version",
+      "value": "17.0.6"
+    },
+    {
+      "key": "product.images.platform.components.commerce-suite.version",
+      "value": "2205.10"
+    },
+    {
+      "key": "product.images.platform.components.ccv2-module.version",
+      "value": "2205-20230228-020238"
+    },
+    {
+      "key": "product.images.platform.components.ccv2-internal-module.version",
+      "value": "2205-20230223-020234"
+    },
+    {
+      "key": "product.images.solr.components.ccv2-solr-module.version",
+      "value": "2206.3"
+    },
+    {
+      "key": "product.images.solr.components.solr.version",
+      "value": "8.11"
+    },
+    {
+      "key": "product.images.solr.components.java.version",
+      "value": "17.0.6"
+    },
+    {
+      "key": "product.images.zookeeper.components.zookeeper.version",
+      "value": "3.8.0"
+    },
+    {
+      "key": "product.images.zookeeper.components.java.version",
+      "value": "17.0.6"
+    },
+    {
+      "key": "product.version",
+      "value": "2205.10-2205-20230228-020238"
+    },
+    {
+      "key": "project.repository.revision",
+      "value": "aa92427"
+    },
+    {
+      "key": "product.builder.memory.os.reserved",
+      "value": "536870912"
+    },
+    {
+      "key": "product.builder.memory.limit.builder",
+      "value": "3500146688"
+    },
+    {
+      "key": "product.builder.memory.available",
+      "value": "-1"
+    },
+    {
+      "key": "product.builder.memory.additional.factor.platform.ant",
+      "value": "0.25"
+    },
+    {
+      "key": "product.images.platform.buildtime.java.version",
+      "value": "11.0.18"
+    }
+  ]
+}
