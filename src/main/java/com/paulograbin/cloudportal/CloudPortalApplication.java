@@ -1,40 +1,48 @@
 package com.paulograbin.cloudportal;
 
+import com.paulograbin.ccv2api.model.BuildDetailDTO;
 import com.paulograbin.ccv2api.model.BuildDetailsDTO;
+import com.paulograbin.ccv2api.model.DeploymentDetailsDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class CloudPortalApplication implements CommandLineRunner
-{
-	private BuildService buildService;
-	private DeploymentService deploymentService;
+public class CloudPortalApplication implements CommandLineRunner {
+
+    private final Logger LOG = LoggerFactory.getLogger(BuildService.class);
 
 
-	public CloudPortalApplication(BuildService buildService, DeploymentService deploymentService)
-	{
-		this.buildService = buildService;
-		this.deploymentService = deploymentService;
-	}
+    private final BuildService buildService;
+    private final DeploymentService deploymentService;
 
 
-	public static void main(String[] args)
-	{
-		SpringApplication.run(CloudPortalApplication.class, args);
-	}
+    public CloudPortalApplication(BuildService buildService, DeploymentService deploymentService) {
+        this.buildService = buildService;
+        this.deploymentService = deploymentService;
+    }
 
 
-	@Override
-	public void run(String... args) throws Exception
-	{
-//		BuildDetailDTO buildDetails = buildService.getBuildDetails("20230323.1");
-		BuildDetailsDTO allBuilds = buildService.getAllBuilds();
+    public static void main(String[] args) {
+        SpringApplication.run(CloudPortalApplication.class, args);
+    }
 
 
-		//		develop 28-03-23 09-49
-		//		20230328.3
+    @Override
+    public void run(String... args) throws Exception {
+//        BuildDetailDTO buildDetails = buildService.getBuildDetails("20230323.1");
+        BuildDetailsDTO allBuilds = buildService.getAllBuilds();
+        BuildDetailDTO buildDetails = buildService.getBuildDetails("20230323.1");
+
+
+        DeploymentDetailsDTO deploymentDetailsDTO = deploymentService.fetchDeployments();
+        LOG.info("Found {} deployments", deploymentDetailsDTO.getCount());
+
+        //		develop 28-03-23 09-49
+        //		20230328.3
 //		buildService.createBuild("develop");
 
 //		buildService.createBuildAndAlertWhenDone("develop");
@@ -52,9 +60,7 @@ public class CloudPortalApplication implements CommandLineRunner
 
 
 //
-//		System.exit(0);
-
 //		BuildDetailsDTO allBuilds1 = buildService.getAllBuilds();
 //		LOG.info(allBuilds1.toString());
-	}
+    }
 }
