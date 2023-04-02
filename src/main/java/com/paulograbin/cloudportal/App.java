@@ -24,12 +24,14 @@ public class App implements CommandLineRunner {
     private final BuildService buildService;
     private final DeploymentService deploymentService;
     private final EnvironmentService environmentService;
+    private final AlertService alertService;
 
 
-    public App(BuildService buildService, DeploymentService deploymentService, EnvironmentService environmentService) {
+    public App(BuildService buildService, DeploymentService deploymentService, EnvironmentService environmentService, AlertService alertService) {
         this.buildService = buildService;
         this.deploymentService = deploymentService;
         this.environmentService = environmentService;
+        this.alertService = alertService;
     }
 
 
@@ -61,7 +63,6 @@ public class App implements CommandLineRunner {
         LOG.info(" APP READY ");
         LOG.info(" APP READY ");
         LOG.info(" ******************* ");
-
 
 //        BuildDetailDTO buildDetails = buildService.getBuildDetails("20230323.1");
 //        BuildDetailsDTO allBuilds = buildService.getAllBuilds();

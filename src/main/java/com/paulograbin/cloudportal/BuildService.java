@@ -22,9 +22,11 @@ public class BuildService {
     private final Logger LOG = LoggerFactory.getLogger(BuildService.class);
 
     private final CloudPortalOperations cloudPortalOperations;
+    private final AlertService alertService;
 
-    public BuildService(CloudPortalOperations cloudPortalOperations) {
+    public BuildService(CloudPortalOperations cloudPortalOperations, AlertService alertService) {
         this.cloudPortalOperations = cloudPortalOperations;
+        this.alertService = alertService;
     }
 
     @Cacheable("builds")
@@ -85,11 +87,11 @@ public class BuildService {
 
         Thread.sleep(5000L);
 
-        monitorBuild(createBuildResponse);
+        monitorBuild(createBuildResponse.getCode());
     }
 
-    private void monitorBuild(CreateBuildResponseDTO createBuildResponse) throws InterruptedException {
-        BuildProgressDTO buildProgress = cloudPortalOperations.getBuildProgress(createBuildResponse.getCode());
+    public void monitorBuild(String buildCode) throws InterruptedException {
+        BuildProgressDTO buildProgress = cloudPortalOperations.getBuildProgress(buildCode);
 
         String message = "";
 
@@ -114,7 +116,7 @@ public class BuildService {
 
         Thread.sleep(5 * 60 * 1000);
 
-        monitorBuild(createBuildResponse);
+        monitorBuild(buildCode);
     }
 
     public void createBuild(String branch) {
