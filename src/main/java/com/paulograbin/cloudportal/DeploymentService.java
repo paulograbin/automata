@@ -26,17 +26,19 @@ public class DeploymentService {
         this.cloudPortalOperations = cloudPortalOperations;
     }
 
-    public void makeDeployment(String buildCode) {
+    public CreateDeploymentResponseDTO makeDeployment(String buildCode, String environmentCode) {
         CreateDeploymentRequestDTO request = new CreateDeploymentRequestDTO();
         request.setBuildCode(buildCode);
         request.setStrategy(CreateDeploymentRequestDTO.StrategyEnum.RECREATE);
         request.setDatabaseUpdateMode(CreateDeploymentRequestDTO.DatabaseUpdateModeEnum.NONE);
-        request.setEnvironmentCode("d1");
+        request.setEnvironmentCode(environmentCode);
 
-        CreateDeploymentResponseDTO deployments = cloudPortalOperations.sendPostRequest("deployments", request, CreateDeploymentResponseDTO.class);
+        CreateDeploymentResponseDTO deploymentResponse = cloudPortalOperations.sendPostRequest("deployments", request, CreateDeploymentResponseDTO.class);
 
         LOG.info("Deployment created: ");
-        LOG.info(" Code: {}", deployments.getCode());
+        LOG.info(" Code: {}", deploymentResponse.getCode());
+
+        return deploymentResponse;
     }
 
     @Cacheable("deployments")
