@@ -26,7 +26,7 @@ public class BuildService {
         this.cloudPortalOperations = cloudPortalOperations;
     }
 
-
+    @Cacheable("builds")
     public BuildDetailsDTO getAllBuilds() {
         LOG.info("Fetching all recent builds...");
 

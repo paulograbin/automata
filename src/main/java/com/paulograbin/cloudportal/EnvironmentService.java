@@ -19,6 +19,8 @@ public class EnvironmentService {
         this.cloudPortalOperations = cloudPortalOperations;
     }
 
+
+    @Cacheable("environments")
     public EnvironmentsDTO fetchAllEnvironments() {
         LOG.info("Fetching all environments...");
 
