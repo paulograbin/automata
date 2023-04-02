@@ -99,8 +99,14 @@ public class BuildService {
 
         if (buildProgress.getBuildStatus().equalsIgnoreCase("SUCCESS")) {
             message = buildProgress.getBuildCode() + " ready";
+            alertService.sendAlert(message);
+
+            return;
         } else if (buildProgress.getBuildStatus().equalsIgnoreCase("FAILED")) {
             message = buildProgress.getBuildCode() + " failed";
+            alertService.sendAlert(message);
+
+            return;
         } else if (buildProgress.getBuildStatus().equalsIgnoreCase("BUILDING")) {
             message = buildProgress.getBuildCode() + " is building, at " + buildProgress.getPercentage() + "%";
         } else if (buildProgress.getBuildStatus().equalsIgnoreCase("UNKNOWN")) {
