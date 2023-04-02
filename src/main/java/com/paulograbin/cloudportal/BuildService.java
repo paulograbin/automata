@@ -109,17 +109,13 @@ public class BuildService {
             message = buildProgress.getBuildCode() + " new status " + buildProgress.getBuildStatus();
         }
 
-        LOG.info("Sending alert message: {} at {}", message, new SimpleDateFormat("HH:mm:ss").format(new Date()));
-
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.postForObject("http://ntfy.sh/builds", message, String.class);
-
+        alertService.sendAlert(message);
         Thread.sleep(5 * 60 * 1000);
 
         monitorBuild(buildCode);
     }
 
-    public void createBuild(String branch) {
+    public CreateBuildResponseDTO createBuild(String branch) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yy HH-mm");
         String formattedDate = dateFormat.format(new Date());
 
