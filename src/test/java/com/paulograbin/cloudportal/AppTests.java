@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @Disabled
-class CloudPortalApplicationTests
+class AppTests
 {
 
 	@Test
