@@ -1,7 +1,8 @@
 package com.paulograbin.cloudportal;
 
  import com.paulograbin.ccv2api.model.BuildDetailsDTO;
-import org.springframework.stereotype.Controller;
+ import com.paulograbin.ccv2api.model.DeploymentDetailsDTO;
+ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController
 {
 
-	BuildService buildService;
+	private final BuildService buildService;
+	private final DeploymentService deploymentService;
 
-	public HomeController(BuildService buildService)
+	public HomeController(BuildService buildService, DeploymentService deploymentService)
 	{
 		this.buildService = buildService;
+		this.deploymentService = deploymentService;
 	}
 
 	@GetMapping
@@ -26,6 +29,9 @@ public class HomeController
 
 		BuildDetailsDTO allBuilds = buildService.getAllBuilds();
 		model.addAttribute("builds", allBuilds);
+
+		DeploymentDetailsDTO deploymentDetailsDTO = deploymentService.fetchDeployments();
+		model.addAttribute("deployments", deploymentDetailsDTO);
 
 		return "index.html";
 	}
