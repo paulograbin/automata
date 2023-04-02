@@ -17,6 +17,7 @@ import java.util.Date;
 
 @Service
 public class BuildService {
+
     private final Logger LOG = LoggerFactory.getLogger(BuildService.class);
 
     private final CloudPortalOperations cloudPortalOperations;
@@ -31,17 +32,9 @@ public class BuildService {
 
         BuildDetailsDTO buildDetailsDTO = cloudPortalOperations.getAllBuilds();
 
-//		for (BuildDetailDTO buildDetailDTO : buildDetailsDTO.getValue())
-//		{
-//			LOG.info(" ****************** ");
-//			LOG.info("Build details: ");
-//			LOG.info(" Code {}", buildDetailDTO.getCode());
-//			LOG.info(" Branch {}", buildDetailDTO.getBranch());
-//			LOG.info(" Status {}", buildDetailDTO.getStatus());
-//			LOG.info(" Start time {}", buildDetailDTO.getBuildStartTimestamp());
-//			LOG.info(" End time {}", buildDetailDTO.getBuildEndTimestamp());
-//			LOG.info(" Created by {}", buildDetailDTO.getCreatedBy());
-//		}
+        for (BuildDetailDTO buildDetailDTO : buildDetailsDTO.getValue()) {
+            logBuildDetails(buildDetailDTO);
+        }
 
         return buildDetailsDTO;
     }
@@ -50,18 +43,20 @@ public class BuildService {
         LOG.info("Fetching build codes...");
 
         BuildDetailDTO buildDetailDTO = cloudPortalOperations.getBuild("builds/" + buildCode);
-
-        LOG.info("Build details ");
-        LOG.info(" Code {}", buildDetailDTO.getCode());
-        LOG.info(" Branch {}", buildDetailDTO.getBranch());
-        LOG.info(" Status {}", buildDetailDTO.getStatus());
-        LOG.info(" Start time {}", buildDetailDTO.getBuildStartTimestamp());
-        LOG.info(" End time {}", buildDetailDTO.getBuildEndTimestamp());
-        LOG.info(" Created by {}", buildDetailDTO.getCreatedBy());
+        logBuildDetails(buildDetailDTO);
 
         return buildDetailDTO;
     }
 
+    private void logBuildDetails(BuildDetailDTO buildDetailDTO) {
+        LOG.debug("Build details ");
+        LOG.debug(" Code {}", buildDetailDTO.getCode());
+        LOG.debug(" Branch {}", buildDetailDTO.getBranch());
+        LOG.debug(" Status {}", buildDetailDTO.getStatus());
+        LOG.debug(" Start time {}", buildDetailDTO.getBuildStartTimestamp());
+        LOG.debug(" End time {}", buildDetailDTO.getBuildEndTimestamp());
+        LOG.debug(" Created by {}", buildDetailDTO.getCreatedBy());
+    }
 
     public void createBuildAndAlertWhenDone(String branch) throws InterruptedException {
         String formattedDate = new SimpleDateFormat("dd-MM-yy HH-mm").format(new Date());
