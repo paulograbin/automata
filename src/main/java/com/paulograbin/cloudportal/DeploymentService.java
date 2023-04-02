@@ -13,8 +13,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class DeploymentService
-{
+public class DeploymentService {
 
 	private final Logger LOG = LoggerFactory.getLogger(DeploymentService.class);
 
@@ -25,13 +24,12 @@ public class DeploymentService
 		this.cloudPortalOperations = cloudPortalOperations;
 	}
 
-	public void makeDeployment(String buildCode)
-	{
-		CreateDeploymentRequestDTO request = new CreateDeploymentRequestDTO();
-		request.setBuildCode(buildCode);
-		request.setStrategy(CreateDeploymentRequestDTO.StrategyEnum.RECREATE);
-		request.setDatabaseUpdateMode(CreateDeploymentRequestDTO.DatabaseUpdateModeEnum.NONE);
-		request.setEnvironmentCode("d1");
+    public void makeDeployment(String buildCode) {
+        CreateDeploymentRequestDTO request = new CreateDeploymentRequestDTO();
+        request.setBuildCode(buildCode);
+        request.setStrategy(CreateDeploymentRequestDTO.StrategyEnum.RECREATE);
+        request.setDatabaseUpdateMode(CreateDeploymentRequestDTO.DatabaseUpdateModeEnum.NONE);
+        request.setEnvironmentCode("d1");
 
 		CreateDeploymentResponseDTO deployments = cloudPortalOperations.sendPostRequest("deployments", request, CreateDeploymentResponseDTO.class);
 
@@ -39,10 +37,9 @@ public class DeploymentService
 		LOG.info(" Code: {}", deployments.getCode());
 	}
 
-	public DeploymentDetailsDTO fetchDeployments()
-	{
-		{
-			LOG.info("Fetching all recent builds...");
+    @Cacheable("deployments")
+    public DeploymentDetailsDTO fetchDeployments() {
+        LOG.info("Fetching all recent deployments...");
 
 			DeploymentDetailsDTO buildDetailsDTO = cloudPortalOperations.getDeployments("deployments");
 

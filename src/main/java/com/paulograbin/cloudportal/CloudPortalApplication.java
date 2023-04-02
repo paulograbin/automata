@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
+@EnableCaching
 public class CloudPortalApplication implements CommandLineRunner {
 
     private final Logger LOG = LoggerFactory.getLogger(BuildService.class);
