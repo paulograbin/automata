@@ -9,6 +9,27 @@
 <body>
 <div class="container">
 
+  <div id="newbuild">
+    <h1>New Build</h1>
+
+      <div class="mb-3">
+        <label for="inputBranch" class="form-label">Branch name</label>
+        <input type="text" class="form-control" id="inputBranch" value="globale_experiment">
+      </div>
+
+      <div class="mb-3">
+        <label for="inputEnvironmentCode" class="form-label">Environment</label>
+        <input type="text" class="form-control" id="inputEnvironmentCode" value="d1">
+      </div>
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="sendAlerts" checked>
+        <label class="form-check-label" for="sendAlerts">Send me alerts about the build</label>
+      </div>
+
+      <button id="btnSubmitNewBuild" type="submit" class="btn btn-primary">Submit</button>
+  </div>
+
   <div id="environments">
     <h1>Environments</h1>
 
@@ -91,6 +112,29 @@
 
 </html>
 <script>
+  async function makeBuild() {
+    const newBuildRequest = {
+      branchName: 'globale_experiment',
+      environmentCode: 'd1'
+    }
+
+    console.log(newBuildRequest);
+
+    const response = await fetch("/newbuild", {
+      method: 'POST',
+      headers: {
+        "Content-Type": 'application/json',
+      },
+      body: JSON.stringify(newBuildRequest),
+    });
+
+    const result = await response.json();
+    console.log(result)
+  }
+
+  let btnSubmit = document.getElementById('btnSubmitNewBuild');
+  btnSubmit.onclick = makeBuild;
+
   var objeto = {
     teste: "aaaa",
     segundo: 1111,
