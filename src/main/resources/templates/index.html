@@ -61,7 +61,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr th:each="build: ${deployments.value}" th:class="${build.status} =='FAIL' ? 'table-danger' : ''">
+      <tr th:each="build: ${deployments.value}" th:class="${build.status} =='DEPLOYED' ? 'table-Success' : ''">
         <td th:text="${build.code}">
         <td th:text="${build.status}">
         <td th:text="${build.createdBy}">
