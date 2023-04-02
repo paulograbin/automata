@@ -1,5 +1,6 @@
 package com.paulograbin.cloudportal.ccv2;
 
+import com.google.gson.Gson;
 import com.paulograbin.ccv2api.model.BuildDetailDTO;
 import com.paulograbin.ccv2api.model.BuildDetailsDTO;
 import com.paulograbin.ccv2api.model.BuildProgressDTO;
@@ -19,6 +20,8 @@ import com.paulograbin.ccv2api.model.DeploymentDetailDTO;
 import com.paulograbin.ccv2api.model.DeploymentDetailsDTO;
 import com.paulograbin.ccv2api.model.DeploymentModeDTO;
 import com.paulograbin.ccv2api.model.DeploymentProgressDTO;
+import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentDTO;
+import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentsDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,6 +36,7 @@ import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.Map;
 
 
 @Service
@@ -77,9 +81,6 @@ public class CloudPortalAPI implements CloudPortalOperations {
     }
 
 
-
-
-
     @Override
     public <T> T sendPostRequest(String s, Object request, Class<T> responseType) {
         Instant start = Instant.now();
@@ -108,8 +109,7 @@ public class CloudPortalAPI implements CloudPortalOperations {
         return forObject;
     }
 
-    @Override
-    @Cacheable("builds")
+
     public BuildDetailsDTO getAllBuilds() {
         return sendRequestInternal("builds", BuildDetailsDTO.class);
     }
@@ -230,5 +230,36 @@ public class CloudPortalAPI implements CloudPortalOperations {
         LOG.info("Sever took {} ms to come back", requestTime);
 
         return forObject;
+    }
+
+
+
+
+    public EnvironmentsDTO fetchEnvironments() {
+        EnvironmentsDTO environments = sendRequestInternalOlderAPI("environments");
+
+        for (EnvironmentDTO environment : environments.getEnvironments()) {
+            LOG.info("Found environment {}", environment);
+        }
+        return environments;
+    }
+
+    private EnvironmentsDTO sendRequestInternalOlderAPI(String urlPath) {
+        LOG.info("Sending request to server...");
+
+        Instant start = Instant.now();
+
+        String url = makeBaseUrl(BASE_API_URL);
+        url = url.replace("v2", "v1");
+        String olderAPIReturn = restTemplate.getForObject(url + urlPath, String.class);
+
+        olderAPIReturn = "{ \"value\":" + olderAPIReturn + '}';
+
+        long requestTime = Duration.between(start, Instant.now()).toMillis();
+
+        LOG.info("Sever took {} ms to come back", requestTime);
+
+        Gson gson = new Gson();
+        return gson.fromJson(olderAPIReturn, EnvironmentsDTO.class);
     }
 }

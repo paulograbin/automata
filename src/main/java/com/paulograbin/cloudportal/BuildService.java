@@ -8,6 +8,7 @@ import com.paulograbin.ccv2api.model.CreateBuildResponseDTO;
 import com.paulograbin.cloudportal.ccv2.CloudPortalOperations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -43,7 +44,13 @@ public class BuildService {
         LOG.info("Fetching build codes...");
 
         BuildDetailDTO buildDetailDTO = cloudPortalOperations.getBuild("builds/" + buildCode);
-        logBuildDetails(buildDetailDTO);
+        LOG.info("Build details ");
+        LOG.info(" Code {}", buildDetailDTO.getCode());
+        LOG.info(" Branch {}", buildDetailDTO.getBranch());
+        LOG.info(" Status {}", buildDetailDTO.getStatus());
+        LOG.info(" Start time {}", buildDetailDTO.getBuildStartTimestamp());
+        LOG.info(" End time {}", buildDetailDTO.getBuildEndTimestamp());
+        LOG.info(" Created by {}", buildDetailDTO.getCreatedBy());
 
         return buildDetailDTO;
     }
