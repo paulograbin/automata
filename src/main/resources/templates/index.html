@@ -9,26 +9,89 @@
 <body>
 
 <div class="container">
-    <!--    <div th:each="a : ${}">-->
-    <!---->
-    <!--    </div>-->
+  <div id="environments">
+    <h1>Environments</h1>
 
-    <table>
-        <thead>
-        <tr>
-            <th>11111</th>
-            <th>22222</th>
-            <th>33333</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="build: ${builds.value}">
-          <td th:text="${build.code}">
-          <td th:text="${build.name}">
-          <td th:text="${build.branch}">
-        </tr>
-        </tbody>
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <div th:class="card-body">
+            <h5 class="card-title">Title</h5>
+            <p class="card-text">This is the card text</p>
+            <button class="btn btn-primary">Teste</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <div th:class="card-body">
+            <h5 class="card-title">Title</h5>
+            <p class="card-text">This is the card text</p>
+            <button class="btn btn-primary">Teste</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <div th:class="card-body">
+            <h5 class="card-title">Title</h5>
+            <p class="card-text">This is the card text</p>
+            <button class="btn btn-primary">Teste</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="deployments">
+    <h1>Deployments</h1>
+
+    <table class="table table-striped table-hover table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th class="col">Code</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="build: ${deployments.value}" th:class="${build.status} =='FAIL' ? 'table-danger' : ''">
+        <td th:text="${build.code}">
+        <td th:text="${build.status}">
+        <td th:text="${build.createdBy}">
+        <td th:text="${build.buildCode}">
+        <td th:text="${build.environmentCode}">
+        <td th:text="${build.scheduledTimestamp}">
+        <td th:text="${build.deployedTimestamp}">
+        <td th:text="${build.failedTimestamp}">
+      </tr>
+      </tbody>
     </table>
+  </div>
+
+
+  <div class="builds">
+    <h1>Builds</h1>
+    <table class="table table-striped table-hover table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th class="col">Code</th>
+        <th class="col">Name</th>
+        <th class="col">Branch</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="build: ${builds.value}" th:class="${build.status} =='FAIL' ? 'table-danger' : ''">
+        <td th:text="${build.code}">
+        <td th:text="${build.name}">
+        <td th:text="${build.branch}">
+        <td th:text="${#temporals.format(build.buildStartTimestamp, 'dd-MM-yyyy HH:mm')}"></td>
+        <td th:text="${#temporals.format(build.buildEndTimestamp, 'dd-MM-yyyy HH:mm')}"></td>
+        <td th:text="${build.createdBy}">
+        <td th:text="${build.status}">
+      </tr>
+      </tbody>
+    </table>
+  </div>
 
 </div>
 </body>
@@ -39,19 +102,19 @@
 
 </html>
 <script>
-    var objeto = {
-        teste: "aaaa",
-        segundo: 1111,
-        aa: "bbb"
-    };
+  var objeto = {
+    teste: "aaaa",
+    segundo: 1111,
+    aa: "bbb"
+  };
 
-    // const replacerFunction = function(key, value) {
-    //     console.log(key, value);
-    //
-    //     return value;
-    // }
+  // const replacerFunction = function(key, value) {
+  //     console.log(key, value);
+  //
+  //     return value;
+  // }
 
-    const replacerFunction = ['aa'];
+  const replacerFunction = ['aa'];
 
-    console.log(JSON.stringify(objeto, replacerFunction));
+  console.log(JSON.stringify(objeto, replacerFunction));
 </script>

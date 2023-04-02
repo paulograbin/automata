@@ -15,17 +15,19 @@ public class HomeController
 
 	private final BuildService buildService;
 	private final DeploymentService deploymentService;
+	private final EnvironmentService environmentService;
 
-	public HomeController(BuildService buildService, DeploymentService deploymentService)
+	public HomeController(BuildService buildService, DeploymentService deploymentService, EnvironmentService environmentService)
 	{
 		this.buildService = buildService;
 		this.deploymentService = deploymentService;
+		this.environmentService = environmentService;
 	}
 
 	@GetMapping
 	public String home(Model model)
 	{
-		model.addAttribute("aaaa", "adsdasdasdasda");
+		model.addAttribute("environments", environmentService.fetchAllEnvironments());
 
 		BuildDetailsDTO allBuilds = buildService.getAllBuilds();
 		model.addAttribute("builds", allBuilds);
