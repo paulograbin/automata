@@ -67,9 +67,9 @@
         <td th:text="${build.createdBy}">
         <td th:text="${build.buildCode}">
         <td th:text="${build.environmentCode}">
-        <td th:text="${build.scheduledTimestamp}">
-        <td th:text="${build.deployedTimestamp}">
-        <td th:text="${build.failedTimestamp}">
+        <td th:text="${#temporals.format(build.scheduledTimestamp, 'dd-MM-yyyy HH:mm')}">
+        <td th:text="${#temporals.format(build.deployedTimestamp, 'dd-MM-yyyy HH:mm')}">
+        <td th:text="${#temporals.format(build.failedTimestamp, 'dd-MM-yyyy HH:mm')}">
       </tr>
       </tbody>
     </table>
