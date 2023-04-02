@@ -4,13 +4,14 @@ import com.paulograbin.ccv2api.model.CreateDeploymentRequestDTO;
 import com.paulograbin.ccv2api.model.CreateDeploymentResponseDTO;
 import com.paulograbin.ccv2api.model.DeploymentDetailDTO;
 import com.paulograbin.ccv2api.model.DeploymentDetailsDTO;
-import com.paulograbin.cloudportal.ccv2.CloudPortalAPI;
 import com.paulograbin.cloudportal.ccv2.CloudPortalOperations;
-import jakarta.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 @Service
@@ -51,6 +52,29 @@ public class DeploymentService {
             LOG.debug(" Code {}", buildDetailDTO.getEnvironmentCode());
             LOG.debug(" Status {}", buildDetailDTO.getStatus());
             LOG.debug(" Created by {}", buildDetailDTO.getCreatedBy());
+        }
+
+        return deploymentDetails;
+    }
+
+    public DeploymentDetailsDTO fetchDeploymentPerEnvironment(String environmentCode) {
+        LOG.info("Fetching deployment for environment {}", environmentCode);
+
+        Map<String, String> params = new HashMap<>(3);
+        params.put("environmentCode", "d1");
+        params.put("$top", "1");
+        params.put("$skip", "0");
+        params.put("orderby", "scheduledTimestamp desc");
+
+        DeploymentDetailsDTO deploymentDetails = cloudPortalOperations.getDeployments("deployments", params);
+
+        for (DeploymentDetailDTO buildDetailDTO : deploymentDetails.getValue()) {
+            LOG.info(" ****************** ");
+            LOG.info("Deployment details: ");
+            LOG.info(" Code {}", buildDetailDTO.getCode());
+            LOG.info(" Code {}", buildDetailDTO.getEnvironmentCode());
+            LOG.info(" Status {}", buildDetailDTO.getStatus());
+            LOG.info(" Created by {}", buildDetailDTO.getCreatedBy());
         }
 
         return deploymentDetails;
