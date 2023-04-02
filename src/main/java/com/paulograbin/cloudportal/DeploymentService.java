@@ -45,12 +45,12 @@ public class DeploymentService {
         DeploymentDetailsDTO deploymentDetails = cloudPortalOperations.getDeployments("deployments");
 
         for (DeploymentDetailDTO buildDetailDTO : deploymentDetails.getValue()) {
-            LOG.info(" ****************** ");
-            LOG.info("Deployment details: ");
-            LOG.info(" Code {}", buildDetailDTO.getCode());
-            LOG.info(" Code {}", buildDetailDTO.getEnvironmentCode());
-            LOG.info(" Status {}", buildDetailDTO.getStatus());
-            LOG.info(" Created by {}", buildDetailDTO.getCreatedBy());
+            LOG.debug(" ****************** ");
+            LOG.debug("Deployment details: ");
+            LOG.debug(" Code {}", buildDetailDTO.getCode());
+            LOG.debug(" Code {}", buildDetailDTO.getEnvironmentCode());
+            LOG.debug(" Status {}", buildDetailDTO.getStatus());
+            LOG.debug(" Created by {}", buildDetailDTO.getCreatedBy());
         }
 
         return deploymentDetails;
