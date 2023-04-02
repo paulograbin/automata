@@ -17,7 +17,6 @@ public class CloudPortalApplication implements CommandLineRunner {
 
     private final Logger LOG = LoggerFactory.getLogger(BuildService.class);
 
-
     private final BuildService buildService;
     private final DeploymentService deploymentService;
 
@@ -36,12 +35,12 @@ public class CloudPortalApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 //        BuildDetailDTO buildDetails = buildService.getBuildDetails("20230323.1");
-        BuildDetailsDTO allBuilds = buildService.getAllBuilds();
-        BuildDetailDTO buildDetails = buildService.getBuildDetails("20230323.1");
+//        BuildDetailsDTO allBuilds = buildService.getAllBuilds();
+//        BuildDetailDTO buildDetails = buildService.getBuildDetails("20230323.1");
 
 
-        DeploymentDetailsDTO deploymentDetailsDTO = deploymentService.fetchDeployments();
-        LOG.info("Found {} deployments", deploymentDetailsDTO.getCount());
+//        DeploymentDetailsDTO deploymentDetailsDTO = deploymentService.fetchDeployments();
+//        LOG.info("Found {} deployments", deploymentDetailsDTO.getCount());
 
         //		develop 28-03-23 09-49
         //		20230328.3

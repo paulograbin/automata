@@ -58,7 +58,6 @@ public class BuildService {
         LOG.debug(" Created by {}", buildDetailDTO.getCreatedBy());
     }
 
-
     public void createBuildAndAlertWhenDone(String branch) throws InterruptedException {
         String formattedDate = new SimpleDateFormat("dd-MM-yy HH-mm").format(new Date());
 
