@@ -25,11 +25,15 @@ import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentsDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Profile;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Map;
@@ -43,15 +47,32 @@ public class CloudPortalAPI implements CloudPortalOperations {
     private final Logger LOG = LoggerFactory.getLogger(CloudPortalAPI.class);
 
     private final RestTemplate restTemplate;
-
-    private final String BASE_API_URL = "http://localhost:8080/v2/subscriptions/%%SUBSCRIPTION_CODE_PLACEHODER%%/";
+    private final String TOKEN = "Bearer %%TOKEN_PLACEHOLDER%%";
+    private final String BASE_API_URL = "https://portalapi.commerce.ondemand.com/v2/subscriptions/%%SUBSCRIPTION_CODE_PLACEHODER%%/";
 
     public String subscriptionCode;
+    public String apiToken;
 
 
-    public CloudPortalAPI(RestTemplate restTemplate, @Value("${ccv2.subscriptionCode}") String subscriptionCode) {
-        this.restTemplate = restTemplate;
+    public CloudPortalAPI(@Value("${ccv2.subscriptionCode}") String subscriptionCode, @Value("${ccv2.api.token}") String apiToken) {
+        this.apiToken = apiToken;
         this.subscriptionCode = subscriptionCode;
+
+        final var replacedTokenString = makeToken();
+
+//        Proxy localhost = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("localhost", 8080));
+//        SimpleClientHttpRequestFactory simpleClientHttpRequestFactory = new SimpleClientHttpRequestFactory();
+
+//        simpleClientHttpRequestFactory.setProxy(localhost);
+
+        restTemplate = new RestTemplateBuilder()
+                .defaultHeader("Authorization", replacedTokenString)
+//                .requestFactory(() -> simpleClientHttpRequestFactory)
+                .build();
+    }
+
+    private String makeToken() {
+        return TOKEN.replace("%%TOKEN_PLACEHOLDER%%", apiToken);
     }
 
     public String makeBaseUrl(String baseUrl) {
@@ -78,13 +99,22 @@ public class CloudPortalAPI implements CloudPortalOperations {
         Instant start = Instant.now();
 
         String url = makeBaseUrl(BASE_API_URL);
-        BuildProgressDTO forObject = restTemplate.getForObject(url + "/builds/" + buildCode + "/progress", BuildProgressDTO.class);
 
-        long requestTime = Duration.between(start, Instant.now()).toMillis();
+        try {
+            BuildProgressDTO forObject = restTemplate.getForObject(url + "/builds/" + buildCode + "/progress", BuildProgressDTO.class);
 
-        LOG.info("Sever took {} ms to come back", requestTime);
+            long requestTime = Duration.between(start, Instant.now()).toMillis();
 
-        return forObject;
+            LOG.info("Sever took {} ms to come back", requestTime);
+
+            return forObject;
+        } catch (RuntimeException e) {
+            LOG.error("Deu erro {}", e.getMessage(), e);
+            BuildProgressDTO buildProgressDTO = new BuildProgressDTO();
+            buildProgressDTO.setBuildStatus("ERROR");
+
+            return buildProgressDTO;
+        }
     }
 
 
