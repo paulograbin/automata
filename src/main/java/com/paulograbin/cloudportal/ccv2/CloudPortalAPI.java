@@ -47,37 +47,19 @@ public class CloudPortalAPI implements CloudPortalOperations {
     private final Logger LOG = LoggerFactory.getLogger(CloudPortalAPI.class);
 
     private final RestTemplate restTemplate;
-    private final String TOKEN = "Bearer %%TOKEN_PLACEHOLDER%%";
+
     private final String BASE_API_URL = "http://localhost:8080/v2/subscriptions/%%SUBSCRIPTION_CODE_PLACEHODER%%/";
 
     public String subscriptionCode;
-    public String apiToken;
 
 
-    public CloudPortalAPI(@Value("${ccv2.subscriptionCode}") String subscriptionCode, @Value("${ccv2.api.token}") String apiToken) {
-        this.apiToken = apiToken;
+    public CloudPortalAPI(RestTemplate restTemplate, @Value("${ccv2.subscriptionCode}") String subscriptionCode) {
+        this.restTemplate = restTemplate;
         this.subscriptionCode = subscriptionCode;
-
-        final var replacedTokenString = makeToken();
-
-        Proxy localhost = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("localhost", 8080));
-        SimpleClientHttpRequestFactory simpleClientHttpRequestFactory = new SimpleClientHttpRequestFactory();
-//
-        simpleClientHttpRequestFactory.setProxy(localhost);
-
-        restTemplate = new RestTemplateBuilder()
-                .defaultHeader("Authorization", replacedTokenString)
-//                .requestFactory(() -> simpleClientHttpRequestFactory)
-                .build();
-    }
-
-    private String makeToken() {
-        return TOKEN.replace("%%TOKEN_PLACEHOLDER%%", apiToken);
     }
 
     public String makeBaseUrl(String baseUrl) {
-        String replacedToken = baseUrl.replace("%%TOKEN_PLACEHOLDER%%", apiToken);
-        return replacedToken.replace("%%SUBSCRIPTION_CODE_PLACEHODER%%", subscriptionCode);
+        return baseUrl.replace("%%SUBSCRIPTION_CODE_PLACEHODER%%", subscriptionCode);
     }
 
 
