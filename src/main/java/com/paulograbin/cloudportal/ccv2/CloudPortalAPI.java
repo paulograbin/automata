@@ -28,14 +28,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Profile;
-import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.net.InetSocketAddress;
-import java.net.Proxy;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.Collections;
 import java.util.Map;
 
 
@@ -240,9 +239,6 @@ public class CloudPortalAPI implements CloudPortalOperations {
         return forObject;
     }
 
-
-
-
     public EnvironmentsDTO fetchEnvironments() {
         EnvironmentsDTO environments = sendRequestInternalOlderAPI("environments");
 
@@ -277,7 +273,7 @@ public class CloudPortalAPI implements CloudPortalOperations {
         Gson gson = new Gson();
 
         try {
-            EnvironmentsDTO environmentsDTO = gson.fromJson(olderAPIReturn, EnvironmentsDTO.class);
+            gson.fromJson(olderAPIReturn, EnvironmentsDTO.class);
         } catch (RuntimeException e) {
             LOG.error("Error converting what API returned to DTO");
         }
@@ -285,7 +281,7 @@ public class CloudPortalAPI implements CloudPortalOperations {
         try {
             String modifiedReturn = "{ \"value\":" + olderAPIReturn + '}';
 
-            EnvironmentsDTO environmentsDTO = gson.fromJson(modifiedReturn, EnvironmentsDTO.class);
+            gson.fromJson(modifiedReturn, EnvironmentsDTO.class);
         } catch (RuntimeException e) {
             LOG.error("Error converting modified returned value to DTO");
         }
