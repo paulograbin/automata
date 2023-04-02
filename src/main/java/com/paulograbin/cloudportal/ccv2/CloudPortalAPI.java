@@ -231,13 +231,33 @@ public class CloudPortalAPI implements CloudPortalOperations {
         url = url.replace("v2", "v1");
         String olderAPIReturn = restTemplate.getForObject(url + urlPath, String.class);
 
-        olderAPIReturn = "{ \"value\":" + olderAPIReturn + '}';
+        alertForErrors(olderAPIReturn);
+
+        String modifiedReturn = "{ \"value\":" + olderAPIReturn + '}';
 
         long requestTime = Duration.between(start, Instant.now()).toMillis();
 
         LOG.info("Sever took {} ms to come back", requestTime);
 
         Gson gson = new Gson();
-        return gson.fromJson(olderAPIReturn, EnvironmentsDTO.class);
+        return gson.fromJson(modifiedReturn, EnvironmentsDTO.class);
+    }
+
+    private void alertForErrors(String olderAPIReturn) {
+        Gson gson = new Gson();
+
+        try {
+            EnvironmentsDTO environmentsDTO = gson.fromJson(olderAPIReturn, EnvironmentsDTO.class);
+        } catch (RuntimeException e) {
+            LOG.error("Error converting what API returned to DTO");
+        }
+
+        try {
+            String modifiedReturn = "{ \"value\":" + olderAPIReturn + '}';
+
+            EnvironmentsDTO environmentsDTO = gson.fromJson(modifiedReturn, EnvironmentsDTO.class);
+        } catch (RuntimeException e) {
+            LOG.error("Error converting modified returned value to DTO");
+        }
     }
 }
