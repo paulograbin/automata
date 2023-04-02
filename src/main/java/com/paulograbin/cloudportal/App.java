@@ -42,7 +42,7 @@ public class App implements CommandLineRunner {
     public void run(String... args) throws Exception {
         EnvironmentsDTO environmentsDTO = environmentService.fetchAllEnvironments();
 
-        for (EnvironmentDTO environment : environmentsDTO.getEnvironments()) {
+        for (EnvironmentDTO environment : environmentsDTO.getValue()) {
             DeploymentDetailsDTO deploymentDetailsDTO = deploymentService.fetchDeploymentPerEnvironment(environment.getCode());
 
             List<DeploymentDetailDTO> value = deploymentDetailsDTO.getValue();
@@ -52,8 +52,16 @@ public class App implements CommandLineRunner {
 
                 LOG.info("Environment {} has build {}-{}", environment.getCode(), buildDetails.getCode(), buildDetails.getName());
             }
-
         }
+
+
+        LOG.info(" ******************* ");
+        LOG.info(" APP READY ");
+        LOG.info(" APP READY ");
+        LOG.info(" APP READY ");
+        LOG.info(" APP READY ");
+        LOG.info(" ******************* ");
+
 
 //        BuildDetailDTO buildDetails = buildService.getBuildDetails("20230323.1");
 //        BuildDetailsDTO allBuilds = buildService.getAllBuilds();

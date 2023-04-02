@@ -238,7 +238,7 @@ public class CloudPortalAPI implements CloudPortalOperations {
     public EnvironmentsDTO fetchEnvironments() {
         EnvironmentsDTO environments = sendRequestInternalOlderAPI("environments");
 
-        for (EnvironmentDTO environment : environments.getEnvironments()) {
+        for (EnvironmentDTO environment : environments.getValue()) {
             LOG.info("Found environment {}", environment);
         }
         return environments;

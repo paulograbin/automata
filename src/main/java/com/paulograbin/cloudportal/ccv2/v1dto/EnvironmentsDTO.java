@@ -8,16 +8,12 @@ public class EnvironmentsDTO {
     List<EnvironmentDTO> value = null;
 
 
-    public EnvironmentsDTO(List<EnvironmentDTO> environments) {
-        this.value = environments;
-    }
-
-    public List<EnvironmentDTO> getEnvironments() {
+    public List<EnvironmentDTO> getValue() {
         return value;
     }
 
-    public void setEnvironments(List<EnvironmentDTO> environments) {
-        this.value = environments;
+    public void setValue(List<EnvironmentDTO> value) {
+        this.value = value;
     }
 
     @Override
