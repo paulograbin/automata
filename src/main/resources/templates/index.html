@@ -96,8 +96,8 @@
         <td th:text="${build.name}">
         <td th:text="${build.branch}">
         <td th:text="${build.status}">
-        <td th:text="${#temporals.format(build.buildStartTimestamp, 'dd-MM-yyyy HH:mm')}"></td>
-        <td th:text="${#temporals.format(build.buildEndTimestamp, 'dd-MM-yyyy HH:mm')}"></td>
+        <td th:text="${#temporals.format(build.buildStartTimestamp, 'dd-MM-yyyy HH:mm')}">
+        <td th:text="${#temporals.format(build.buildEndTimestamp, 'dd-MM-yyyy HH:mm')}">
         <td th:text="${build.createdBy}">
       </tr>
       </tbody>
