@@ -94,8 +94,14 @@ public class DeploymentService {
 
         if (deploymentProgress.getDeploymentStatus().equalsIgnoreCase("DEPLOYED")) {
             message = deploymentProgress.getDeploymentCode() + " ready";
+
+            alertService.sendAlert(message);
+            return;
         } else if (deploymentProgress.getDeploymentStatus().equalsIgnoreCase("FAIL")) {
             message = deploymentProgress.getDeploymentCode() + " failed";
+
+            alertService.sendAlert(message);
+            return;
         } else if (deploymentProgress.getDeploymentStatus().equalsIgnoreCase("DEPLOYING")) {
             message = deploymentProgress.getDeploymentCode() + " is building, at " + deploymentProgress.getPercentage() + "%";
         } else if (deploymentProgress.getDeploymentStatus().equalsIgnoreCase("SCHEDULED")) {
