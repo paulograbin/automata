@@ -168,8 +168,26 @@ public class CloudPortalAPI implements CloudPortalOperations {
     }
 
     @Override
-    public DeploymentProgressDTO getDeploymentProgress() {
-        throw new UnsupportedOperationException();
+    public DeploymentProgressDTO getDeploymentProgress(String deploymentCode) {
+        LOG.info("Sending request to server...");
+        Instant start = Instant.now();
+
+        String url = makeBaseUrl(BASE_API_URL);
+
+        ResponseEntity<DeploymentProgressDTO> forObject = restTemplate.getForEntity(url + "/deployments/" + deploymentCode + "/progress", DeploymentProgressDTO.class, Collections.emptyMap());
+
+        long requestTime = Duration.between(start, Instant.now()).toMillis();
+        LOG.info("Sever took {} ms to come back", requestTime);
+
+        if (forObject.getStatusCode().isError()) {
+            LOG.error("Deu erro na build...");
+            DeploymentProgressDTO buildProgressDTO = new DeploymentProgressDTO();
+            buildProgressDTO.setDeploymentStatus("ERROR");
+
+            return buildProgressDTO;
+        }
+
+        return forObject.getBody();
     }
 
     @Override

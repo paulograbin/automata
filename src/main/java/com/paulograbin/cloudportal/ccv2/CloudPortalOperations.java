@@ -47,7 +47,8 @@ public interface CloudPortalOperations {
 
     DeploymentDecisionsDTO getDeploymentDecisions();
     DeploymentModeDTO getDeploymentModes();
-    DeploymentProgressDTO getDeploymentProgress();
+
+    DeploymentProgressDTO getDeploymentProgress(String deploymentCode);
 
     /**
      * BACKUP

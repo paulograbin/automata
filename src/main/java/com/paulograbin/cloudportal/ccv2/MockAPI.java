@@ -125,7 +125,7 @@ public class MockAPI implements CloudPortalOperations {
     }
 
     @Override
-    public DeploymentProgressDTO getDeploymentProgress() {
+    public DeploymentProgressDTO getDeploymentProgress(String deploymentCode) {
         return null;
     }
 
