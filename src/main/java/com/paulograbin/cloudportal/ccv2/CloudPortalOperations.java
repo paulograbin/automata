@@ -19,6 +19,9 @@ import com.paulograbin.ccv2api.model.DeploymentDetailDTO;
 import com.paulograbin.ccv2api.model.DeploymentDetailsDTO;
 import com.paulograbin.ccv2api.model.DeploymentModeDTO;
 import com.paulograbin.ccv2api.model.DeploymentProgressDTO;
+import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentsDTO;
+
+import java.util.Map;
 
 public interface CloudPortalOperations {
 
@@ -55,4 +58,8 @@ public interface CloudPortalOperations {
     DatabackupDetailsDTO getDataBackups();
     DatarestoreDetailDTO getDataRestore();
     DatarestoreDetailsDTO getDataRestores();
+
+    EnvironmentsDTO fetchEnvironments();
+
+    DeploymentDetailsDTO getDeployments(String deployments, Map<String, String> params);
 }

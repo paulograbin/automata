@@ -20,12 +20,14 @@ import com.paulograbin.ccv2api.model.DeploymentDetailDTO;
 import com.paulograbin.ccv2api.model.DeploymentDetailsDTO;
 import com.paulograbin.ccv2api.model.DeploymentModeDTO;
 import com.paulograbin.ccv2api.model.DeploymentProgressDTO;
+import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentsDTO;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Map;
 
 
 @Service
@@ -154,6 +156,17 @@ public class MockAPI implements CloudPortalOperations {
 
     @Override
     public DatarestoreDetailsDTO getDataRestores() {
+        return null;
+    }
+
+    @Override
+    public EnvironmentsDTO fetchEnvironments() {
+
+        return null;
+    }
+
+    @Override
+    public DeploymentDetailsDTO getDeployments(String deployments, Map<String, String> params) {
         return null;
     }
 }

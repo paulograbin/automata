@@ -195,6 +195,27 @@ public class CloudPortalAPI implements CloudPortalOperations {
         throw new UnsupportedOperationException();
     }
 
+    @Override
+    public DeploymentDetailsDTO getDeployments(String deployments, Map<String, String> params) {
+        StringBuilder queryBuilder = new StringBuilder();
+
+        params.forEach((name, values) -> {
+
+            if (queryBuilder.isEmpty()) {
+                queryBuilder.append("?");
+                queryBuilder.append(name);
+                queryBuilder.append("=");
+                queryBuilder.append(values);
+            } else {
+                queryBuilder.append("&");
+                queryBuilder.append(name);
+                queryBuilder.append("=");
+                queryBuilder.append(values);
+            }
+        });
+
+        return sendRequestInternal(deployments + '/' + queryBuilder, DeploymentDetailsDTO.class);
+    }
 
     private <T> T sendRequestInternal(String urlPath, Class<T> returnType) {
         LOG.info("Sending request to server...");
