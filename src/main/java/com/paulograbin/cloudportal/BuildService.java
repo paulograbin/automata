@@ -43,7 +43,7 @@ public class BuildService {
     }
 
     public BuildDetailDTO getBuildDetails(String buildCode) {
-        LOG.info("Fetching build codes...");
+        LOG.info("Fetching build details...");
 
         BuildDetailDTO buildDetailDTO = cloudPortalOperations.getBuild("builds/" + buildCode);
         LOG.info("Build details ");
