@@ -4,3 +4,20 @@
     border-width: 1px;
     border-color: black;
 }
+
+.cardImage {
+    width: 300px;
+    height: 300px;
+}
+
+.cardImage-PROD {
+    background-color: red;
+}
+
+.cardImage-DEV {
+    background-color: green;
+}
+
+.cardImage-STG {
+    background-color: yellow;
+}
