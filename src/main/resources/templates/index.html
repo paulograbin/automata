@@ -111,43 +111,67 @@
 <script defer src="http://localhost:35729/livereload.js"></script>
 
 </html>
-<script>
-  async function makeBuild() {
-    const newBuildRequest = {
-      branchName: 'globale_experiment',
-      environmentCode: 'd1'
-    }
+<script th:inline="javascript">
+  /*<![CDATA[*/
+  (function () {
+    document.addEventListener("DOMContentLoaded", function (e) {
+      console.log('Document ready!');
 
-    console.log(newBuildRequest);
+      let subscriptionCode = localStorage.getItem('subscriptionCode');
+      console.log('loaded value for subscripton', subscriptionCode);
 
-    const response = await fetch("/newbuild", {
-      method: 'POST',
-      headers: {
-        "Content-Type": 'application/json',
-      },
-      body: JSON.stringify(newBuildRequest),
+      let token = localStorage.getItem('token');
+      console.log('loaded value for token', token);
+
+      let inputSubscription = document.getElementById('inputSubscriptionCode');
+      inputSubscription.value = subscriptionCode;
+
+      let inputToken = document.getElementById('inputToken');
+      inputToken.value = token;
     });
 
-    const result = await response.json();
-    console.log(result)
-  }
+    async function makeBuild() {
+      const newBuildRequest = {
+        branchName: 'globale_experiment',
+        environmentCode: 'd1'
+      }
 
-  let btnSubmit = document.getElementById('btnSubmitNewBuild');
-  btnSubmit.onclick = makeBuild;
+      console.log(newBuildRequest);
 
-  var objeto = {
-    teste: "aaaa",
-    segundo: 1111,
-    aa: "bbb"
-  };
+      const response = await fetch("/newbuild", {
+        method: 'POST',
+        headers: {
+          "Content-Type": 'application/json',
+        },
+        body: JSON.stringify(newBuildRequest),
+      });
 
-  // const replacerFunction = function(key, value) {
-  //     console.log(key, value);
-  //
-  //     return value;
-  // }
+      const result = await response.json();
+      console.log(result)
+    }
 
-  const replacerFunction = ['aa'];
+    let btnSubmit = document.getElementById('btnSubmitNewBuild');
+    btnSubmit.onclick = makeBuild;
 
-  console.log(JSON.stringify(objeto, replacerFunction));
+
+    localStorage.setItem('subscriptionCode', 'aaaa');
+    localStorage.setItem('token', 'bbb');
+
+    var objeto = {
+      teste: "aaaa",
+      segundo: 1111,
+      aa: "bbb"
+    };
+
+    // const replacerFunction = function(key, value) {
+    //     console.log(key, value);
+    //
+    //     return value;
+    // }
+
+    const replacerFunction = ['aa'];
+
+    console.log(JSON.stringify(objeto, replacerFunction));
+  })();
+  /*]]>*/
 </script>
