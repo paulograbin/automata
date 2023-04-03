@@ -12,6 +12,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.List;
 
 
@@ -42,6 +44,19 @@ public class App implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        Instant tenStart = Instant.now();
+        buildService.getLast10Builds();
+        long tenDuration = Duration.between(tenStart, Instant.now()).toMillis();
+
+        Instant allStart = Instant.now();
+        buildService.fetchAllBuilds();
+        long allDuration = Duration.between(allStart, Instant.now()).toMillis();
+
+        LOG.info("10 builds took {} ms", tenDuration);
+        LOG.info("All builds took {} ms", allDuration);
+
+
+
         EnvironmentsDTO environmentsDTO = environmentService.fetchAllEnvironments();
 
         for (EnvironmentDTO environment : environmentsDTO.getValue()) {
