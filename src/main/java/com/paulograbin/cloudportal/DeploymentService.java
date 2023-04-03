@@ -57,6 +57,24 @@ public class DeploymentService {
         return deploymentDetails;
     }
 
+    public DeploymentDetailsDTO fetchCurrentDeployments() {
+        LOG.info("Fetching current deployments... {}");
+
+        Map<String, String> params = new HashMap<>(3);
+        params.put("status", "DEPLOYED");
+        params.put("$top", "3");
+        params.put("$skip", "0");
+        params.put("orderby", "scheduledTimestamp desc");
+
+        DeploymentDetailsDTO deploymentDetails = cloudPortalOperations.getDeployments("deployments", params);
+
+        for (DeploymentDetailDTO deployment : deploymentDetails.getValue()) {
+            LOG.info("Deployment code {}, environment {}, status {}", deployment.getCode(), deployment.getEnvironmentCode(), deployment.getStatus());
+        }
+
+        return deploymentDetails;
+    }
+
     public DeploymentDetailsDTO fetchDeploymentPerEnvironment(String environmentCode) {
         LOG.info("Fetching deployment for environment {}", environmentCode);
 

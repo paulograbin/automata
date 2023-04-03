@@ -31,7 +31,7 @@ public class HomeController {
         model.addAttribute("builds", buildService.getLast10Builds());
 //        model.addAttribute("builds", new com.paulograbin.ccv2api.model.BuildDetailsDTO());
 
-        model.addAttribute("deployments", deploymentService.fetchDeployments());
+        model.addAttribute("deployments", deploymentService.fetchCurrentDeployments());
 //        model.addAttribute("deployments", new DeploymentDetailsDTO());
 
         return "index.html";
