@@ -1,6 +1,5 @@
 package com.paulograbin.cloudportal;
 
-import com.paulograbin.ccv2api.model.DeploymentDetailsDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +25,7 @@ public class HomeController {
         model.addAttribute("environments", environmentService.fetchAllEnvironments());
 //        model.addAttribute("environments", new EnvironmentsDTO());
 
-        model.addAttribute("builds", buildService.getAllBuilds());
+        model.addAttribute("builds", buildService.getLast10Builds());
 //        model.addAttribute("builds", new com.paulograbin.ccv2api.model.BuildDetailsDTO());
 
         model.addAttribute("deployments", deploymentService.fetchDeployments());

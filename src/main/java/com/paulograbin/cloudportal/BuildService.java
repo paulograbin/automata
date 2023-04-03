@@ -32,15 +32,15 @@ public class BuildService {
     }
 
     @Cacheable("builds")
-    public BuildDetailsDTO getAllBuilds() {
-        LOG.info("Fetching all recent builds...");
+    public BuildDetailsDTO getLast10Builds() {
+        LOG.info("Fetching last 10 builds...");
 
         Map<String, String> params = new HashMap<>(3);
-        params.put("$top", "1");
+        params.put("$top", "10");
         params.put("$skip", "0");
         params.put("orderby", "scheduledTimestamp desc");
 
-        BuildDetailsDTO buildDetailsDTO = cloudPortalOperations.getAllBuilds(params);
+        BuildDetailsDTO buildDetailsDTO = cloudPortalOperations.getBuildsWithParams(params);
 
         for (BuildDetailDTO buildDetailDTO : buildDetailsDTO.getValue()) {
             logBuildDetails(buildDetailDTO);
