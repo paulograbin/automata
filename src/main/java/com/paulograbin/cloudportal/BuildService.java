@@ -63,27 +63,15 @@ public class BuildService {
     public BuildDetailDTO getBuildDetails(String buildCode) {
         LOG.info("Fetching build details...");
 
-        BuildDetailDTO buildDetailDTO = cloudPortalOperations.getBuild("builds/" + buildCode);
-        LOG.info("Build details ");
-        LOG.info(" Code {}", buildDetailDTO.getCode());
-        LOG.info(" Branch {}", buildDetailDTO.getBranch());
-        LOG.info(" Status {}", buildDetailDTO.getStatus());
-        LOG.info(" Start time {}", buildDetailDTO.getBuildStartTimestamp());
-        LOG.info(" End time {}", buildDetailDTO.getBuildEndTimestamp());
-        LOG.info(" Created by {}", buildDetailDTO.getCreatedBy());
+		BuildDetailDTO build = cloudPortalOperations.getBuild("builds/" + buildCode);
+		logBuildDetails(build);
 
-        return buildDetailDTO;
-    }
+		return build;
+	}
 
-    private void logBuildDetails(BuildDetailDTO buildDetailDTO) {
-        LOG.debug("Build details ");
-        LOG.debug(" Code {}", buildDetailDTO.getCode());
-        LOG.debug(" Branch {}", buildDetailDTO.getBranch());
-        LOG.debug(" Status {}", buildDetailDTO.getStatus());
-        LOG.debug(" Start time {}", buildDetailDTO.getBuildStartTimestamp());
-        LOG.debug(" End time {}", buildDetailDTO.getBuildEndTimestamp());
-        LOG.debug(" Created by {}", buildDetailDTO.getCreatedBy());
-    }
+	private void logBuildDetails(BuildDetailDTO build) {
+		LOG.debug("Build details: Code {}, Branch {}, Status {}, Created by {}", build.getCode(), build.getBranch(), build.getStatus(), build.getCreatedBy());
+	}
 
     public void createBuildAndAlertWhenDone(String branch) throws InterruptedException {
         String formattedDate = new SimpleDateFormat("dd-MM-yy HH-mm").format(new Date());
