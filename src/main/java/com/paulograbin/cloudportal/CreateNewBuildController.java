@@ -36,17 +36,23 @@ public class CreateNewBuildController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CreateBuildResponseDTO> createAndDeployBuildJson(@RequestBody NewBuildRequest request) throws InterruptedException {
+    public ResponseEntity<String> createAndDeployBuildJson(@RequestBody NewBuildRequest request) throws InterruptedException {
         LOG.info("New build request: {}", request);
 
-        CreateBuildResponseDTO createBuildResponse = buildService.createBuild(request.getBranchName());
+        new Thread(() -> {
+//            CreateBuildResponseDTO createBuildResponse = buildService.createBuild(request.getBranchName());
+            CreateBuildResponseDTO fake = new CreateBuildResponseDTO();
+            fake.setCode("20230403.1");
 
-        buildService.monitorBuild(createBuildResponse.getCode());
+            buildService.monitorBuild(fake.getCode());
 
-        CreateDeploymentResponseDTO createDeploymentResponseDTO = deploymentService.makeDeployment(createBuildResponse.getCode(), request.getEnvironmentCode());
+            LOG.info("Send deployment request");
+            CreateDeploymentResponseDTO createDeploymentResponseDTO = deploymentService.makeDeployment(fake.getCode(), request.getEnvironmentCode());
 
-        deploymentService.monitorDeployment(createDeploymentResponseDTO.getCode());
+            LOG.info("Will start monitoring the deployment");
+            deploymentService.monitorDeployment(createDeploymentResponseDTO.getCode());
+        }).start();
 
-        return ResponseEntity.ok().body(createBuildResponse);
+        return ResponseEntity.ok().body("ok");
     }
 }
