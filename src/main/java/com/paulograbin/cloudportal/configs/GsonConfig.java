@@ -3,7 +3,6 @@ package com.paulograbin.cloudportal.configs;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.paulograbin.cloudportal.LocalDateTimeTypeAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

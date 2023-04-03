@@ -1,4 +1,4 @@
-package com.paulograbin.cloudportal;
+package com.paulograbin.cloudportal.configs;
 
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
@@ -12,8 +12,8 @@ import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
 
 public class LocalDateTimeTypeAdapter extends TypeAdapter<OffsetDateTime> {
-    private final Logger LOG = LoggerFactory.getLogger(LocalDateTimeTypeAdapter.class);
 
+    private final Logger LOG = LoggerFactory.getLogger(LocalDateTimeTypeAdapter.class);
 
     @Override
     public void write(final JsonWriter jsonWriter, final OffsetDateTime localDate) throws IOException {
@@ -30,7 +30,10 @@ public class LocalDateTimeTypeAdapter extends TypeAdapter<OffsetDateTime> {
             jsonReader.nextNull();
             return null;
         }
+
         String text = jsonReader.nextString();
+        LOG.debug("Read text {}", text);
+
         return ZonedDateTime.parse(text).toOffsetDateTime();
     }
 }
