@@ -262,10 +262,7 @@ public class CloudPortalAPI implements CloudPortalOperations {
         return sendRequestInternal(deployments + '/' + queryBuilder, DeploymentDetailsDTO.class);
     }
 
-
-
     private <T> T sendRequestInternal(String urlPath, Class<T> returnType) {
-
         Instant start = Instant.now();
 
         String url = makeBaseUrl(BASE_API_URL);
