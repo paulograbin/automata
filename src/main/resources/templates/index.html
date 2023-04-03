@@ -152,8 +152,6 @@
 
 </html>
 <script th:inline="javascript">
-  /*<![CDATA[*/
-  (function () {
     document.addEventListener("DOMContentLoaded", function (e) {
       console.log('Document ready!');
 
@@ -189,9 +187,15 @@
       console.log(result)
     }
 
-    let btnSubmit = document.getElementById('btnSubmitNewBuild');
-    btnSubmit.onclick = makeBuild;
+    async function handleSubmitButton() {
+      const environmentCode = document.getElementById("inputEnvironmentCode").value;
+      const branchName = document.getElementById("inputBranch").value;
 
+      makeBuild(branchName, environmentCode);
+    }
+
+    let btnSubmit = document.getElementById('btnSubmitNewBuild');
+    btnSubmit.onclick = handleSubmitButton;
 
     localStorage.setItem('subscriptionCode', 'aaaa');
     localStorage.setItem('token', 'bbb');
@@ -211,6 +215,4 @@
     const replacerFunction = ['aa'];
 
     console.log(JSON.stringify(objeto, replacerFunction));
-  })();
-  /*]]>*/
 </script>
