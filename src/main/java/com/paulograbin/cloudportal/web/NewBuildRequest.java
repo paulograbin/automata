@@ -1,4 +1,4 @@
-package com.paulograbin.cloudportal;
+package com.paulograbin.cloudportal.web;
 
 public class NewBuildRequest {
 

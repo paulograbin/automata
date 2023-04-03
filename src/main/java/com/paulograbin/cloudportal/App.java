@@ -1,6 +1,7 @@
 package com.paulograbin.cloudportal;
 
 import com.paulograbin.ccv2api.model.BuildDetailDTO;
+import com.paulograbin.ccv2api.model.BuildDetailsDTO;
 import com.paulograbin.ccv2api.model.DeploymentDetailDTO;
 import com.paulograbin.ccv2api.model.DeploymentDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentDTO;
@@ -45,7 +46,7 @@ public class App implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Instant tenStart = Instant.now();
-        buildService.getLast10Builds();
+        BuildDetailsDTO last10Builds = buildService.getLast10Builds();
         long tenDuration = Duration.between(tenStart, Instant.now()).toMillis();
 
         Instant allStart = Instant.now();
@@ -56,8 +57,33 @@ public class App implements CommandLineRunner {
         LOG.info("All builds took {} ms", allDuration);
 
 
+        for (var recentBuild : last10Builds.getValue())
+        {
+            if (recentBuild.getStatus().equalsIgnoreCase("BUILDING") )
+            {
+				new Thread(() ->
+				{
+					LOG.info("WILL MONITOR BUILD {}", recentBuild.getCode());
+					buildService.monitorBuild(recentBuild.getCode());
+				}).start();
+            }
+        }
 
-        EnvironmentsDTO environmentsDTO = environmentService.fetchAllEnvironments();
+		DeploymentDetailsDTO lastDeployments = deploymentService.fetchDeployments();
+		for (var deployment : lastDeployments.getValue())
+		{
+			if (deployment.getStatus().equalsIgnoreCase("DEPLOYING"))
+			{
+				new Thread(() ->
+				{
+					LOG.info("WILL MONITOR DEPLOYMENT {}", deployment.getCode());
+					deploymentService.monitorDeployment(deployment.getCode());
+				}).start();
+			}
+		}
+
+
+		EnvironmentsDTO environmentsDTO = environmentService.fetchAllEnvironments();
 
         for (EnvironmentDTO environment : environmentsDTO.getValue()) {
             DeploymentDetailsDTO deploymentDetailsDTO = deploymentService.fetchDeploymentPerEnvironment(environment.getCode());
@@ -77,8 +103,5 @@ public class App implements CommandLineRunner {
         LOG.info(" APP READY ");
         LOG.info(" APP READY ");
         LOG.info(" ******************* ");
-
-//        buildService.createBuildAndAlertWhenDone("globale_experiment");
-//        buildService.monitorBuild("20230330.1");
     }
 }

@@ -1,5 +1,8 @@
-package com.paulograbin.cloudportal;
+package com.paulograbin.cloudportal.web;
 
+import com.paulograbin.cloudportal.BuildService;
+import com.paulograbin.cloudportal.DeploymentService;
+import com.paulograbin.cloudportal.EnvironmentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
