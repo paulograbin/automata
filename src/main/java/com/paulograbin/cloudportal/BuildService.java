@@ -116,7 +116,7 @@ public class BuildService {
         } else if (buildProgress.getBuildStatus().equalsIgnoreCase("BUILDING")) {
             message = "Build " + buildProgress.getBuildCode() + " is building, at " + buildProgress.getPercentage() + "%";
         } else if (buildProgress.getBuildStatus().equalsIgnoreCase("UNKNOWN")) {
-            message = "Build " + buildProgress.getBuildCode() + " building not started yet";
+            message = "Build " + buildProgress.getBuildCode() + " not started yet";
         } else {
             message = "Build " + buildProgress.getBuildCode() + " new status " + buildProgress.getBuildStatus();
         }
