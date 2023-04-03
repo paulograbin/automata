@@ -40,14 +40,11 @@ public class CreateNewBuildController {
         LOG.info("New build request: {}", request);
 
         new Thread(() -> {
-//            CreateBuildResponseDTO createBuildResponse = buildService.createBuild(request.getBranchName());
-            CreateBuildResponseDTO fake = new CreateBuildResponseDTO();
-            fake.setCode("20230403.1");
-
-            buildService.monitorBuild(fake.getCode());
+            CreateBuildResponseDTO createBuildResponse = buildService.createBuild(request.getBranchName());
+            buildService.monitorBuild(createBuildResponse.getCode());
 
             LOG.info("Send deployment request");
-            CreateDeploymentResponseDTO createDeploymentResponseDTO = deploymentService.makeDeployment(fake.getCode(), request.getEnvironmentCode());
+            CreateDeploymentResponseDTO createDeploymentResponseDTO = deploymentService.makeDeployment(createBuildResponse.getCode(), request.getEnvironmentCode());
 
             LOG.info("Will start monitoring the deployment");
             deploymentService.monitorDeployment(createDeploymentResponseDTO.getCode());
