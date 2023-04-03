@@ -93,9 +93,9 @@ public class DeploymentService {
             alertService.sendAlert(message);
             return;
         } else if (deploymentProgress.getDeploymentStatus().equalsIgnoreCase("DEPLOYING")) {
-            message = "Deployment " + deploymentProgress.getDeploymentCode() + " is building, at " + deploymentProgress.getPercentage() + "%";
+            message = "Deployment " + deploymentProgress.getDeploymentCode() + " is running, at " + deploymentProgress.getPercentage() + "%";
         } else if (deploymentProgress.getDeploymentStatus().equalsIgnoreCase("SCHEDULED")) {
-            message = "Deployment " + deploymentProgress.getDeploymentCode() + " building not started yet";
+            message = "Deployment " + deploymentProgress.getDeploymentCode() + " not started yet";
         } else {
             message = "Deployment " + deploymentProgress.getDeploymentCode() + " new status " + deploymentProgress.getDeploymentStatus();
         }
