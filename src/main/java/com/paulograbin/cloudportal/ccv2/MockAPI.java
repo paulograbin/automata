@@ -169,4 +169,9 @@ public class MockAPI implements CloudPortalOperations {
     public DeploymentDetailsDTO getDeployments(String deployments, Map<String, String> params) {
         return null;
     }
+
+    @Override
+    public BuildDetailsDTO getAllBuilds(Map<String, String> params) {
+        return null;
+    }
 }

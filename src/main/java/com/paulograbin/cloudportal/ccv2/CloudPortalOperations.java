@@ -63,4 +63,6 @@ public interface CloudPortalOperations {
     EnvironmentsDTO fetchEnvironments();
 
     DeploymentDetailsDTO getDeployments(String deployments, Map<String, String> params);
+
+    BuildDetailsDTO getAllBuilds(Map<String, String> params);
 }

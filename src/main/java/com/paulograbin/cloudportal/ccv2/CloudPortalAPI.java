@@ -122,6 +122,11 @@ public class CloudPortalAPI implements CloudPortalOperations {
     }
 
     @Override
+    public BuildDetailsDTO getAllBuilds(Map<String, String> params) {
+        return null;
+    }
+
+    @Override
     @Cacheable("build")
     public BuildDetailDTO getBuild(String code) {
         return sendRequestInternal(code, BuildDetailDTO.class);
