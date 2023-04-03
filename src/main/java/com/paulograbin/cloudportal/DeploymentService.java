@@ -88,21 +88,21 @@ public class DeploymentService {
         LOG.info("Build {} has status {}", deploymentProgress.getDeploymentCode(), deploymentProgress.getDeploymentStatus());
 
         if (deploymentProgress.getDeploymentStatus().equalsIgnoreCase("DEPLOYED")) {
-            message = deploymentProgress.getDeploymentCode() + " ready";
+            message = "Deployment " + deploymentProgress.getDeploymentCode() + " ready";
 
             alertService.sendAlert(message);
             return;
         } else if (deploymentProgress.getDeploymentStatus().equalsIgnoreCase("FAIL")) {
-            message = deploymentProgress.getDeploymentCode() + " failed";
+            message = "Deployment " + deploymentProgress.getDeploymentCode() + " failed";
 
             alertService.sendAlert(message);
             return;
         } else if (deploymentProgress.getDeploymentStatus().equalsIgnoreCase("DEPLOYING")) {
-            message = deploymentProgress.getDeploymentCode() + " is building, at " + deploymentProgress.getPercentage() + "%";
+            message = "Deployment " + deploymentProgress.getDeploymentCode() + " is building, at " + deploymentProgress.getPercentage() + "%";
         } else if (deploymentProgress.getDeploymentStatus().equalsIgnoreCase("SCHEDULED")) {
-            message = deploymentProgress.getDeploymentCode() + " building not started yet";
+            message = "Deployment " + deploymentProgress.getDeploymentCode() + " building not started yet";
         } else {
-            message = deploymentProgress.getDeploymentCode() + " new status " + deploymentProgress.getDeploymentStatus();
+            message = "Deployment " + deploymentProgress.getDeploymentCode() + " new status " + deploymentProgress.getDeploymentStatus();
         }
 
         alertService.sendAlert(message);

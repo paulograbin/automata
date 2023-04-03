@@ -97,21 +97,21 @@ public class BuildService {
         LOG.info("Build {} has status {}", buildProgress.getBuildCode(), buildProgress.getBuildStatus());
 
         if (buildProgress.getBuildStatus().equalsIgnoreCase("SUCCESS")) {
-            message = buildProgress.getBuildCode() + " ready";
+            message = "Build " + buildProgress.getBuildCode() + " ready";
 
             alertService.sendAlert(message);
             return;
         } else if (buildProgress.getBuildStatus().equalsIgnoreCase("FAILED")) {
-            message = buildProgress.getBuildCode() + " failed";
+            message = "Build " + buildProgress.getBuildCode() + " failed";
 
             alertService.sendAlert(message);
             return;
         } else if (buildProgress.getBuildStatus().equalsIgnoreCase("BUILDING")) {
-            message = buildProgress.getBuildCode() + " is building, at " + buildProgress.getPercentage() + "%";
+            message = "Build " + buildProgress.getBuildCode() + " is building, at " + buildProgress.getPercentage() + "%";
         } else if (buildProgress.getBuildStatus().equalsIgnoreCase("UNKNOWN")) {
-            message = buildProgress.getBuildCode() + " building not started yet";
+            message = "Build " + buildProgress.getBuildCode() + " building not started yet";
         } else {
-            message = buildProgress.getBuildCode() + " new status " + buildProgress.getBuildStatus();
+            message = "Build " + buildProgress.getBuildCode() + " new status " + buildProgress.getBuildStatus();
         }
 
         alertService.sendAlert(message);
