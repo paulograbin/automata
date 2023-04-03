@@ -4,144 +4,148 @@
       layout:decorator="layout/layout"
       lang="en">
 <head>
-  <title>Automata</title>
+    <title>Automata</title>
 </head>
 <body>
 
 
 <div id="newbuild" class="pageSection">
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">New Build</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">New Build</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
 
-      <div class="mb-3">
-        <label for="inputBranch" class="form-label">Branch name</label>
-        <input type="text" class="form-control" id="inputBranch" value="globale_experiment">
-      </div>
+            <div class="mb-3">
+                <label for="inputBranch" class="form-label">Branch name</label>
+                <input type="text" class="form-control" id="inputBranch" value="globale_experiment">
+            </div>
 
-      <div class="mb-3">
-        <label for="inputEnvironmentCode" class="form-label">Environment</label>
-        <input type="text" class="form-control" id="inputEnvironmentCode" value="d1">
-      </div>
+            <div class="mb-3">
+                <label for="inputEnvironmentCode" class="form-label">Environment</label>
+                <input type="text" class="form-control" id="inputEnvironmentCode" value="d1">
+            </div>
 
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="sendAlerts" checked>
-        <label class="form-check-label" for="sendAlerts">Send me alerts about the build</label>
-      </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="sendAlerts" checked>
+                <label class="form-check-label" for="sendAlerts">Send me alerts about the build</label>
+            </div>
 
-      <button id="btnSubmitNewBuild" type="submit" class="btn btn-primary">Submit</button>
+            <button id="btnSubmitNewBuild" type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </div>
-  </div>
 </div>
 
 <div class="container">
 
-  <div id="shortcuts" class="pageSection">
-    <h1>Deploy shortcuts</h1>
+    <div id="shortcuts" class="pageSection">
+        <h1>Deploy shortcuts</h1>
 
-    <p>
-      <button id="btnDevToStg" type="submit" class="btn btn-primary" onclick="makeBuild('develop', 's1')">Deploy develop to S1</button>
-    </p>
-    <p>
-      <button id="btnGlobaleToDev" type="submit" class="btn btn-primary" onclick="makeBuild('globale_experiment', 'd1')">Deploy GlobalE to D1</button>
-    </p>
-  </div>
+        <p>
+            <button id="btnDevToStg" type="submit" class="btn btn-primary" onclick="makeBuild('develop', 's1')">Deploy
+                develop to S1
+            </button>
+        </p>
+        <p>
+            <button id="btnGlobaleToDev" type="submit" class="btn btn-primary"
+                    onclick="makeBuild('globale_experiment', 'd1')">Deploy GlobalE to D1
+            </button>
+        </p>
+    </div>
 
-  <div id="environments" class="pageSection">
-    <h1>Environments</h1>
+    <div id="environments" class="pageSection">
+        <h1>Environments</h1>
 
-    <div class="row">
-      <div class="card col-lg" style="width: 18rem;" th:each="environments: ${environments.value}">
-        <img src="/server.png" th:class="'cardImage cardImage-' + ${environments.type}">
-        <div th:class="card-body">
-          <h5 class="card-title" th:text="${environments.code}"></h5>
-          <p class="card-text" th:text="'Type ' + ${environments.type}"></p>
-          <p class="card-text" th:text="'Status ' + ${environments.status}"></p>
-          <h1 th:if="${environments.status} == 'AVAILABLE'">
-            <i class="bi bi-check-circle-fill text-success"></i>
-          </h1>
-          <h1 th:if="${environments.status} != 'AVAILABLE'">
-            <i class="bi bi-bug-fill text-danger"></i>
-          </h1>
+        <div class="row">
+            <div class="card col-lg" style="width: 18rem;" th:each="environments: ${environments.value}">
+                <img src="/server.png" th:class="'cardImage cardImage-' + ${environments.type}">
+                <div th:class="card-body">
+                    <h5 class="card-title" th:text="${environments.code}"></h5>
+                    <p class="card-text" th:text="'Type ' + ${environments.type}"></p>
+                    <p class="card-text" th:text="'Status ' + ${environments.status}"></p>
+                    <h1 th:if="${environments.status} == 'AVAILABLE'">
+                        <i class="bi bi-check-circle-fill text-success"></i>
+                    </h1>
+                    <h1 th:if="${environments.status} != 'AVAILABLE'">
+                        <i class="bi bi-bug-fill text-danger"></i>
+                    </h1>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="deployments" class="pageSection">
-    <h1>Deployments</h1>
-
-    <table class="table table-striped table-hover table-bordered">
-      <thead class="thead-dark">
-      <tr>
-        <th class="col">Code</th>
-        <th class="col">Status</th>
-        <th class="col">Created by</th>
-        <th class="col">Build code</th>
-        <th class="col">Environment</th>
-        <th class="col">Started at</th>
-        <th class="col">Finished at</th>
-        <th class="col">Failed at</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr th:each="build: ${deployments.value}" th:class="${build.status} =='DEPLOYED' ? 'table-Success' : ''">
-        <td th:text="${build.code}">
-        <td th:text="${build.status}">
-        <td th:text="${build.createdBy}">
-        <td th:text="${build.buildCode}">
-        <td th:text="${build.environmentCode}">
-        <td th:text="${#temporals.format(build.scheduledTimestamp, 'dd-MM-yyyy HH:mm')}">
-        <td th:text="${#temporals.format(build.deployedTimestamp, 'dd-MM-yyyy HH:mm')}">
-        <td th:text="${#temporals.format(build.failedTimestamp, 'dd-MM-yyyy HH:mm')}">
-      </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div id="builds" class="pageSection">
-    <h1>Builds</h1>
-    <table class="table table-striped table-hover table-bordered">
-      <thead class="thead-dark">
-      <tr>
-        <th class="col">Code</th>
-        <th class="col">Name</th>
-        <th class="col">Branch</th>
-        <th class="col">Status</th>
-        <th class="col">Started at</th>
-        <th class="col">Finished at</th>
-        <th class="col">Created by</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr th:each="build: ${builds.value}" th:class="${build.status} =='FAIL' ? 'table-danger' : ''">
-        <td th:text="${build.code}">
-        <td th:text="${build.name}">
-        <td th:text="${build.branch}">
-        <td th:text="${build.status}">
-        <td th:text="${#temporals.format(build.buildStartTimestamp, 'dd-MM-yyyy HH:mm')}">
-        <td th:text="${#temporals.format(build.buildEndTimestamp, 'dd-MM-yyyy HH:mm')}">
-        <td th:text="${build.createdBy}">
-      </tr>
-      </tbody>
-    </table>
-  </div>
-
-
-  <div id="configurations">
-    <h1>Configs</h1>
-
-    <div class="mb-3">
-      <label for="inputSubscriptionCode" class="form-label">Subscription</label>
-      <input type="text" class="form-control" id="inputSubscriptionCode">
     </div>
 
-    <div class="mb-3">
-      <label for="inputToken" class="form-label">Environment</label>
-      <input type="text" class="form-control" id="inputToken">
+    <div id="deployments" class="pageSection">
+        <h1>Deployments</h1>
+
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th class="col">Code</th>
+                <th class="col">Status</th>
+                <th class="col">Created by</th>
+                <th class="col">Build code</th>
+                <th class="col">Environment</th>
+                <th class="col">Started at</th>
+                <th class="col">Finished at</th>
+                <th class="col">Failed at</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="build: ${deployments.value}" th:class="${build.status} =='DEPLOYED' ? 'table-Success' : ''">
+                <td th:text="${build.code}">
+                <td th:text="${build.status}">
+                <td th:text="${build.createdBy}">
+                <td th:text="${build.buildCode}">
+                <td th:text="${build.environmentCode}">
+                <td th:text="${#temporals.format(build.scheduledTimestamp, 'dd-MM-yyyy HH:mm')}">
+                <td th:text="${#temporals.format(build.deployedTimestamp, 'dd-MM-yyyy HH:mm')}">
+                <td th:text="${#temporals.format(build.failedTimestamp, 'dd-MM-yyyy HH:mm')}">
+            </tr>
+            </tbody>
+        </table>
     </div>
-  </div>
+
+    <div id="builds" class="pageSection">
+        <h1>Builds</h1>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th class="col">Code</th>
+                <th class="col">Name</th>
+                <th class="col">Branch</th>
+                <th class="col">Status</th>
+                <th class="col">Started at</th>
+                <th class="col">Finished at</th>
+                <th class="col">Created by</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="build: ${builds.value}" th:class="${build.status} =='FAIL' ? 'table-danger' : ''">
+                <td th:text="${build.code}">
+                <td th:text="${build.name}">
+                <td th:text="${build.branch}">
+                <td th:text="${build.status}">
+                <td th:text="${#temporals.format(build.buildStartTimestamp, 'dd-MM-yyyy HH:mm')}">
+                <td th:text="${#temporals.format(build.buildEndTimestamp, 'dd-MM-yyyy HH:mm')}">
+                <td th:text="${build.createdBy}">
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div id="configurations">
+        <h1>Configs</h1>
+
+        <div class="mb-3">
+            <label for="inputSubscriptionCode" class="form-label">Subscription</label>
+            <input type="text" class="form-control" id="inputSubscriptionCode">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputToken" class="form-label">Environment</label>
+            <input type="text" class="form-control" id="inputToken">
+        </div>
+    </div>
 </div>
 </body>
 
@@ -152,67 +156,67 @@
 
 </html>
 <script th:inline="javascript">
-    document.addEventListener("DOMContentLoaded", function (e) {
-      console.log('Document ready!');
+  document.addEventListener("DOMContentLoaded", function (e) {
+    console.log('Document ready!');
 
-      let subscriptionCode = localStorage.getItem('subscriptionCode');
-      let token = localStorage.getItem('token');
-      console.log('loaded value for subscription:', subscriptionCode);
-      console.log('loaded value for token:', token);
+    let subscriptionCode = localStorage.getItem('subscriptionCode');
+    let token = localStorage.getItem('token');
+    console.log('loaded value for subscription:', subscriptionCode);
+    console.log('loaded value for token:', token);
 
-      let inputSubscription = document.getElementById('inputSubscriptionCode');
-      inputSubscription.value = subscriptionCode;
+    let inputSubscription = document.getElementById('inputSubscriptionCode');
+    inputSubscription.value = subscriptionCode;
 
-      let inputToken = document.getElementById('inputToken');
-      inputToken.value = token;
+    let inputToken = document.getElementById('inputToken');
+    inputToken.value = token;
+  });
+
+  async function makeBuild(branch, environment) {
+    const newBuildRequest = {
+      branchName: branch,
+      environmentCode: environment
+    }
+
+    console.log(newBuildRequest);
+
+    const response = await fetch("/newbuild", {
+      method: 'POST',
+      headers: {
+        "Content-Type": 'application/json',
+      },
+      body: JSON.stringify(newBuildRequest),
     });
 
-    async function makeBuild(branch, environment) {
-      const newBuildRequest = {
-        branchName: branch,
-        environmentCode: environment
-      }
+    const result = await response.json();
+    console.log(result)
+  }
 
-      console.log(newBuildRequest);
+  async function handleSubmitButton() {
+    const environmentCode = document.getElementById("inputEnvironmentCode").value;
+    const branchName = document.getElementById("inputBranch").value;
 
-      const response = await fetch("/newbuild", {
-        method: 'POST',
-        headers: {
-          "Content-Type": 'application/json',
-        },
-        body: JSON.stringify(newBuildRequest),
-      });
+    makeBuild(branchName, environmentCode);
+  }
 
-      const result = await response.json();
-      console.log(result)
-    }
+  let btnSubmit = document.getElementById('btnSubmitNewBuild');
+  btnSubmit.onclick = handleSubmitButton;
 
-    async function handleSubmitButton() {
-      const environmentCode = document.getElementById("inputEnvironmentCode").value;
-      const branchName = document.getElementById("inputBranch").value;
+  localStorage.setItem('subscriptionCode', 'aaaa');
+  localStorage.setItem('token', 'bbb');
 
-      makeBuild(branchName, environmentCode);
-    }
+  var objeto = {
+    teste: "aaaa",
+    segundo: 1111,
+    aa: "bbb"
+  };
 
-    let btnSubmit = document.getElementById('btnSubmitNewBuild');
-    btnSubmit.onclick = handleSubmitButton;
+  // const replacerFunction = function(key, value) {
+  //     console.log(key, value);
+  //
+  //     return value;
+  // }
 
-    localStorage.setItem('subscriptionCode', 'aaaa');
-    localStorage.setItem('token', 'bbb');
+  const replacerFunction = ['aa'];
 
-    var objeto = {
-      teste: "aaaa",
-      segundo: 1111,
-      aa: "bbb"
-    };
-
-    // const replacerFunction = function(key, value) {
-    //     console.log(key, value);
-    //
-    //     return value;
-    // }
-
-    const replacerFunction = ['aa'];
-
-    console.log(JSON.stringify(objeto, replacerFunction));
+  console.log(JSON.stringify(objeto, replacerFunction));
 </script>
