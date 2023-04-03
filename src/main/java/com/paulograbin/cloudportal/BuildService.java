@@ -14,6 +14,8 @@ import org.springframework.web.client.RestTemplate;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 
 @Service
@@ -33,7 +35,12 @@ public class BuildService {
     public BuildDetailsDTO getAllBuilds() {
         LOG.info("Fetching all recent builds...");
 
-        BuildDetailsDTO buildDetailsDTO = cloudPortalOperations.getAllBuilds();
+        Map<String, String> params = new HashMap<>(3);
+        params.put("$top", "1");
+        params.put("$skip", "0");
+        params.put("orderby", "scheduledTimestamp desc");
+
+        BuildDetailsDTO buildDetailsDTO = cloudPortalOperations.getAllBuilds(params);
 
         for (BuildDetailDTO buildDetailDTO : buildDetailsDTO.getValue()) {
             logBuildDetails(buildDetailDTO);
