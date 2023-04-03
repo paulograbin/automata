@@ -10,7 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -41,6 +40,18 @@ public class BuildService {
         params.put("orderby", "scheduledTimestamp desc");
 
         BuildDetailsDTO buildDetailsDTO = cloudPortalOperations.getBuildsWithParams(params);
+
+        for (BuildDetailDTO buildDetailDTO : buildDetailsDTO.getValue()) {
+            logBuildDetails(buildDetailDTO);
+        }
+
+        return buildDetailsDTO;
+    }
+
+    public BuildDetailsDTO fetchAllBuilds() {
+        LOG.info("Fetching all recent builds...");
+
+        BuildDetailsDTO buildDetailsDTO = cloudPortalOperations.getAllBuilds();
 
         for (BuildDetailDTO buildDetailDTO : buildDetailsDTO.getValue()) {
             logBuildDetails(buildDetailDTO);
