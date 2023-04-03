@@ -56,7 +56,6 @@ public class App implements CommandLineRunner {
             }
         }
 
-
         LOG.info(" ******************* ");
         LOG.info(" APP READY ");
         LOG.info(" APP READY ");
@@ -64,34 +63,7 @@ public class App implements CommandLineRunner {
         LOG.info(" APP READY ");
         LOG.info(" ******************* ");
 
-//        BuildDetailDTO buildDetails = buildService.getBuildDetails("20230323.1");
-//        BuildDetailsDTO allBuilds = buildService.getAllBuilds();
-//        BuildDetailDTO buildDetails = buildService.getBuildDetails("20230323.1");
-
-
-//        DeploymentDetailsDTO deploymentDetailsDTO = deploymentService.fetchDeployments();
-//        LOG.info("Found {} deployments", deploymentDetailsDTO.getCount());
-
-        //		develop 28-03-23 09-49
-        //		20230328.3
-//		buildService.createBuild("develop");
-
-//		buildService.createBuildAndAlertWhenDone("develop");
-
-//		deploymentService.makeDeployment("20230329.4");
-//
-//		System.exit(0);
-
-
-//		globale_experiment 28-03-23 09-49
-//		20230328.4
-
-
-//		buildService.createBuild("globale_experiment");
-
-
-//
-//		BuildDetailsDTO allBuilds1 = buildService.getAllBuilds();
-//		LOG.info(allBuilds1.toString());
+//        buildService.createBuildAndAlertWhenDone("globale_experiment");
+//        buildService.monitorBuild("20230330.1");
     }
 }
