@@ -30,24 +30,23 @@ public interface CloudPortalOperations {
     /**
      * BUILDS
      */
-    BuildDetailsDTO getAllBuilds();
     BuildDetailDTO getBuild(String code);
+    BuildDetailsDTO getAllBuilds();
+    BuildDetailsDTO getBuildsWithParams(Map<String, String> params);
+    BuildProgressDTO getBuildProgress(String buildCode);
     CreateBuildResponseDTO createBuild(CreateBuildRequestDTO requestDTO);
     String getBuildLogs(String buildCode);
-    BuildProgressDTO getBuildProgress(String buildCode);
 
     /**
      * DEPLOYMENTS
      */
-    DeploymentDetailsDTO getDeployments(String deployments);
-    DeploymentDetailDTO getDeployment(String deployments);
-
-    CreateDeploymentResponseDTO createDeployment(CreateDeploymentRequestDTO deploymentRequestDTO);
     CreateDeploymentDecisionResponseDTO createDeploymentDecision(CreateDeploymentDecisionResponseDTO responseDTO);
-
+    CreateDeploymentResponseDTO createDeployment(CreateDeploymentRequestDTO deploymentRequestDTO);
     DeploymentDecisionsDTO getDeploymentDecisions();
+    DeploymentDetailDTO getDeployment(String deployments);
+    DeploymentDetailsDTO getDeployments(String deployments);
+    DeploymentDetailsDTO getDeployments(String deployments, Map<String, String> params);
     DeploymentModeDTO getDeploymentModes();
-
     DeploymentProgressDTO getDeploymentProgress(String deploymentCode);
 
     /**
@@ -60,9 +59,9 @@ public interface CloudPortalOperations {
     DatarestoreDetailDTO getDataRestore();
     DatarestoreDetailsDTO getDataRestores();
 
+
+    /**
+     * ENVIRONMENTS
+     */
     EnvironmentsDTO fetchEnvironments();
-
-    DeploymentDetailsDTO getDeployments(String deployments, Map<String, String> params);
-
-    BuildDetailsDTO getAllBuilds(Map<String, String> params);
 }

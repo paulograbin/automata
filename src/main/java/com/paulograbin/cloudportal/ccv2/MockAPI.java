@@ -43,11 +43,6 @@ public class MockAPI implements CloudPortalOperations {
         this.gson = gson;
     }
 
-//    @Override
-//    public <T> T sendRequest(String urlPath, Class<T> returnType) {
-//        return null;
-//    }
-
     @Override
     public <T> T sendPostRequest(String s, Object request, Class<T> responseType) {
         return null;
@@ -58,17 +53,10 @@ public class MockAPI implements CloudPortalOperations {
         return null;
     }
 
-    @Override
-    public BuildDetailsDTO getAllBuilds() {
-        String contentAsString = loadResourceByName("returns/builds/allBuilds.json");
-
-        return gson.fromJson(contentAsString, BuildDetailsDTO.class);
-    }
-
     private String loadResourceByName(String resourcePath) {
         org.springframework.core.io.Resource resource = resourceLoader.getResource("classpath:" + resourcePath);
 
-        String contentAsString = null;
+        String contentAsString;
         try {
             contentAsString = resource.getContentAsString(StandardCharsets.UTF_8);
         } catch (IOException e) {
@@ -82,6 +70,14 @@ public class MockAPI implements CloudPortalOperations {
         String contentAsString = loadResourceByName("returns/builds/build.json");
 
         return gson.fromJson(contentAsString, BuildDetailDTO.class);
+    }
+
+    @Override
+    public BuildDetailsDTO getAllBuilds()
+    {
+        String contentAsString = loadResourceByName("returns/builds/allBuilds.json");
+
+        return gson.fromJson(contentAsString, BuildDetailsDTO.class);
     }
 
     @Override
@@ -171,7 +167,7 @@ public class MockAPI implements CloudPortalOperations {
     }
 
     @Override
-    public BuildDetailsDTO getAllBuilds(Map<String, String> params) {
+    public BuildDetailsDTO getBuildsWithParams(Map<String, String> params) {
         return null;
     }
 }

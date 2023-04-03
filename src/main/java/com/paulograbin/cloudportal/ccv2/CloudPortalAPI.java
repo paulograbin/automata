@@ -115,13 +115,31 @@ public class CloudPortalAPI implements CloudPortalOperations {
     }
 
 
+    @Override
     public BuildDetailsDTO getAllBuilds() {
         return sendRequestInternal("builds", BuildDetailsDTO.class);
     }
 
     @Override
-    public BuildDetailsDTO getAllBuilds(Map<String, String> params) {
-        return null;
+    public BuildDetailsDTO getBuildsWithParams(Map<String, String> params) {
+        StringBuilder queryBuilder = new StringBuilder();
+
+        params.forEach((name, values) -> {
+
+            if (queryBuilder.isEmpty()) {
+                queryBuilder.append("?");
+                queryBuilder.append(name);
+                queryBuilder.append("=");
+                queryBuilder.append(values);
+            } else {
+                queryBuilder.append("&");
+                queryBuilder.append(name);
+                queryBuilder.append("=");
+                queryBuilder.append(values);
+            }
+        });
+
+        return sendRequestInternal("builds" + '/' + queryBuilder, BuildDetailsDTO.class);
     }
 
     @Override
