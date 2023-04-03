@@ -79,8 +79,7 @@ public class BuildService {
 
         CreateBuildResponseDTO createBuildResponse = cloudPortalOperations.sendPostRequest("builds", request, CreateBuildResponseDTO.class);
 
-        LOG.info("Build to be created ");
-        LOG.info(" Code {}", createBuildResponse.getCode());
+        LOG.info("Build to create {} ", createBuildResponse.getCode());
 
 //		CreateBuildResponseDTO createBuildResponse = new CreateBuildResponseDTO();
 //		createBuildResponse.setCode("20230329.3");
