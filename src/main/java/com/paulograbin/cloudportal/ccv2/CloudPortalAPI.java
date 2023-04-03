@@ -94,26 +94,24 @@ public class CloudPortalAPI implements CloudPortalOperations {
 
     @Override
     public BuildProgressDTO getBuildProgress(String buildCode) {
-        LOG.info("Sending request to server...");
         Instant start = Instant.now();
 
         String url = makeBaseUrl(BASE_API_URL);
 
-        try {
-            BuildProgressDTO forObject = restTemplate.getForObject(url + "/builds/" + buildCode + "/progress", BuildProgressDTO.class);
+        ResponseEntity<BuildProgressDTO> forObject = restTemplate.getForEntity(url + "/builds/" + buildCode + "/progress", BuildProgressDTO.class, Collections.emptyMap());
 
-            long requestTime = Duration.between(start, Instant.now()).toMillis();
+        long requestTime = Duration.between(start, Instant.now()).toMillis();
+        LOG.debug("Sever took {} ms to come back", requestTime);
 
-            LOG.info("Sever took {} ms to come back", requestTime);
-
-            return forObject;
-        } catch (RuntimeException e) {
-            LOG.error("Deu erro {}", e.getMessage(), e);
+        if (forObject.getStatusCode().isError()) {
+            LOG.error("Deu erro na build...");
             BuildProgressDTO buildProgressDTO = new BuildProgressDTO();
             buildProgressDTO.setBuildStatus("ERROR");
 
             return buildProgressDTO;
         }
+
+        return forObject.getBody();
     }
 
 
@@ -174,7 +172,6 @@ public class CloudPortalAPI implements CloudPortalOperations {
 
     @Override
     public DeploymentProgressDTO getDeploymentProgress(String deploymentCode) {
-        LOG.info("Sending request to server...");
         Instant start = Instant.now();
 
         String url = makeBaseUrl(BASE_API_URL);
@@ -246,6 +243,8 @@ public class CloudPortalAPI implements CloudPortalOperations {
 
         return sendRequestInternal(deployments + '/' + queryBuilder, DeploymentDetailsDTO.class);
     }
+
+
 
     private <T> T sendRequestInternal(String urlPath, Class<T> returnType) {
 
