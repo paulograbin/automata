@@ -89,7 +89,7 @@ public class BuildService {
         monitorBuild(createBuildResponse.getCode());
     }
 
-    public void monitorBuild(String buildCode) throws InterruptedException {
+    public void monitorBuild(String buildCode) {
         BuildProgressDTO buildProgress = cloudPortalOperations.getBuildProgress(buildCode);
 
         String message = "";
@@ -115,7 +115,11 @@ public class BuildService {
         }
 
         alertService.sendAlert(message);
-        Thread.sleep(5 * 60 * 1000);
+        try {
+            Thread.sleep(5 * 60 * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         monitorBuild(buildCode);
     }

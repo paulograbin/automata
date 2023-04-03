@@ -80,7 +80,7 @@ public class DeploymentService {
         return deploymentDetails;
     }
 
-    public void monitorDeployment(String code) throws InterruptedException {
+    public void monitorDeployment(String code) {
         DeploymentProgressDTO deploymentProgress = cloudPortalOperations.getDeploymentProgress(code);
 
         String message = "";
@@ -106,7 +106,11 @@ public class DeploymentService {
         }
 
         alertService.sendAlert(message);
-        Thread.sleep(5 * 60 * 1000);
+        try {
+            Thread.sleep(5 * 60 * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         monitorDeployment(code);
     }
