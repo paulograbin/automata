@@ -87,7 +87,7 @@ public class CloudPortalAPI implements CloudPortalOperations {
         T response = restTemplate.postForObject(url + s, request, responseType);
 
         long requestTime = Duration.between(start, Instant.now()).toMillis();
-        LOG.info("Sever took {} ms to come back", requestTime);
+        LOG.debug("Sever took {} ms to come back", requestTime);
 
         return response;
     }
@@ -177,7 +177,7 @@ public class CloudPortalAPI implements CloudPortalOperations {
         ResponseEntity<DeploymentProgressDTO> forObject = restTemplate.getForEntity(url + "/deployments/" + deploymentCode + "/progress", DeploymentProgressDTO.class, Collections.emptyMap());
 
         long requestTime = Duration.between(start, Instant.now()).toMillis();
-        LOG.info("Sever took {} ms to come back", requestTime);
+        LOG.debug("Sever took {} ms to come back", requestTime);
 
         if (forObject.getStatusCode().isError()) {
             LOG.error("Deu erro na build...");
@@ -243,7 +243,6 @@ public class CloudPortalAPI implements CloudPortalOperations {
     }
 
     private <T> T sendRequestInternal(String urlPath, Class<T> returnType) {
-        LOG.info("Sending request to server...");
 
         Instant start = Instant.now();
 
@@ -252,7 +251,7 @@ public class CloudPortalAPI implements CloudPortalOperations {
 
         long requestTime = Duration.between(start, Instant.now()).toMillis();
 
-        LOG.info("Sever took {} ms to come back", requestTime);
+        LOG.debug("Sever took {} ms to come back", requestTime);
 
         return forObject;
     }
@@ -267,7 +266,6 @@ public class CloudPortalAPI implements CloudPortalOperations {
     }
 
     private EnvironmentsDTO sendRequestInternalOlderAPI(String urlPath) {
-        LOG.info("Sending request to server...");
 
         Instant start = Instant.now();
 
@@ -281,7 +279,7 @@ public class CloudPortalAPI implements CloudPortalOperations {
 
         long requestTime = Duration.between(start, Instant.now()).toMillis();
 
-        LOG.info("Sever took {} ms to come back", requestTime);
+        LOG.debug("Sever took {} ms to come back", requestTime);
 
         Gson gson = new Gson();
         return gson.fromJson(modifiedReturn, EnvironmentsDTO.class);
