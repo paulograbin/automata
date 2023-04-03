@@ -133,8 +133,8 @@ public class BuildService {
 
         CreateBuildResponseDTO response = cloudPortalOperations.sendPostRequest("builds", request, CreateBuildResponseDTO.class);
 
-        LOG.info("Build to be created ");
-        LOG.info(" Code {}", response.getCode());
-    }
+        LOG.info("Build to be created {}", response.getCode());
 
+        return response;
+    }
 }
