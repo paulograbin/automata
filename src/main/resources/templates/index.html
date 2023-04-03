@@ -8,6 +8,18 @@
 </head>
 <body>
 <div class="container">
+
+  <div id="shortcuts" class="pageSection">
+    <h1>Deploy shortcuts</h1>
+
+    <p>
+      <button id="btnDevToStg" type="submit" class="btn btn-primary" onclick="makeBuild('develop', 's1')">Deploy develop to S1</button>
+    </p>
+    <p>
+      <button id="btnGlobaleToDev" type="submit" class="btn btn-primary" onclick="makeBuild('globale_experiment', 'd1')">Deploy GlobalE to D1</button>
+    </p>
+  </div>
+
   <div id="environments" class="pageSection">
     <h1>Environments</h1>
 
@@ -129,10 +141,10 @@
       inputToken.value = token;
     });
 
-    async function makeBuild() {
+    async function makeBuild(branch, environment) {
       const newBuildRequest = {
-        branchName: 'globale_experiment',
-        environmentCode: 'd1'
+        branchName: branch,
+        environmentCode: environment
       }
 
       console.log(newBuildRequest);
