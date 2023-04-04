@@ -27,4 +27,10 @@ public class EnvironmentService {
 
         return cloudPortalOperations.fetchEnvironments();
     }
+
+    public EnvironmentsDTO fetchAllEnvironmentsByPassCache() {
+        LOG.info("Fetching all environments...");
+
+        return cloudPortalOperations.fetchEnvironments();
+    }
 }
