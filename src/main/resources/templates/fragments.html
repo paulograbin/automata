@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Thymeleaf Fragments: home</title>
+  <!--/*/ <th:block th:include="fragments/general.html :: headerfiles">
+          </th:block> /*/-->
+</head>
+<!--<body>-->
+<!--<header th:insert="fragments/general.html :: header">-->
+
+<!--</header>-->
+
+<!--<p>Go to the next page to see fragments in action</p>-->
+
+
+<!--<div th:replace="fragments/general.html :: footer"></div>-->
+
+<!--</body>-->
+
+<body>
+<header th:insert="fragments/general.html :: header"></header>
+
+<div th:replace="fragments/forms.html :: formField(field='Name', value='John Doe',size='40')"></div>
+<div th:replace="fragments/forms.html :: formField(field='Age', value='44',size='2')"></div>
+
+<div th:replace="fragments/general.html :: footer"></div>
+
+<h1>data</h1>
+<div
+    th:replace="${#lists.size(data) > 0} ?
+            ~{fragments/menus.html :: dataPresent} :
+            ~{fragments/menus.html :: noData}">
+</div>
+
+<h1>table</h1>
+
+<body>
+<header th:replace="fragments/general.html :: header"> </header>
+<table>
+  <thead th:replace="fragments/tables.html
+              :: fields(~{ :: .myFields})">
+  <tr class="myFields">
+
+    <th>Id</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <div th:replace="fragments/tables.html
+          :: tableBody(tableData=${data})">
+  </div>
+</table>
+<div th:replace="fragments/general.html :: footer"></div>
+</body>
+
+</body>
+
+</html>
+

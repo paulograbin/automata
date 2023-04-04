@@ -153,6 +153,7 @@
 <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <script defer src="http://localhost:35729/livereload.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 
 </html>
 <script th:inline="javascript">
@@ -169,6 +170,14 @@
 
     let inputToken = document.getElementById('inputToken');
     inputToken.value = token;
+
+
+      console.log('agora vai...')
+
+      $.get("fragmenttt").done(function(fragment) { // get from controller
+          console.log(fragment);
+          $("#newbuild").replaceWith(fragment); // update snippet of page
+      });
   });
 
   async function makeBuild(branch, environment) {
