@@ -29,7 +29,7 @@ public class HomeController {
 //        model.addAttribute("environments", new EnvironmentsDTO());
 
         model.addAttribute("builds", buildService.getLast10Builds());
-//        model.addAttribute("builds", new com.paulograbin.ccv2api.model.BuildDetailsDTO());
+//        model.addAttribute("builds", new com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO());
 
         model.addAttribute("deployments", deploymentService.fetchCurrentDeployments());
 //        model.addAttribute("deployments", new DeploymentDetailsDTO());

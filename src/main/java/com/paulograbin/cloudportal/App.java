@@ -1,23 +1,12 @@
 package com.paulograbin.cloudportal;
 
-import com.paulograbin.ccv2api.model.BuildDetailDTO;
-import com.paulograbin.ccv2api.model.BuildDetailsDTO;
-import com.paulograbin.ccv2api.model.DeploymentDetailDTO;
-import com.paulograbin.ccv2api.model.DeploymentDetailsDTO;
-import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentDTO;
-import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentsDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cache.annotation.EnableCaching;
-
-import java.time.Duration;
-import java.time.Instant;
-import java.util.List;
 
 
 @SpringBootApplication

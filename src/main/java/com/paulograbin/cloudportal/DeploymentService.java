@@ -1,10 +1,10 @@
 package com.paulograbin.cloudportal;
 
-import com.paulograbin.ccv2api.model.CreateDeploymentRequestDTO;
-import com.paulograbin.ccv2api.model.CreateDeploymentResponseDTO;
-import com.paulograbin.ccv2api.model.DeploymentDetailDTO;
-import com.paulograbin.ccv2api.model.DeploymentDetailsDTO;
-import com.paulograbin.ccv2api.model.DeploymentProgressDTO;
+import com.paulograbin.cloudportal.ccv2.dto.CreateDeploymentRequestDTO;
+import com.paulograbin.cloudportal.ccv2.dto.CreateDeploymentResponseDTO;
+import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailDTO;
+import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailsDTO;
+import com.paulograbin.cloudportal.ccv2.dto.DeploymentProgressDTO;
 import com.paulograbin.cloudportal.ccv2.CloudPortalOperations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
