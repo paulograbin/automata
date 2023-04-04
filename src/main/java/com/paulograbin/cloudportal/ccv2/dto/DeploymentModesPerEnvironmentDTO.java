@@ -1,10 +1,10 @@
-package com.paulograbin.ccv2api.model;
+package com.paulograbin.cloudportal.ccv2.dto;
 
 import java.net.URI;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.paulograbin.ccv2api.model.DeploymentModeDTO;
+import com.paulograbin.cloudportal.ccv2.dto.DeploymentModeDTO;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import jakarta.validation.Valid;

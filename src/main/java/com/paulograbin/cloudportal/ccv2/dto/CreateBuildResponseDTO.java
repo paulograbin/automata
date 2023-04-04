@@ -1,4 +1,4 @@
-package com.paulograbin.ccv2api.model;
+package com.paulograbin.cloudportal.ccv2.dto;
 
 import java.net.URI;
 import java.util.Objects;
