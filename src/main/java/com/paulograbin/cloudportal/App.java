@@ -96,16 +96,15 @@ public class App implements CommandLineRunner {
 			}
 		}
 
+		EnvironmentsDTO environments = environmentService.fetchAllEnvironments();
 
-		EnvironmentsDTO environmentsDTO = environmentService.fetchAllEnvironments();
+        for (EnvironmentDTO environment : environments.getValue()) {
+            DeploymentDetailsDTO deployed = deploymentService.fetchDeploymentPerEnvironment(environment.getCode());
 
-        for (EnvironmentDTO environment : environmentsDTO.getValue()) {
-            DeploymentDetailsDTO deploymentDetailsDTO = deploymentService.fetchDeploymentPerEnvironment(environment.getCode());
+            List<DeploymentDetailDTO> deployedDetails = deployed.getValue();
 
-            List<DeploymentDetailDTO> value = deploymentDetailsDTO.getValue();
-
-            if (value.size() == 1) {
-                BuildDetailDTO buildDetails = buildService.getBuildDetails(value.get(0).getBuildCode());
+            if (deployedDetails.size() == 1) {
+                BuildDetailDTO buildDetails = buildService.getBuildDetails(deployedDetails.get(0).getBuildCode());
 
                 LOG.info("Environment {} has build {}-{}", environment.getCode(), buildDetails.getCode(), buildDetails.getName());
             }
