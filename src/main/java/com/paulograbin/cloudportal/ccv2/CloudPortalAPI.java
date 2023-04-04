@@ -40,7 +40,7 @@ import java.util.Map;
 
 @Service
 //@Profile("production")
-@Profile("development")
+@Profile(value = {"development", "commandline"})
 public class CloudPortalAPI implements CloudPortalOperations {
 
     private final Logger LOG = LoggerFactory.getLogger(CloudPortalAPI.class);
