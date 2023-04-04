@@ -79,7 +79,7 @@ public class DeploymentService {
         LOG.info("Fetching deployment for environment {}", environmentCode);
 
         Map<String, String> params = new HashMap<>(3);
-        params.put("environmentCode", "d1");
+        params.put("environmentCode", environmentCode);
         params.put("$top", "1");
         params.put("$skip", "0");
         params.put("orderby", "scheduledTimestamp desc");

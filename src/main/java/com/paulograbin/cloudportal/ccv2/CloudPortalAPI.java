@@ -143,7 +143,7 @@ public class CloudPortalAPI implements CloudPortalOperations {
     }
 
     @Override
-    @Cacheable("build")
+    @Cacheable(value = "build", key = "#code")
     public BuildDetailDTO getBuild(String code) {
         return sendRequestInternal(code, BuildDetailDTO.class);
     }
