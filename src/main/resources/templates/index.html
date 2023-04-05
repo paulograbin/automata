@@ -4,6 +4,7 @@
       layout:decorator="layout/layout"
       lang="en">
 <head>
+    <script src="/js/javascript.js"></script>
     <title>Automata</title>
 </head>
 <body>
@@ -41,13 +42,10 @@
         <h1>Deploy shortcuts</h1>
 
         <p>
-            <button id="btnDevToStg" type="submit" class="btn btn-primary" onclick="makeBuild('develop', 's1')">Deploy
-                develop to S1
-            </button>
+            <button id="btnDevToStg" type="submit" class="btn btn-primary" onclick="makeBuild('develop', 's1')">Deploy develop to S1</button>
         </p>
         <p>
-            <button id="btnGlobaleToDev" type="submit" class="btn btn-primary"
-                    onclick="makeBuild('globale_experiment', 'd1')">Deploy GlobalE to D1
+            <button id="btnGlobaleToDev" type="submit" class="btn btn-primary" onclick="makeBuild('globale_experiment', 'd1')">Deploy GlobalE to D1
             </button>
         </p>
     </div>
