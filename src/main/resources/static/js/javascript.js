@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
   let inputToken = document.getElementById('inputToken');
   inputToken.value = token;
 
-  const interval = setInterval(function () {
-    $.get("environments").done(function (data) { // get from controller
-      console.log('Refreshing environments');
-      $("#environments").replaceWith(data);
-    });
-  }, 5000);
+  // const interval = setInterval(function () {
+  //   $.get("environments").done(function (data) { // get from controller
+  //     console.log('Refreshing environments');
+  //     $("#environments").replaceWith(data);
+  //   });
+  // }, 5000);
 });
 
 console.log(Intl.DateTimeFormat().resolvedOptions().timeZone);
