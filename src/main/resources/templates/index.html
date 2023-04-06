@@ -163,7 +163,7 @@
     const environmentCode = document.getElementById("inputEnvironmentCode").value;
     const branchName = document.getElementById("inputBranch").value;
 
-    makeBuild(branchName, environmentCode);
+    await makeBuild(branchName, environmentCode);
   }
 
   let btnSubmit = document.getElementById('btnSubmitNewBuild');
