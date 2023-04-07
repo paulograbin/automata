@@ -119,6 +119,7 @@ public class DeploymentService {
         }
 
         alertService.sendAlert(message);
+
         try {
             Thread.sleep(5 * 60 * 1000);
         } catch (InterruptedException e) {
