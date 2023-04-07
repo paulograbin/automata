@@ -25,6 +25,5 @@ public class ExpressionUtilityObjectsController {
         model.addAttribute("set", new HashSet<Integer>(Arrays.asList(1, 3, 8)));
 
         return "utils.html";
-
     }
 }
