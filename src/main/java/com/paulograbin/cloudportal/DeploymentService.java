@@ -58,7 +58,7 @@ public class DeploymentService {
     }
 
     public DeploymentDetailsDTO fetchCurrentDeployments() {
-        LOG.info("Fetching current deployments... {}");
+        LOG.info("Fetching current deployments...");
 
         Map<String, String> params = new HashMap<>(3);
         params.put("status", "DEPLOYED");
