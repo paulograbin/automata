@@ -43,21 +43,19 @@ public class RegularEventListener
         this.asyncSampleService = asyncSampleService;
     }
 
-	@EventListener(ApplicationReadyEvent.class)
-	public void run() throws Exception
-	{
-		LOG.info("Running commandline runner...");
+    @EventListener(ApplicationReadyEvent.class)
+    public void run() throws Exception {
+        LOG.info("Running commandline runner...");
 
-		Instant tenStart = Instant.now();
-		com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO last10Builds = buildService.getLast10Builds();
-		long tenDuration = Duration.between(tenStart, Instant.now()).toMillis();
+//        miscService.teste();
+//        externo.makeSomeAsyncCalls(buildService);
 
-		Instant allStart = Instant.now();
-		buildService.fetchAllBuilds();
-		long allDuration = Duration.between(allStart, Instant.now()).toMillis();
+        CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
+//
+//        while (!last10BuildsFuture.isDone()) {
+//        }
+//        LOG.info("Done waiting...");
 
-		LOG.info("10 builds took {} ms", tenDuration);
-		LOG.info("All builds took {} ms", allDuration);
 
         for (var recentBuild : last10Builds.getValue()) {
             if (recentBuild.getStatus().equalsIgnoreCase("BUILDING")) {
