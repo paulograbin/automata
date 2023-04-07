@@ -53,31 +53,26 @@ public class RegularEventListener
 		LOG.info("10 builds took {} ms", tenDuration);
 		LOG.info("All builds took {} ms", allDuration);
 
+        for (var recentBuild : last10Builds.getValue()) {
+            if (recentBuild.getStatus().equalsIgnoreCase("BUILDING")) {
+                new Thread(() ->
+                {
+                    LOG.info("WILL MONITOR BUILD {}", recentBuild.getCode());
+                    buildService.monitorBuild(recentBuild.getCode());
+                }).start();
+            }
+        }
 
-		for (var recentBuild : last10Builds.getValue())
-		{
-			if (recentBuild.getStatus().equalsIgnoreCase("BUILDING") )
-			{
-				new Thread(() ->
-				{
-					LOG.info("WILL MONITOR BUILD {}", recentBuild.getCode());
-					buildService.monitorBuild(recentBuild.getCode());
-				}).start();
-			}
-		}
-
-		DeploymentDetailsDTO lastDeployments = deploymentService.fetchDeployments();
-		for (var deployment : lastDeployments.getValue())
-		{
-			if (deployment.getStatus().equalsIgnoreCase("DEPLOYING"))
-			{
-				new Thread(() ->
-				{
-					LOG.info("WILL MONITOR DEPLOYMENT {}", deployment.getCode());
-					deploymentService.monitorDeployment(deployment.getCode());
-				}).start();
-			}
-		}
+        DeploymentDetailsDTO lastDeployments = deploymentService.fetchDeployments();
+        for (var deployment : lastDeployments.getValue()) {
+            if (deployment.getStatus().equalsIgnoreCase("DEPLOYING")) {
+                new Thread(() ->
+                {
+                    LOG.info("WILL MONITOR DEPLOYMENT {}", deployment.getCode());
+                    deploymentService.monitorDeployment(deployment.getCode());
+                }).start();
+            }
+        }
 
 		EnvironmentsDTO environments = environmentService.fetchAllEnvironments();
 
