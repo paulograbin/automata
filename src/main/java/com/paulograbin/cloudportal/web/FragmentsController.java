@@ -17,24 +17,8 @@ public class FragmentsController {
 
     @GetMapping("/fragments")
     public String getHome(Model model) {
-        model.addAttribute("data", environmentService.fetchAllEnvironments());
+        model.addAttribute("data", environmentService.fetchAllEnvironmentsSync());
 
         return "fragments.html";
-    }
-
-    @GetMapping("/markup")
-    public String markupPage() {
-        return "markup.html";
-    }
-
-    @GetMapping("/params")
-    public String paramsPage() {
-        return "params.html";
-    }
-
-    @GetMapping("/other")
-    public String otherPage(Model model) {
-        model.addAttribute("data", environmentService.fetchAllEnvironments());
-        return "other.html";
     }
 }
