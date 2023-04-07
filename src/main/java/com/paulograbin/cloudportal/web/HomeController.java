@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.concurrent.CompletableFuture;
-import java.util.stream.Stream;
 
 
 @Controller
@@ -39,30 +38,11 @@ public class HomeController {
         CompletableFuture<BuildDetailsDTO> last10Builds = buildService.getLast10Builds();
         CompletableFuture<DeploymentDetailsDTO> deployments = deploymentService.fetchCurrentDeployments();
 
-        environmentsFuture.thenAccept(env -> {
-            model.addAttribute("environments", env);
-        });
+        environmentsFuture.thenAccept(env -> model.addAttribute("environments", env));
+        last10Builds.thenAccept(builds -> model.addAttribute("builds", builds));
+        deployments.thenAccept(deploys -> model.addAttribute("deployments", deploys));
 
-        last10Builds.thenAccept(builds -> {
-            model.addAttribute("builds", builds);
-        });
-
-        deployments.thenAccept(deploys -> {
-            model.addAttribute("deployments", deploys);
-        });
-
-        Stream.of(environmentsFuture, environmentsFuture, last10Builds, deployments)
-                .map(CompletableFuture::join)
-                .forEach(l -> LOG.info("Something completed: {}", l));
-
-//        model.addAttribute("environments", environmentService.fetchAllEnvironmentsSync());
-//        model.addAttribute("environments", new EnvironmentsDTO());
-
-//        model.addAttribute("builds", buildService.getLast10BuildsNotAsync());
-//        model.addAttribute("builds", new com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO());
-
-//        model.addAttribute("deployments", attributeValue);
-//        model.addAttribute("deployments", new DeploymentDetailsDTO());
+        CompletableFuture.allOf(environmentsFuture, environmentsFuture, last10Builds, deployments).thenRun(() -> LOG.info("All data loaded!"));
 
         return "index.html";
     }
