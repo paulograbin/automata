@@ -13,9 +13,9 @@ import java.util.concurrent.CompletableFuture;
 
 
 @Service
-public class AsyncTestService {
+public class AsyncSampleService {
 
-    private static final Logger LOG = LoggerFactory.getLogger(AsyncTestService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AsyncSampleService.class);
 
     @Async
     public void makeSomeAsyncCalls(BuildService buildService) {

@@ -1,9 +1,10 @@
 package com.paulograbin.cloudportal.event;
 
-import com.paulograbin.cloudportal.AlertService;
 import com.paulograbin.cloudportal.BuildService;
 import com.paulograbin.cloudportal.DeploymentService;
 import com.paulograbin.cloudportal.EnvironmentService;
+import com.paulograbin.cloudportal.ccv2.MiscService;
+import com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentDTO;
 import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentsDTO;
@@ -14,9 +15,8 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import java.time.Duration;
-import java.time.Instant;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Profile({"development", "production"})
 @Component
@@ -27,15 +27,21 @@ public class RegularEventListener
 	private final BuildService buildService;
 	private final DeploymentService deploymentService;
 	private final EnvironmentService environmentService;
-	private final AlertService alertService;
+    private final MiscService miscService;
+    private final AsyncSampleService asyncSampleService;
 
-	public RegularEventListener(BuildService buildService, DeploymentService deploymentService, EnvironmentService environmentService, AlertService alertService)
-	{
-		this.buildService = buildService;
-		this.deploymentService = deploymentService;
-		this.environmentService = environmentService;
-		this.alertService = alertService;
-	}
+
+    public RegularEventListener(BuildService buildService,
+                                DeploymentService deploymentService,
+                                EnvironmentService environmentService,
+                                MiscService miscService,
+                                AsyncSampleService asyncSampleService) {
+        this.buildService = buildService;
+        this.deploymentService = deploymentService;
+        this.environmentService = environmentService;
+        this.miscService = miscService;
+        this.asyncSampleService = asyncSampleService;
+    }
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void run() throws Exception
