@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+
 @Profile({"development", "production"})
 @Component
 public class RegularEventListener
@@ -57,40 +58,45 @@ public class RegularEventListener
 //        LOG.info("Done waiting...");
 
 
-        for (var recentBuild : last10Builds.getValue()) {
-            if (recentBuild.getStatus().equalsIgnoreCase("BUILDING")) {
-                new Thread(() ->
-                {
-                    LOG.info("WILL MONITOR BUILD {}", recentBuild.getCode());
-                    buildService.monitorBuild(recentBuild.getCode());
-                }).start();
+        last10BuildsFuture.thenAccept(builds -> {
+            for (var recentBuild : builds.getValue()) {
+                if (recentBuild.getStatus().equalsIgnoreCase("BUILDING")) {
+                    new Thread(() ->
+                    {
+                        LOG.info("WILL MONITOR BUILD {}", recentBuild.getCode());
+                        buildService.monitorBuild(recentBuild.getCode());
+                    }).start();
+                }
             }
-        }
+        });
 
-        DeploymentDetailsDTO lastDeployments = deploymentService.fetchDeployments();
-        for (var deployment : lastDeployments.getValue()) {
-            if (deployment.getStatus().equalsIgnoreCase("DEPLOYING")) {
-                new Thread(() ->
-                {
-                    LOG.info("WILL MONITOR DEPLOYMENT {}", deployment.getCode());
-                    deploymentService.monitorDeployment(deployment.getCode());
-                }).start();
+        CompletableFuture<DeploymentDetailsDTO> deploymentDetailsFuture = deploymentService.fetchDeployments();
+        deploymentDetailsFuture.thenAccept(deploys -> {
+            for (var deployment : deploys.getValue()) {
+                if (deployment.getStatus().equalsIgnoreCase("DEPLOYING")) {
+                    new Thread(() ->
+                    {
+                        LOG.info("WILL MONITOR DEPLOYMENT {}", deployment.getCode());
+                        deploymentService.monitorDeployment(deployment.getCode());
+                    }).start();
+                }
             }
-        }
+        });
 
-		EnvironmentsDTO environments = environmentService.fetchAllEnvironments();
+        CompletableFuture<EnvironmentsDTO> environmentsFuture = environmentService.fetchAllEnvironments();
+        environmentsFuture.thenAccept(environments -> {
+            for (EnvironmentDTO environment : environments.getValue()) {
+                com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailsDTO deployed = deploymentService.fetchDeploymentPerEnvironment(environment.getCode());
 
-		for (EnvironmentDTO environment : environments.getValue()) {
-			com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailsDTO deployed = deploymentService.fetchDeploymentPerEnvironment(environment.getCode());
+                List<com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailDTO> deployedDetails = deployed.getValue();
 
-			List<com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailDTO> deployedDetails = deployed.getValue();
+                if (deployedDetails.size() == 1) {
+                    com.paulograbin.cloudportal.ccv2.dto.BuildDetailDTO buildDetails = buildService.getBuildDetails(deployedDetails.get(0).getBuildCode());
 
-			if (deployedDetails.size() == 1) {
-				com.paulograbin.cloudportal.ccv2.dto.BuildDetailDTO buildDetails = buildService.getBuildDetails(deployedDetails.get(0).getBuildCode());
-
-				LOG.info("Environment {} has build {}-{}", environment.getCode(), buildDetails.getCode(), buildDetails.getName());
-			}
-		}
+                    LOG.info("Environment {} has build {}-{}", environment.getCode(), buildDetails.getCode(), buildDetails.getName());
+                }
+            }
+        });
 
 		LOG.info(" ******************* ");
 		LOG.info(" APP READY ");
