@@ -51,7 +51,7 @@ public class DeploymentService {
         DeploymentDetailsDTO deploymentDetails = cloudPortalOperations.getDeployments("deployments");
 
         for (DeploymentDetailDTO deployment : deploymentDetails.getValue()) {
-            LOG.info("Deployment code {}, environment {}, status {}", deployment.getCode(), deployment.getEnvironmentCode(), deployment.getStatus());
+            LOG.debug("Deployment code {}, environment {}, status {}", deployment.getCode(), deployment.getEnvironmentCode(), deployment.getStatus());
         }
 
         return deploymentDetails;
