@@ -9,10 +9,12 @@ import com.paulograbin.cloudportal.ccv2.CloudPortalOperations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 
 @Service
@@ -45,7 +47,7 @@ public class DeploymentService {
     }
 
     @Cacheable("deployments")
-    public DeploymentDetailsDTO fetchDeployments() {
+    public DeploymentDetailsDTO fetchDeploymentsSync() {
         LOG.info("Fetching all recent deployments...");
 
         DeploymentDetailsDTO deploymentDetails = cloudPortalOperations.getDeployments("deployments");
@@ -57,7 +59,20 @@ public class DeploymentService {
         return deploymentDetails;
     }
 
-    public DeploymentDetailsDTO fetchCurrentDeployments() {
+    @Async
+    public CompletableFuture<DeploymentDetailsDTO> fetchDeployments() {
+        LOG.info("Fetching all recent deployments...");
+
+        DeploymentDetailsDTO deploymentDetails = cloudPortalOperations.getDeployments("deployments");
+
+        for (DeploymentDetailDTO deployment : deploymentDetails.getValue()) {
+            LOG.debug("Deployment code {}, environment {}, status {}", deployment.getCode(), deployment.getEnvironmentCode(), deployment.getStatus());
+        }
+
+        return CompletableFuture.completedFuture(deploymentDetails);
+    }
+
+    public DeploymentDetailsDTO fetchCurrentDeploymentsSync() {
         LOG.info("Fetching current deployments...");
 
         Map<String, String> params = new HashMap<>(3);
@@ -73,6 +88,25 @@ public class DeploymentService {
         }
 
         return deploymentDetails;
+    }
+
+    @Async
+    public CompletableFuture<DeploymentDetailsDTO> fetchCurrentDeployments() {
+        LOG.info("Fetching current deployments...");
+
+        Map<String, String> params = new HashMap<>(3);
+        params.put("status", "DEPLOYED");
+        params.put("$top", "3");
+        params.put("$skip", "0");
+        params.put("orderby", "scheduledTimestamp desc");
+
+        DeploymentDetailsDTO deploymentDetails = cloudPortalOperations.getDeployments("deployments", params);
+
+        for (DeploymentDetailDTO deployment : deploymentDetails.getValue()) {
+            LOG.info("Deployment code {}, environment {}, status {}", deployment.getCode(), deployment.getEnvironmentCode(), deployment.getStatus());
+        }
+
+        return CompletableFuture.completedFuture(deploymentDetails);
     }
 
     public DeploymentDetailsDTO fetchDeploymentPerEnvironment(String environmentCode) {
