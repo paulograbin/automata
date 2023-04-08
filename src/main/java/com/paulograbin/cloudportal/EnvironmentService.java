@@ -24,7 +24,6 @@ public class EnvironmentService {
     }
 
 
-    @Cacheable("environments")
     @Async
     public CompletableFuture<EnvironmentsDTO> fetchAllEnvironments() {
         LOG.info("Fetching all environments...");
