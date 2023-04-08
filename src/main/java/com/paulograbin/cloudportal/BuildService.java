@@ -1,20 +1,22 @@
 package com.paulograbin.cloudportal;
 
-import com.paulograbin.ccv2api.model.BuildDetailDTO;
-import com.paulograbin.ccv2api.model.BuildDetailsDTO;
-import com.paulograbin.ccv2api.model.BuildProgressDTO;
-import com.paulograbin.ccv2api.model.CreateBuildRequestDTO;
-import com.paulograbin.ccv2api.model.CreateBuildResponseDTO;
 import com.paulograbin.cloudportal.ccv2.CloudPortalOperations;
+import com.paulograbin.cloudportal.ccv2.dto.BuildDetailDTO;
+import com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO;
+import com.paulograbin.cloudportal.ccv2.dto.BuildProgressDTO;
+import com.paulograbin.cloudportal.ccv2.dto.CreateBuildRequestDTO;
+import com.paulograbin.cloudportal.ccv2.dto.CreateBuildResponseDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 
 @Service
@@ -30,8 +32,26 @@ public class BuildService {
         this.alertService = alertService;
     }
 
+    @Async
+    public CompletableFuture<BuildDetailsDTO> getLast10Builds() {
+        LOG.info("Fetching last 10 builds...");
+
+        Map<String, String> params = new HashMap<>(3);
+        params.put("$top", "10");
+        params.put("$skip", "0");
+        params.put("orderby", "scheduledTimestamp desc");
+
+        BuildDetailsDTO buildDetailsDTO = cloudPortalOperations.getBuildsWithParams(params);
+
+        for (BuildDetailDTO buildDetailDTO : buildDetailsDTO.getValue()) {
+            logBuildDetails(buildDetailDTO);
+        }
+
+        return CompletableFuture.completedFuture(buildDetailsDTO);
+    }
+
     @Cacheable("builds")
-    public BuildDetailsDTO getLast10Builds() {
+    public BuildDetailsDTO getLast10BuildsSync() {
         LOG.info("Fetching last 10 builds...");
 
         Map<String, String> params = new HashMap<>(3);
@@ -48,7 +68,8 @@ public class BuildService {
         return buildDetailsDTO;
     }
 
-    public BuildDetailsDTO fetchAllBuilds() {
+    @Async
+    public CompletableFuture<BuildDetailsDTO> fetchAllBuilds() {
         LOG.info("Fetching all recent builds...");
 
         BuildDetailsDTO buildDetailsDTO = cloudPortalOperations.getAllBuilds();
@@ -57,21 +78,21 @@ public class BuildService {
             logBuildDetails(buildDetailDTO);
         }
 
-        return buildDetailsDTO;
+        return CompletableFuture.completedFuture(buildDetailsDTO);
     }
 
     public BuildDetailDTO getBuildDetails(String buildCode) {
         LOG.info("Fetching build details...");
 
-		BuildDetailDTO build = cloudPortalOperations.getBuild("builds/" + buildCode);
-		logBuildDetails(build);
+        BuildDetailDTO build = cloudPortalOperations.getBuild("builds/" + buildCode);
+        logBuildDetails(build);
 
-		return build;
-	}
+        return build;
+    }
 
-	private void logBuildDetails(BuildDetailDTO build) {
-		LOG.debug("Build details: Code {}, Branch {}, Status {}, Created by {}", build.getCode(), build.getBranch(), build.getStatus(), build.getCreatedBy());
-	}
+    private void logBuildDetails(BuildDetailDTO build) {
+        LOG.debug("Build details: Code {}, Branch {}, Status {}, Created by {}", build.getCode(), build.getBranch(), build.getStatus(), build.getCreatedBy());
+    }
 
     public void createBuildAndAlertWhenDone(String branch) throws InterruptedException {
         String formattedDate = new SimpleDateFormat("dd-MM-yy HH-mm").format(new Date());

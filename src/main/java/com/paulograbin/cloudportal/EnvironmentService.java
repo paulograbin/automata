@@ -5,7 +5,10 @@ import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentsDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+
+import java.util.concurrent.CompletableFuture;
 
 
 @Service
@@ -21,8 +24,21 @@ public class EnvironmentService {
     }
 
 
+    @Async
+    public CompletableFuture<EnvironmentsDTO> fetchAllEnvironments() {
+        LOG.info("Fetching all environments...");
+
+        return CompletableFuture.completedFuture(cloudPortalOperations.fetchEnvironments());
+    }
+
     @Cacheable("environments")
-    public EnvironmentsDTO fetchAllEnvironments() {
+    public EnvironmentsDTO fetchAllEnvironmentsSync() {
+        LOG.info("Fetching all environments...");
+
+        return cloudPortalOperations.fetchEnvironments();
+    }
+
+    public EnvironmentsDTO fetchAllEnvironmentsByPassCache() {
         LOG.info("Fetching all environments...");
 
         return cloudPortalOperations.fetchEnvironments();

@@ -117,7 +117,7 @@
 <!--                            </inputSpec>-->
 <!--                            <generatorName>spring</generatorName>-->
 <!--                            <apiPackage>com.paulograbin.ccv2api.api</apiPackage>-->
-<!--                            <modelPackage>com.paulograbin.ccv2api.model</modelPackage>-->
+<!--                            <modelPackage>com.paulograbin.cloudportal.ccv2.dto</modelPackage>-->
 <!--                            <supportingFilesToGenerate>-->
 <!--                                ApiUtil.java-->
 <!--                            </supportingFilesToGenerate>-->

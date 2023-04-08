@@ -4,6 +4,7 @@
       layout:decorator="layout/layout"
       lang="en">
 <head>
+    <script src="/js/javascript.js"></script>
     <title>Automata</title>
 </head>
 <body>
@@ -41,36 +42,16 @@
         <h1>Deploy shortcuts</h1>
 
         <p>
-            <button id="btnDevToStg" type="submit" class="btn btn-primary" onclick="makeBuild('develop', 's1')">Deploy
-                develop to S1
-            </button>
+            <button id="btnDevToStg" type="submit" class="btn btn-primary" onclick="makeBuild('develop', 's1')">Deploy develop to S1</button>
         </p>
         <p>
-            <button id="btnGlobaleToDev" type="submit" class="btn btn-primary"
-                    onclick="makeBuild('globale_experiment', 'd1')">Deploy GlobalE to D1
+            <button id="btnGlobaleToDev" type="submit" class="btn btn-primary" onclick="makeBuild('globale_experiment', 'd1')">Deploy GlobalE to D1
             </button>
         </p>
     </div>
 
-    <div id="environments" class="pageSection">
-        <h1>Environments</h1>
-
-        <div class="row">
-            <div class="card col-lg" style="width: 18rem;" th:each="environments: ${environments.value}">
-                <img src="/server.png" th:class="'cardImage cardImage-' + ${environments.type}">
-                <div th:class="card-body">
-                    <h5 class="card-title" th:text="${environments.code}"></h5>
-                    <p class="card-text" th:text="'Type ' + ${environments.type}"></p>
-                    <p class="card-text" th:text="'Status ' + ${environments.status}"></p>
-                    <h1 th:if="${environments.status} == 'AVAILABLE'">
-                        <i class="bi bi-check-circle-fill text-success"></i>
-                    </h1>
-                    <h1 th:if="${environments.status} != 'AVAILABLE'">
-                        <i class="bi bi-bug-fill text-danger"></i>
-                    </h1>
-                </div>
-            </div>
-        </div>
+    <div id="environments" class="pageSection" >
+        <div class="pageSection" th:replace="pieces/environments :: envs"></div>
     </div>
 
     <div id="deployments" class="pageSection">
@@ -149,27 +130,14 @@
 </div>
 </body>
 
-<link rel="stylesheet" href="css/main.css"/>
+<link rel="stylesheet" href="/css/main.css"/>
 <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <script defer src="http://localhost:35729/livereload.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 
 </html>
 <script th:inline="javascript">
-  document.addEventListener("DOMContentLoaded", function (e) {
-    console.log('Document ready!');
-
-    let subscriptionCode = localStorage.getItem('subscriptionCode');
-    let token = localStorage.getItem('token');
-    console.log('loaded value for subscription:', subscriptionCode);
-    console.log('loaded value for token:', token);
-
-    let inputSubscription = document.getElementById('inputSubscriptionCode');
-    inputSubscription.value = subscriptionCode;
-
-    let inputToken = document.getElementById('inputToken');
-    inputToken.value = token;
-  });
 
   async function makeBuild(branch, environment) {
     const newBuildRequest = {
@@ -195,7 +163,7 @@
     const environmentCode = document.getElementById("inputEnvironmentCode").value;
     const branchName = document.getElementById("inputBranch").value;
 
-    makeBuild(branchName, environmentCode);
+    await makeBuild(branchName, environmentCode);
   }
 
   let btnSubmit = document.getElementById('btnSubmitNewBuild');
@@ -217,6 +185,5 @@
   // }
 
   const replacerFunction = ['aa'];
-
   console.log(JSON.stringify(objeto, replacerFunction));
 </script>

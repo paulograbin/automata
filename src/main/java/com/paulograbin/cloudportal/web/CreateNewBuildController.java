@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.web;
 
-import com.paulograbin.ccv2api.model.CreateBuildResponseDTO;
-import com.paulograbin.ccv2api.model.CreateDeploymentResponseDTO;
+import com.paulograbin.cloudportal.ccv2.dto.CreateBuildResponseDTO;
+import com.paulograbin.cloudportal.ccv2.dto.CreateDeploymentResponseDTO;
 import com.paulograbin.cloudportal.BuildService;
 import com.paulograbin.cloudportal.DeploymentService;
 import org.slf4j.Logger;

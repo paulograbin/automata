@@ -1,12 +1,12 @@
-package com.paulograbin.ccv2api.model;
+package com.paulograbin.cloudportal.ccv2.dto;
 
 import java.net.URI;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.paulograbin.ccv2api.model.DeploymentCancelationDetailDTO;
-import com.paulograbin.ccv2api.model.DeploymentTrafficSplitDTO;
+import com.paulograbin.cloudportal.ccv2.dto.DeploymentCancelationDetailDTO;
+import com.paulograbin.cloudportal.ccv2.dto.DeploymentTrafficSplitDTO;
 import java.time.OffsetDateTime;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.openapitools.jackson.nullable.JsonNullable;
