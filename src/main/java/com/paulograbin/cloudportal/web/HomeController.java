@@ -35,7 +35,7 @@ public class HomeController {
     }
 
     @GetMapping
-    public String home(Model model) throws ExecutionException, InterruptedException {
+    public String home(Model model) {
         CompletableFuture<EnvironmentsDTO> environmentsFuture = environmentService.fetchAllEnvironments();
         CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
         CompletableFuture<DeploymentDetailsDTO> deploymentsFuture = deploymentService.fetchCurrentDeployments();
