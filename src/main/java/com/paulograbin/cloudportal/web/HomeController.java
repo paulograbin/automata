@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.stream.Stream;
 
 
 @Controller
@@ -33,16 +35,22 @@ public class HomeController {
     }
 
     @GetMapping
-    public String home(Model model) {
-        CompletableFuture<EnvironmentsDTO> environmentsFuture = environmentService.fetchAllEnvironments();
-        CompletableFuture<BuildDetailsDTO> last10Builds = buildService.getLast10Builds();
-        CompletableFuture<DeploymentDetailsDTO> deployments = deploymentService.fetchCurrentDeployments();
+    public String home(Model model) throws ExecutionException, InterruptedException {
+        CompletableFuture<EnvironmentsDTO> environmentsDTOCompletableFuture = environmentService.fetchAllEnvironments();
+        CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
 
-        environmentsFuture.thenAccept(env -> model.addAttribute("environments", env));
-        last10Builds.thenAccept(builds -> model.addAttribute("builds", builds));
-        deployments.thenAccept(deploys -> model.addAttribute("deployments", deploys));
+        Stream.of(environmentsDTOCompletableFuture, last10BuildsFuture)
+                .map(CompletableFuture::join)
+                .forEach(l -> LOG.info("Something completed..."));
 
-        CompletableFuture.allOf(environmentsFuture, environmentsFuture, last10Builds, deployments).thenRun(() -> LOG.info("All data loaded!"));
+        last10BuildsFuture.thenAccept(b -> model.addAttribute("builds", b));
+
+        model.addAttribute("environments", environmentService.fetchAllEnvironmentsSync());
+        model.addAttribute("deployments", deploymentService.fetchCurrentDeployments().get());
+
+//        model.addAttribute("environments", new EnvironmentsDTO());
+//        model.addAttribute("builds", new com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO());
+//        model.addAttribute("deployments", new DeploymentDetailsDTO());
 
         return "index.html";
     }
