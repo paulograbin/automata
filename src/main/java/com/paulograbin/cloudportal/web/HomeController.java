@@ -13,6 +13,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
@@ -36,6 +38,8 @@ public class HomeController {
 
     @GetMapping
     public String home(Model model) {
+        Instant start = Instant.now();
+
         CompletableFuture<EnvironmentsDTO> environmentsFuture = environmentService.fetchAllEnvironments();
         CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
         CompletableFuture<DeploymentDetailsDTO> deploymentsFuture = deploymentService.fetchCurrentDeployments();
@@ -48,6 +52,9 @@ public class HomeController {
         last10BuildsFuture.thenAccept(b -> model.addAttribute("builds", b));
         deploymentsFuture.thenAccept(d -> model.addAttribute("deployments", d));
 
+
+        long l = Duration.between(start, Instant.now()).toMillis();
+        LOG.info("Page took {} ms to load", l);
         return "index.html";
     }
 }
