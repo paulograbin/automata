@@ -38,15 +38,17 @@ public class HomeController {
     public String home(Model model) throws ExecutionException, InterruptedException {
         CompletableFuture<EnvironmentsDTO> environmentsDTOCompletableFuture = environmentService.fetchAllEnvironments();
         CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
+        CompletableFuture<DeploymentDetailsDTO> deploymentsFuture = deploymentService.fetchCurrentDeployments();
 
-        Stream.of(environmentsDTOCompletableFuture, last10BuildsFuture)
+        Stream.of(environmentsDTOCompletableFuture, last10BuildsFuture, deploymentsFuture)
                 .map(CompletableFuture::join)
                 .forEach(l -> LOG.info("Something completed..."));
 
         last10BuildsFuture.thenAccept(b -> model.addAttribute("builds", b));
+        deploymentsFuture.thenAccept(d -> model.addAttribute("deployments", d));
 
         model.addAttribute("environments", environmentService.fetchAllEnvironmentsSync());
-        model.addAttribute("deployments", deploymentService.fetchCurrentDeployments().get());
+
 
 //        model.addAttribute("environments", new EnvironmentsDTO());
 //        model.addAttribute("builds", new com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO());
