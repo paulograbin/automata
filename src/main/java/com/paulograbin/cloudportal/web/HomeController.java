@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 import java.util.stream.Stream;
 
 
@@ -34,6 +33,7 @@ public class HomeController {
         this.environmentService = environmentService;
     }
 
+
     @GetMapping
     public String home(Model model) {
         CompletableFuture<EnvironmentsDTO> environmentsFuture = environmentService.fetchAllEnvironments();
@@ -44,15 +44,9 @@ public class HomeController {
                 .map(CompletableFuture::join)
                 .forEach(l -> LOG.info("Something completed..."));
 
+        environmentsFuture.thenAccept(e -> model.addAttribute("environments", e));
         last10BuildsFuture.thenAccept(b -> model.addAttribute("builds", b));
         deploymentsFuture.thenAccept(d -> model.addAttribute("deployments", d));
-
-        model.addAttribute("environments", environmentService.fetchAllEnvironmentsSync());
-
-
-//        model.addAttribute("environments", new EnvironmentsDTO());
-//        model.addAttribute("builds", new com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO());
-//        model.addAttribute("deployments", new DeploymentDetailsDTO());
 
         return "index.html";
     }
