@@ -36,11 +36,11 @@ public class HomeController {
 
     @GetMapping
     public String home(Model model) throws ExecutionException, InterruptedException {
-        CompletableFuture<EnvironmentsDTO> environmentsDTOCompletableFuture = environmentService.fetchAllEnvironments();
+        CompletableFuture<EnvironmentsDTO> environmentsFuture = environmentService.fetchAllEnvironments();
         CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
         CompletableFuture<DeploymentDetailsDTO> deploymentsFuture = deploymentService.fetchCurrentDeployments();
 
-        Stream.of(environmentsDTOCompletableFuture, last10BuildsFuture, deploymentsFuture)
+        Stream.of(environmentsFuture, last10BuildsFuture, deploymentsFuture)
                 .map(CompletableFuture::join)
                 .forEach(l -> LOG.info("Something completed..."));
 
