@@ -4,12 +4,15 @@ public class EnvironmentDTO {
 
     private String timezone;
     private String code;
-    private String nome;
+    private String name;
     private String description;
     private String status;
     private String type;
     private String dynatraceUrl;
     private String cloudPortalDeepLink;
+    private String externalId;
+    private String subscriptionCode;
+
 
     public EnvironmentDTO() {
     }
@@ -30,12 +33,12 @@ public class EnvironmentDTO {
         this.code = code;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String nome) {
+        this.name = nome;
     }
 
     public String getDescription() {
@@ -78,12 +81,28 @@ public class EnvironmentDTO {
         this.cloudPortalDeepLink = cloudPortalDeepLink;
     }
 
+    public String getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    public String getSubscriptionCode() {
+        return subscriptionCode;
+    }
+
+    public void setSubscriptionCode(String subscriptionCode) {
+        this.subscriptionCode = subscriptionCode;
+    }
+
     @Override
     public String toString() {
         return "EnvironmentDTO{" +
                 "timezone='" + timezone + '\'' +
                 ", code='" + code + '\'' +
-                ", nome='" + nome + '\'' +
+                ", nome='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
                 ", type='" + type + '\'' +
