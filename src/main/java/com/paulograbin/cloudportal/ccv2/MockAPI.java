@@ -21,9 +21,7 @@ import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentModeDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentProgressDTO;
 import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentsDTO;
-import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.ResourceLoader;
-import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
