@@ -52,7 +52,6 @@ public class HomeController {
         last10BuildsFuture.thenAccept(b -> model.addAttribute("builds", b));
         deploymentsFuture.thenAccept(d -> model.addAttribute("deployments", d));
 
-
         long l = Duration.between(start, Instant.now()).toMillis();
         LOG.info("Page took {} ms to load", l);
         return "index.html";

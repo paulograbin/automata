@@ -1,11 +1,11 @@
 package com.paulograbin.cloudportal;
 
+import com.paulograbin.cloudportal.ccv2.CloudPortalAPI;
 import com.paulograbin.cloudportal.ccv2.dto.CreateDeploymentRequestDTO;
 import com.paulograbin.cloudportal.ccv2.dto.CreateDeploymentResponseDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentProgressDTO;
-import com.paulograbin.cloudportal.ccv2.CloudPortalOperations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
@@ -22,11 +22,11 @@ public class DeploymentService {
 
     private final Logger LOG = LoggerFactory.getLogger(DeploymentService.class);
 
-    private final CloudPortalOperations cloudPortalOperations;
+    private final CloudPortalAPI cloudPortalOperations;
     private final AlertService alertService;
 
 
-    public DeploymentService(CloudPortalOperations cloudPortalOperations, AlertService alertService) {
+    public DeploymentService(CloudPortalAPI cloudPortalOperations, AlertService alertService) {
         this.cloudPortalOperations = cloudPortalOperations;
         this.alertService = alertService;
     }
