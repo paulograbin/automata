@@ -1,11 +1,11 @@
 package com.paulograbin.cloudportal;
 
+import com.paulograbin.cloudportal.ccv2.CloudPortalOperations;
 import com.paulograbin.cloudportal.ccv2.dto.CreateDeploymentRequestDTO;
 import com.paulograbin.cloudportal.ccv2.dto.CreateDeploymentResponseDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentProgressDTO;
-import com.paulograbin.cloudportal.ccv2.CloudPortalOperations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
