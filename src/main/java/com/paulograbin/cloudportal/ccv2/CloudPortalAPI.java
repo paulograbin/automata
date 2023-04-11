@@ -39,8 +39,6 @@ import java.util.Map;
 
 
 @Service
-//@Profile("production")
-@Profile(value = {"development", "commandline"})
 public class CloudPortalAPI {
 
     private final Logger LOG = LoggerFactory.getLogger(CloudPortalAPI.class);
