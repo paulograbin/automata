@@ -41,7 +41,7 @@ import java.util.Map;
 @Service
 //@Profile("production")
 @Profile(value = {"development", "commandline"})
-public class CloudPortalAPI implements CloudPortalOperations {
+public class CloudPortalAPI {
 
     private final Logger LOG = LoggerFactory.getLogger(CloudPortalAPI.class);
 
@@ -79,7 +79,6 @@ public class CloudPortalAPI implements CloudPortalOperations {
     }
 
 
-    @Override
     public <T> T sendPostRequest(String s, Object request, Class<T> responseType) {
         Instant start = Instant.now();
 
@@ -92,7 +91,7 @@ public class CloudPortalAPI implements CloudPortalOperations {
         return response;
     }
 
-    @Override
+
     public BuildProgressDTO getBuildProgress(String buildCode) {
         Instant start = Instant.now();
 
@@ -115,12 +114,11 @@ public class CloudPortalAPI implements CloudPortalOperations {
     }
 
 
-    @Override
     public BuildDetailsDTO getAllBuilds() {
         return sendRequestInternal("builds", BuildDetailsDTO.class);
     }
 
-    @Override
+
     public BuildDetailsDTO getBuildsWithParams(Map<String, String> params) {
         StringBuilder queryBuilder = new StringBuilder();
 
@@ -142,53 +140,53 @@ public class CloudPortalAPI implements CloudPortalOperations {
         return sendRequestInternal("builds" + '/' + queryBuilder, BuildDetailsDTO.class);
     }
 
-    @Override
+
     @Cacheable(value = "build", key = "#code")
     public BuildDetailDTO getBuild(String code) {
         return sendRequestInternal(code, BuildDetailDTO.class);
     }
 
-    @Override
+
     public CreateBuildResponseDTO createBuild(CreateBuildRequestDTO requestDTO) {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public String getBuildLogs(String buildCode) {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public DeploymentDetailsDTO getDeployments(String deployments) {
         return sendRequestInternal(deployments, DeploymentDetailsDTO.class);
     }
 
-    @Override
+
     public DeploymentDetailDTO getDeployment(String deployments) {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public CreateDeploymentResponseDTO createDeployment(CreateDeploymentRequestDTO deploymentRequestDTO) {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public CreateDeploymentDecisionResponseDTO createDeploymentDecision(CreateDeploymentDecisionResponseDTO responseDTO) {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public DeploymentDecisionsDTO getDeploymentDecisions() {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public DeploymentModeDTO getDeploymentModes() {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public DeploymentProgressDTO getDeploymentProgress(String deploymentCode) {
         Instant start = Instant.now();
 
@@ -210,37 +208,37 @@ public class CloudPortalAPI implements CloudPortalOperations {
         return forObject.getBody();
     }
 
-    @Override
+
     public CreateDatabackupResponseDTO createDataBackup() {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public CreateDatarestoreResponseDTO createDataRestore() {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public DatabackupDetailDTO getDataBackup() {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public DatabackupDetailsDTO getDataBackups() {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public DatarestoreDetailDTO getDataRestore() {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public DatarestoreDetailsDTO getDataRestores() {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public DeploymentDetailsDTO getDeployments(String deployments, Map<String, String> params) {
         StringBuilder queryBuilder = new StringBuilder();
 

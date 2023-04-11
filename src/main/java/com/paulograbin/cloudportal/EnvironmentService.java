@@ -1,6 +1,6 @@
 package com.paulograbin.cloudportal;
 
-import com.paulograbin.cloudportal.ccv2.CloudPortalOperations;
+import com.paulograbin.cloudportal.ccv2.CloudPortalAPI;
 import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentsDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,10 +16,10 @@ public class EnvironmentService {
 
     private final Logger LOG = LoggerFactory.getLogger(DeploymentService.class);
 
-    private final CloudPortalOperations cloudPortalOperations;
+    private final CloudPortalAPI cloudPortalOperations;
 
 
-    public EnvironmentService(CloudPortalOperations cloudPortalOperations) {
+    public EnvironmentService(CloudPortalAPI cloudPortalOperations) {
         this.cloudPortalOperations = cloudPortalOperations;
     }
 

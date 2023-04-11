@@ -1,6 +1,6 @@
 package com.paulograbin.cloudportal;
 
-import com.paulograbin.cloudportal.ccv2.CloudPortalOperations;
+import com.paulograbin.cloudportal.ccv2.CloudPortalAPI;
 import com.paulograbin.cloudportal.ccv2.dto.BuildDetailDTO;
 import com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.dto.BuildProgressDTO;
@@ -24,11 +24,11 @@ public class BuildService {
 
     private final Logger LOG = LoggerFactory.getLogger(BuildService.class);
 
-    private final CloudPortalOperations cloudPortalOperations;
+    private final CloudPortalAPI cloudPortalAPI;
     private final AlertService alertService;
 
-    public BuildService(CloudPortalOperations cloudPortalOperations, AlertService alertService) {
-        this.cloudPortalOperations = cloudPortalOperations;
+    public BuildService(CloudPortalAPI cloudPortalAPI, AlertService alertService) {
+        this.cloudPortalAPI = cloudPortalAPI;
         this.alertService = alertService;
     }
 
@@ -41,7 +41,7 @@ public class BuildService {
         params.put("$skip", "0");
         params.put("orderby", "scheduledTimestamp desc");
 
-        BuildDetailsDTO buildDetailsDTO = cloudPortalOperations.getBuildsWithParams(params);
+        BuildDetailsDTO buildDetailsDTO = cloudPortalAPI.getBuildsWithParams(params);
 
         for (BuildDetailDTO buildDetailDTO : buildDetailsDTO.getValue()) {
             logBuildDetails(buildDetailDTO);
@@ -59,7 +59,7 @@ public class BuildService {
         params.put("$skip", "0");
         params.put("orderby", "scheduledTimestamp desc");
 
-        BuildDetailsDTO buildDetailsDTO = cloudPortalOperations.getBuildsWithParams(params);
+        BuildDetailsDTO buildDetailsDTO = cloudPortalAPI.getBuildsWithParams(params);
 
         for (BuildDetailDTO buildDetailDTO : buildDetailsDTO.getValue()) {
             logBuildDetails(buildDetailDTO);
@@ -72,7 +72,7 @@ public class BuildService {
     public CompletableFuture<BuildDetailsDTO> fetchAllBuilds() {
         LOG.info("Fetching all recent builds...");
 
-        BuildDetailsDTO buildDetailsDTO = cloudPortalOperations.getAllBuilds();
+        BuildDetailsDTO buildDetailsDTO = cloudPortalAPI.getAllBuilds();
 
         for (BuildDetailDTO buildDetailDTO : buildDetailsDTO.getValue()) {
             logBuildDetails(buildDetailDTO);
@@ -84,7 +84,7 @@ public class BuildService {
     public BuildDetailDTO getBuildDetails(String buildCode) {
         LOG.info("Fetching build details...");
 
-        BuildDetailDTO build = cloudPortalOperations.getBuild("builds/" + buildCode);
+        BuildDetailDTO build = cloudPortalAPI.getBuild("builds/" + buildCode);
         logBuildDetails(build);
 
         return build;
@@ -104,7 +104,7 @@ public class BuildService {
                 .name(buildName)
                 .branch(branch);
 
-        CreateBuildResponseDTO createBuildResponse = cloudPortalOperations.sendPostRequest("builds", request, CreateBuildResponseDTO.class);
+        CreateBuildResponseDTO createBuildResponse = cloudPortalAPI.sendPostRequest("builds", request, CreateBuildResponseDTO.class);
 
         LOG.info("Build to create {} ", createBuildResponse.getCode());
 
@@ -117,7 +117,7 @@ public class BuildService {
     }
 
     public void monitorBuild(String buildCode) {
-        BuildProgressDTO buildProgress = cloudPortalOperations.getBuildProgress(buildCode);
+        BuildProgressDTO buildProgress = cloudPortalAPI.getBuildProgress(buildCode);
 
         String message = "";
 
@@ -162,7 +162,7 @@ public class BuildService {
                 .name(buildName)
                 .branch(branch);
 
-        CreateBuildResponseDTO response = cloudPortalOperations.sendPostRequest("builds", request, CreateBuildResponseDTO.class);
+        CreateBuildResponseDTO response = cloudPortalAPI.sendPostRequest("builds", request, CreateBuildResponseDTO.class);
 
         LOG.info("Build to be created {}", response.getCode());
 
