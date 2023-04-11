@@ -30,10 +30,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 
-@Service
 //@Profile("development")
-@Profile("production")
-public class MockAPI implements CloudPortalOperations {
+public class MockAPI {
 
     private final ResourceLoader resourceLoader;
     private final Gson gson;
@@ -43,12 +41,10 @@ public class MockAPI implements CloudPortalOperations {
         this.gson = gson;
     }
 
-    @Override
     public <T> T sendPostRequest(String s, Object request, Class<T> responseType) {
         return null;
     }
 
-    @Override
     public BuildProgressDTO getBuildProgress(String buildCode) {
         return null;
     }
@@ -65,14 +61,12 @@ public class MockAPI implements CloudPortalOperations {
         return contentAsString;
     }
 
-    @Override
     public BuildDetailDTO getBuild(String code) {
         String contentAsString = loadResourceByName("returns/builds/build.json");
 
         return gson.fromJson(contentAsString, BuildDetailDTO.class);
     }
 
-    @Override
     public BuildDetailsDTO getAllBuilds()
     {
         String contentAsString = loadResourceByName("returns/builds/allBuilds.json");
@@ -80,93 +74,75 @@ public class MockAPI implements CloudPortalOperations {
         return gson.fromJson(contentAsString, BuildDetailsDTO.class);
     }
 
-    @Override
     public CreateBuildResponseDTO createBuild(CreateBuildRequestDTO requestDTO) {
         return null;
     }
 
-    @Override
     public String getBuildLogs(String buildCode) {
         return null;
     }
 
-    @Override
     public DeploymentDetailsDTO getDeployments(String deployments) {
         return null;
     }
 
-    @Override
     public DeploymentDetailDTO getDeployment(String deployments) {
         return null;
     }
 
-    @Override
     public CreateDeploymentResponseDTO createDeployment(CreateDeploymentRequestDTO deploymentRequestDTO) {
         return null;
     }
 
-    @Override
     public CreateDeploymentDecisionResponseDTO createDeploymentDecision(CreateDeploymentDecisionResponseDTO responseDTO) {
         return null;
     }
 
-    @Override
     public DeploymentDecisionsDTO getDeploymentDecisions() {
         return null;
     }
 
-    @Override
     public DeploymentModeDTO getDeploymentModes() {
         return null;
     }
 
-    @Override
     public DeploymentProgressDTO getDeploymentProgress(String deploymentCode) {
         return null;
     }
 
-    @Override
     public CreateDatabackupResponseDTO createDataBackup() {
         return null;
     }
 
-    @Override
     public CreateDatarestoreResponseDTO createDataRestore() {
         return null;
     }
 
-    @Override
     public DatabackupDetailDTO getDataBackup() {
         return null;
     }
 
-    @Override
     public DatabackupDetailsDTO getDataBackups() {
         return null;
     }
 
-    @Override
     public DatarestoreDetailDTO getDataRestore() {
         return null;
     }
 
-    @Override
     public DatarestoreDetailsDTO getDataRestores() {
         return null;
     }
 
-    @Override
     public EnvironmentsDTO fetchEnvironments() {
 
         return null;
     }
 
-    @Override
     public DeploymentDetailsDTO getDeployments(String deployments, Map<String, String> params) {
         return null;
     }
 
-    @Override
     public BuildDetailsDTO getBuildsWithParams(Map<String, String> params) {
         return null;
     }
