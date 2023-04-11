@@ -1,6 +1,6 @@
 package com.paulograbin.cloudportal;
 
-import com.paulograbin.cloudportal.ccv2.CloudPortalOperations;
+import com.paulograbin.cloudportal.ccv2.CloudPortalAPI;
 import com.paulograbin.cloudportal.ccv2.dto.CreateDeploymentRequestDTO;
 import com.paulograbin.cloudportal.ccv2.dto.CreateDeploymentResponseDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailDTO;
@@ -22,11 +22,11 @@ public class DeploymentService {
 
     private final Logger LOG = LoggerFactory.getLogger(DeploymentService.class);
 
-    private final CloudPortalOperations cloudPortalOperations;
+    private final CloudPortalAPI cloudPortalOperations;
     private final AlertService alertService;
 
 
-    public DeploymentService(CloudPortalOperations cloudPortalOperations, AlertService alertService) {
+    public DeploymentService(CloudPortalAPI cloudPortalOperations, AlertService alertService) {
         this.cloudPortalOperations = cloudPortalOperations;
         this.alertService = alertService;
     }
