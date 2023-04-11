@@ -3,7 +3,7 @@ package com.paulograbin.cloudportal.web;
 import com.paulograbin.cloudportal.BuildService;
 import com.paulograbin.cloudportal.DeploymentService;
 import com.paulograbin.cloudportal.EnvironmentService;
-import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailDTO;
+import com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentsDTO;
 import org.slf4j.Logger;
@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.concurrent.CompletableFuture;
+import java.util.stream.Stream;
 
 
 @Controller
@@ -38,62 +40,17 @@ public class HomeController {
     public String home(Model model) {
         Instant start = Instant.now();
 
-//        CompletableFuture<EnvironmentsDTO> environmentsFuture = environmentService.fetchAllEnvironments();
-//        CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
-//        CompletableFuture<DeploymentDetailsDTO> deploymentsFuture = deploymentService.fetchCurrentDeployments();
+        CompletableFuture<EnvironmentsDTO> environmentsFuture = environmentService.fetchAllEnvironments();
+        CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
+        CompletableFuture<DeploymentDetailsDTO> deploymentsFuture = deploymentService.fetchCurrentDeployments();
 
-//        Stream.of(environmentsFuture, last10BuildsFuture, deploymentsFuture)
-//                .map(CompletableFuture::join)
-//                .forEach(l -> LOG.info("Something completed..."));
+        Stream.of(environmentsFuture, last10BuildsFuture, deploymentsFuture)
+                .map(CompletableFuture::join)
+                .forEach(l -> LOG.info("Something completed..."));
 
-//        CompletableFuture.allOf(environmentsFuture, last10BuildsFuture, deploymentsFuture)
-//                .thenRun(() -> LOG.info("All data loaded!"));
-
-//        environmentsFuture.thenAccept(e -> model.addAttribute("environments", e));
-//        last10BuildsFuture.thenAccept(b -> model.addAttribute("builds", b));
-//        deploymentsFuture.thenAccept(d -> model.addAttribute("deployments", d));
-
-        model.addAttribute("environments", new EnvironmentsDTO());
-        model.addAttribute("builds", new com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO());
-        DeploymentDetailsDTO attributeValue = new DeploymentDetailsDTO();
-
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-        attributeValue.addValueItem(new DeploymentDetailDTO().code("RandomStringUtils.randomAlphanumeric(10)"));
-
-        model.addAttribute("deployments", attributeValue);
+        environmentsFuture.thenAccept(e -> model.addAttribute("environments", e));
+        last10BuildsFuture.thenAccept(b -> model.addAttribute("builds", b));
+        deploymentsFuture.thenAccept(d -> model.addAttribute("deployments", d));
 
         long l = Duration.between(start, Instant.now()).toMillis();
         LOG.info("Page took {} ms to load", l);
