@@ -20,5 +20,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
   // }, 5000);
 });
 
+window.addEventListener('scroll', changeNavBarCSS, false);
+
+function changeNavBarCSS() {
+  console.log('changeNavBarCSS');
+
+  const navBarElement = document.getElementById('NavBar');
+  this.scrollY > 0 ? navBarElement.classList.add('fixed') : navBarElement.classList.remove('fixed');
+}
+
 console.log(Intl.DateTimeFormat().resolvedOptions().timeZone);
 console.log(userLang = navigator.language || navigator.userLanguage);

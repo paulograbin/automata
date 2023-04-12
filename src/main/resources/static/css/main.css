@@ -1555,7 +1555,7 @@ body {
 .FrontPageTopBar .Logo {
     fill: #fff;
     transition: 100ms fill;
-    height: 30px;
+    height: 40px;
     margin-top: -15px;
     margin-bottom: -15px
 }
