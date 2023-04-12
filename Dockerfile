@@ -15,7 +15,7 @@ FROM paulograbin/automata_base as build
 WORKDIR /opt/confirmation
 COPY mvnw .
 COPY .mvn .mvn
-COPY pom.xml /opt/confirmation
+COPY pom.xml .
 COPY src src
 
 RUN mvn package -DskipTests
