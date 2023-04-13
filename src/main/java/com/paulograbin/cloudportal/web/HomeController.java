@@ -44,9 +44,7 @@ public class HomeController {
         CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
         CompletableFuture<DeploymentDetailsDTO> deploymentsFuture = deploymentService.fetchCurrentDeployments();
 
-        Stream.of(environmentsFuture, last10BuildsFuture, deploymentsFuture)
-                .map(CompletableFuture::join)
-                .forEach(l -> LOG.info("Something completed..."));
+        CompletableFuture.allOf(environmentsFuture, last10BuildsFuture, deploymentsFuture).join();
 
         environmentsFuture.thenAccept(e -> model.addAttribute("environments", e));
         last10BuildsFuture.thenAccept(b -> model.addAttribute("builds", b));
