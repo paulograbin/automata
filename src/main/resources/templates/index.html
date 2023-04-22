@@ -72,60 +72,65 @@
     <div id="deployments" class="pageSection">
         <h1>Deployments</h1>
 
-        <table class="table table-striped table-hover table-bordered">
-            <thead class="thead-dark">
-            <tr>
-                <th class="col">Code</th>
-                <th class="col">Status</th>
-                <th class="col">Created by</th>
-                <th class="col">Build code</th>
-                <th class="col">Environment</th>
-                <th class="col">Started at</th>
-                <th class="col">Finished at</th>
-                <th class="col">Failed at</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="build: ${deployments.value}" th:class="${build.status} =='DEPLOYED' ? 'table-Success' : ''">
-                <td th:text="${build.code}">
-                <td th:text="${build.status}">
-                <td th:text="${build.createdBy}">
-                <td th:text="${build.buildCode}">
-                <td th:text="${build.environmentCode}">
-                <td th:text="${#temporals.format(build.scheduledTimestamp, 'dd-MM-yyyy HH:mm')}">
-                <td th:text="${#temporals.format(build.deployedTimestamp, 'dd-MM-yyyy HH:mm')}">
-                <td th:text="${#temporals.format(build.failedTimestamp, 'dd-MM-yyyy HH:mm')}">
-            </tr>
-            </tbody>
-        </table>
+      <div th:if="${deployments}">
+          <table class="table table-striped table-hover table-bordered">
+              <thead class="thead-dark">
+              <tr>
+                  <th class="col">Code</th>
+                  <th class="col">Status</th>
+                  <th class="col">Created by</th>
+                  <th class="col">Build code</th>
+                  <th class="col">Environment</th>
+                  <th class="col">Started at</th>
+                  <th class="col">Finished at</th>
+                  <th class="col">Failed at</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="build: ${deployments.value}" th:class="${build.status} =='DEPLOYED' ? 'table-Success' : ''">
+                  <td th:text="${build.code}">
+                  <td th:text="${build.status}">
+                  <td th:text="${build.createdBy}">
+                  <td th:text="${build.buildCode}">
+                  <td th:text="${build.environmentCode}">
+                  <td th:text="${#temporals.format(build.scheduledTimestamp, 'dd-MM-yyyy HH:mm')}">
+                  <td th:text="${#temporals.format(build.deployedTimestamp, 'dd-MM-yyyy HH:mm')}">
+                  <td th:text="${#temporals.format(build.failedTimestamp, 'dd-MM-yyyy HH:mm')}">
+              </tr>
+              </tbody>
+          </table>
+        </div>
     </div>
 
     <div id="builds" class="pageSection">
         <h1>Builds</h1>
-        <table class="table table-striped table-hover table-bordered">
-            <thead class="thead-dark">
-            <tr>
-                <th class="col">Code</th>
-                <th class="col">Name</th>
-                <th class="col">Branch</th>
-                <th class="col">Status</th>
-                <th class="col">Started at</th>
-                <th class="col">Finished at</th>
-                <th class="col">Created by</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="build: ${builds.value}" th:class="${build.status} =='FAIL' ? 'table-danger' : ''">
-                <td th:text="${build.code}">
-                <td th:text="${build.name}">
-                <td th:text="${build.branch}">
-                <td th:text="${build.status}">
-                <td th:text="${#temporals.format(build.buildStartTimestamp, 'dd-MM-yyyy HH:mm')}">
-                <td th:text="${#temporals.format(build.buildEndTimestamp, 'dd-MM-yyyy HH:mm')}">
-                <td th:text="${build.createdBy}">
-            </tr>
-            </tbody>
-        </table>
+
+        <div th:if="${builds}">
+            <table class="table table-striped table-hover table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th class="col">Code</th>
+                    <th class="col">Name</th>
+                    <th class="col">Branch</th>
+                    <th class="col">Status</th>
+                    <th class="col">Started at</th>
+                    <th class="col">Finished at</th>
+                    <th class="col">Created by</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="build: ${builds.value}" th:class="${build.status} =='FAIL' ? 'table-danger' : ''">
+                    <td th:text="${build.code}">
+                    <td th:text="${build.name}">
+                    <td th:text="${build.branch}">
+                    <td th:text="${build.status}">
+                    <td th:text="${#temporals.format(build.buildStartTimestamp, 'dd-MM-yyyy HH:mm')}">
+                    <td th:text="${#temporals.format(build.buildEndTimestamp, 'dd-MM-yyyy HH:mm')}">
+                    <td th:text="${build.createdBy}">
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
