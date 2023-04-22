@@ -60,7 +60,7 @@ public class RegularEventListener
 
         last10BuildsFuture.thenAccept(builds -> {
             for (var recentBuild : builds.getValue()) {
-                if (recentBuild.getStatus().equalsIgnoreCase("BUILDING")) {
+                if (recentBuild.getStatus().equalsIgnoreCase("BUILDING") || recentBuild.getStatus().equals("UNKNOWN")) {
                     new Thread(() ->
                     {
                         LOG.info("WILL MONITOR BUILD {}", recentBuild.getCode());
