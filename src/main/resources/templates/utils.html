@@ -7,8 +7,28 @@
 </head>
 <body>
 <div class="container">
-  <h1>Date expression utility</h1>
+  <h1>Lists</h1>
+  <p th:text="${list}"></p>
+  <p><b>List size: </b> <span th:text="${list.size}"></span></p>
 
+  List is not null:
+  <div th:if="${list} != null">
+    <p><b>List: </b> <span>List is not null!</span></p>
+  </div>
+
+  List is null
+  <div th:if="${list} == null">
+    <p><b>List: </b> <span>List is null!</span></p>
+  </div>
+
+  Non existing list
+  <div th:if="${listaaa} == null">
+    <p><b>List: </b> <span>Listaaa is null!</span></p>
+  </div>
+
+  aasdasda
+
+  <h1>Date expression utility</h1>
   <p><b>Iso format</b> <span th:text="${#dates.formatISO(date)}"></span></p>
   <p><b>Format with pattern</b> <span th:text="${#dates.format(date, 'dd-MM-yyyy HH:mm')}"></span></p>
   <p><b>Format with pattern (2):</b> <span th:text="${#dates.format(date, 'dd/MM/yyyy HH:mm')}"></span></p>
