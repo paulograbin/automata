@@ -5,10 +5,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 
 @Controller
 public class ExpressionUtilityObjectsController {
@@ -23,6 +25,10 @@ public class ExpressionUtilityObjectsController {
         model.addAttribute("nullString", null);
         model.addAttribute("array", new int[]{1, 3, 4, 5});
         model.addAttribute("set", new HashSet<Integer>(Arrays.asList(1, 3, 8)));
+
+        List<String> aaa = List.of("aaa", "bbbbb", "cccc", "d");
+        List<String> list = new ArrayList<>(aaa);
+        model.addAttribute("list", list);
 
         return "utils.html";
     }
