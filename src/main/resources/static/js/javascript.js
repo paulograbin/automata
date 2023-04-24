@@ -1,5 +1,52 @@
+async function registerForNotifications() {
+
+  Notification.requestPermission().then(function (permission) {
+    console.log(permission);
+
+    if(permission === "granted") {
+      showNotification();
+    } else if(permission === "default"){
+      requestAndShowPermission();
+    } else {
+      alert("Use normal alert");
+    }
+
+    var title = "JavaScript Jeep";
+    icon = 'https://homepages.cae.wisc.edu/~ece533/images/airplane.png';
+    var body = "It's Your boarding time";
+    var notification = new Notification(title, { body, icon });
+
+    console.log('document.visibilityState', document.visibilityState);
+
+    let showNotification = document.visibilityState !== "visible";
+    if(showNotification) {
+      // Notification code
+    }
+  });
+
+
+  // if ("serviceWorker" in navigator && "PushManager" in window) {
+  //   try {
+  //     const swReg = await navigator.serviceWorker.register("/js/sw.js");
+  //
+  //     const pushSubscription = await swReg.pushManager.subscribe({
+  //       userVisibleOnly: true
+  //     });
+  //
+  //     savePushSubscription(pushSubscription);
+  //   } catch (error) {
+  //     console.error("Error subscribing for push notifications", error);
+  //   }
+  // } else {
+  //   console.error('Push notifications are not supported by the browser');
+  // }
+}
+
 document.addEventListener("DOMContentLoaded", function (e) {
   console.log('Document ready!');
+  console.log(e);
+
+  registerForNotifications();
 
   let subscriptionCode = localStorage.getItem('subscriptionCode');
   let token = localStorage.getItem('token');
@@ -23,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 window.addEventListener('scroll', changeNavBarCSS, false);
 
 function changeNavBarCSS() {
-  console.log('changeNavBarCSS');
+  // console.log('changeNavBarCSS');
 
   const navBarElement = document.getElementById('NavBar');
   this.scrollY > 0 ? navBarElement.classList.add('fixed') : navBarElement.classList.remove('fixed');
