@@ -6,6 +6,8 @@ import com.paulograbin.cloudportal.ccv2.dto.CreateDeploymentResponseDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentProgressDTO;
+import com.paulograbin.cloudportal.model.AutomataDeploymentDetailDTO;
+import com.paulograbin.cloudportal.model.AutomataDeploymentDetailsDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
@@ -107,6 +109,41 @@ public class DeploymentService {
         }
 
         return CompletableFuture.completedFuture(deploymentDetails);
+    }
+
+    @Async
+    public CompletableFuture<AutomataDeploymentDetailsDTO> fetchPendingDeployments() {
+        LOG.info("Fetching current deployments...");
+
+        Map<String, String> params = new HashMap<>(3);
+        params.put("status", "DEPLOYING");
+        params.put("$top", "3");
+        params.put("$skip", "0");
+        params.put("orderby", "scheduledTimestamp desc");
+
+        DeploymentDetailsDTO deploymentDetails = cloudPortalOperations.getDeployments("deployments", params);
+
+        AutomataDeploymentDetailsDTO meu = new AutomataDeploymentDetailsDTO();
+
+        for (DeploymentDetailDTO deployment : deploymentDetails.getValue()) {
+            LOG.info("Deployment code {}, environment {}, status {}", deployment.getCode(), deployment.getEnvironmentCode(), deployment.getStatus());
+
+            DeploymentProgressDTO deploymentProgress = cloudPortalOperations.getDeploymentProgress(deployment.getCode());
+
+            AutomataDeploymentDetailDTO meuDetail = new AutomataDeploymentDetailDTO();
+            meuDetail.setPercentage(deploymentProgress.getPercentage());
+            meuDetail.code(deploymentProgress.getDeploymentCode());
+            meuDetail.status(deploymentProgress.getDeploymentStatus());
+            meuDetail.buildCode(deployment.getBuildCode());
+            meuDetail.createdBy(deployment.getCreatedBy());
+            meuDetail.environmentCode(deployment.getEnvironmentCode());
+            meuDetail.createdTimestamp(deployment.getScheduledTimestamp());
+
+
+            meu.addValueItem(meuDetail);
+        }
+
+        return CompletableFuture.completedFuture(meu);
     }
 
     public DeploymentDetailsDTO fetchDeploymentPerEnvironment(String environmentCode) {
