@@ -4,6 +4,16 @@
       layout:decorator="layout/layout"
       lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-title" content="Travel Website">
+    <meta name="application-name" content="Travel Website">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="../favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="manifest" href="../manifest.json">
     <script src="/js/javascript.js"></script>
     <title>Automata</title>
 </head>
@@ -70,7 +80,34 @@
     </div>
 
     <div id="deployments" class="pageSection">
-        <h1>Deployments</h1>
+      <h1>Deployments</h1>
+
+      <div th:if="${pendingDeployments}">
+          <table class="table table-striped table-hover table-bordered">
+              <thead class="thead-dark">
+              <tr>
+                  <th class="col">Code</th>
+                  <th class="col">Status</th>
+                  <th class="col">Created by</th>
+                  <th class="col">Build code</th>
+                  <th class="col">Environment</th>
+                  <th class="col">Started at</th>
+                  <th class="col">%</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="pendingDeployment: ${pendingDeployments.value}" th:class="${pendingDeployment.status} =='DEPLOYED' ? 'table-Success' : ''">
+                  <td th:text="${pendingDeployment.code}">
+                  <td th:text="${pendingDeployment.status}">
+                  <td th:text="${pendingDeployment.createdBy}">
+                  <td th:text="${pendingDeployment.buildCode}">
+                  <td th:text="${pendingDeployment.environmentCode}">
+                  <td th:text="${#temporals.format(pendingDeployment.scheduledTimestamp, 'dd-MM-yyyy HH:mm')}">
+                  <td th:text="${pendingDeployment.percentage}">
+              </tr>
+              </tbody>
+          </table>
+      </div>
 
       <div th:if="${deployments}">
           <table class="table table-striped table-hover table-bordered">
