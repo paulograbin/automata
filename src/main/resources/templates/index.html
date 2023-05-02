@@ -63,13 +63,18 @@
 
         <div class="row">
             <div class="col">
-                <button id="btnDevToStg" type="submit" class="btn btn-primary" onclick="makeBuild('develop', 's1')">
+                <button type="submit" class="btn btn-primary" onclick="makeBuild('develop', 's1')">
                     Deploy develop to S1
                 </button>
             </div>
             <div class="col">
-                <button id="btnGlobaleToDev" type="submit" class="btn btn-primary" onclick="makeBuild('globale_experiment', 'd1')">
+                <button type="submit" class="btn btn-primary" onclick="makeBuild('globale_experiment', 'd1')">
                     Deploy GlobalE to D1
+                </button>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary" onclick="makeBuild('globale_experiment', 's1')">
+                    Deploy GlobalE to S1
                 </button>
             </div>
         </div>
