@@ -36,7 +36,7 @@ public class DeploymentService {
     public CreateDeploymentResponseDTO makeDeployment(String buildCode, String environmentCode) {
         CreateDeploymentRequestDTO request = new CreateDeploymentRequestDTO();
         request.setBuildCode(buildCode);
-        request.setStrategy(CreateDeploymentRequestDTO.StrategyEnum.RECREATE);
+        request.setStrategy(CreateDeploymentRequestDTO.StrategyEnum.ROLLING_UPDATE);
         request.setDatabaseUpdateMode(CreateDeploymentRequestDTO.DatabaseUpdateModeEnum.NONE);
         request.setEnvironmentCode(environmentCode);
 
