@@ -202,7 +202,7 @@
 </html>
 <script th:inline="javascript">
 
-  async function makeBuild(branch, environment) {
+  const makeBuild = async (branch, environment) => {
     const newBuildRequest = {
       branchName: branch,
       environmentCode: environment
@@ -222,11 +222,11 @@
     console.log(result)
   }
 
-  async function handleSubmitButton() {
-    const environmentCode = document.getElementById("inputEnvironmentCode").value;
-    const branchName = document.getElementById("inputBranch").value;
+  const handleSubmitButton = async () => {
+      const environmentCode = document.getElementById("inputEnvironmentCode").value;
+      const branchName = document.getElementById("inputBranch").value;
 
-    await makeBuild(branchName, environmentCode);
+      await makeBuild(branchName, environmentCode);
   }
 
   let btnSubmit = document.getElementById('btnSubmitNewBuild');

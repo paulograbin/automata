@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 window.addEventListener('scroll', changeNavBarCSS, false);
 
-function changeNavBarCSS() {
+const changeNavBarCSS = () => {
   // console.log('changeNavBarCSS');
 
   const navBarElement = document.getElementById('NavBar');
