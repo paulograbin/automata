@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.util.StringUtils;
 
 
 @SpringBootApplication
@@ -19,17 +20,20 @@ public class App {
 
 
 	public static void main(String[] args) {
-		if (args.length > 0) {
-			LOG.warn("Starting app in commandline mode");
+		if (args[0].equalsIgnoreCase("web")) {
+			LOG.warn("Starting web mode");
 
 			new SpringApplicationBuilder(App.class)
-					.web(WebApplicationType.NONE)
-					.profiles("commandline")
-					.headless(true)
+					.profiles("web")
 					.run(args);
-		} else {
-			LOG.info("Starting app normally...");
-			SpringApplication.run(App.class, args);
 		}
-	}
+
+        LOG.warn("Starting app in commandline mode");
+
+        new SpringApplicationBuilder(App.class)
+                .web(WebApplicationType.NONE)
+                .profiles("commandline")
+                .headless(true)
+                .run(args);
+    }
 }
