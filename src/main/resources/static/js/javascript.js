@@ -44,7 +44,6 @@ async function registerForNotifications() {
 
 document.addEventListener("DOMContentLoaded", function (e) {
   console.log('Document ready!');
-  console.log(e);
 
   registerForNotifications();
 
@@ -76,5 +75,5 @@ const changeNavBarCSS = () => {
   this.scrollY > 0 ? navBarElement.classList.add('fixed') : navBarElement.classList.remove('fixed');
 }
 
-console.log(Intl.DateTimeFormat().resolvedOptions().timeZone);
-console.log(userLang = navigator.language || navigator.userLanguage);
+console.log('timezone', Intl.DateTimeFormat().resolvedOptions().timeZone);
+console.log('navigator language', userLang = navigator.language || navigator.userLanguage);
