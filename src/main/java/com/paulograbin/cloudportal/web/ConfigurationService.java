@@ -30,8 +30,7 @@ public class ConfigurationService {
 
         AutomataConfiguration automataConfiguration = new AutomataConfiguration();
 
-        try
-        {
+        try {
             if (Files.exists(path)) {
                 LOG.info("Config file exist!");
             } else {
@@ -61,8 +60,7 @@ public class ConfigurationService {
         return automataConfiguration;
     }
 
-    private void validateConfiguration(AutomataConfiguration automataConfiguration)
-    {
+    private void validateConfiguration(AutomataConfiguration automataConfiguration) {
         if (StringUtils.isBlank(automataConfiguration.getSubscriptionCode()) || StringUtils.isBlank(automataConfiguration.getAuthenticationToken())) {
             throw new RuntimeException("Empty configuration file");
         }

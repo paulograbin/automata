@@ -21,22 +21,17 @@ import java.util.concurrent.CompletableFuture;
 
 @Profile({"development", "production"})
 @Component
-public class RegularEventListener
-{
-	private static final Logger LOG = LoggerFactory.getLogger(RegularEventListener.class);
+public class RegularEventListener {
+    private static final Logger LOG = LoggerFactory.getLogger(RegularEventListener.class);
 
-	private final BuildService buildService;
-	private final DeploymentService deploymentService;
-	private final EnvironmentService environmentService;
+    private final BuildService buildService;
+    private final DeploymentService deploymentService;
+    private final EnvironmentService environmentService;
     private final MiscService miscService;
     private final AsyncSampleService asyncSampleService;
 
 
-    public RegularEventListener(BuildService buildService,
-                                DeploymentService deploymentService,
-                                EnvironmentService environmentService,
-                                MiscService miscService,
-                                AsyncSampleService asyncSampleService) {
+    public RegularEventListener(BuildService buildService, DeploymentService deploymentService, EnvironmentService environmentService, MiscService miscService, AsyncSampleService asyncSampleService) {
         this.buildService = buildService;
         this.deploymentService = deploymentService;
         this.environmentService = environmentService;
@@ -54,8 +49,7 @@ public class RegularEventListener
         last10BuildsFuture.thenAccept(builds -> {
             for (var recentBuild : builds.getValue()) {
                 if (recentBuild.getStatus().equalsIgnoreCase("BUILDING") || recentBuild.getStatus().equals("UNKNOWN")) {
-                    new Thread(() ->
-                    {
+                    new Thread(() -> {
                         LOG.info("WILL MONITOR BUILD {}", recentBuild.getCode());
                         buildService.monitorBuild(recentBuild.getCode());
                     }).start();
@@ -67,8 +61,7 @@ public class RegularEventListener
         deploymentDetailsFuture.thenAccept(deploys -> {
             for (var deployment : deploys.getValue()) {
                 if (deployment.getStatus().equalsIgnoreCase("DEPLOYING")) {
-                    new Thread(() ->
-                    {
+                    new Thread(() -> {
                         LOG.info("WILL MONITOR DEPLOYMENT {}", deployment.getCode());
                         deploymentService.monitorDeployment(deployment.getCode());
                     }).start();
@@ -91,11 +84,11 @@ public class RegularEventListener
             }
         });
 
-		LOG.info(" ******************* ");
-		LOG.info(" APP READY ");
-		LOG.info(" APP READY ");
-		LOG.info(" APP READY ");
-		LOG.info(" APP READY ");
-		LOG.info(" ******************* ");
-	}
+        LOG.info(" ******************* ");
+        LOG.info(" APP READY ");
+        LOG.info(" APP READY ");
+        LOG.info(" APP READY ");
+        LOG.info(" APP READY ");
+        LOG.info(" ******************* ");
+    }
 }
