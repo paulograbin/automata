@@ -3,9 +3,9 @@ package com.paulograbin.cloudportal.ccv2;
 import com.google.gson.Gson;
 import com.paulograbin.cloudportal.ccv2.v1dto.CustomersDTO;
 import com.paulograbin.cloudportal.ccv2.v1dto.PermissionDTO;
+import com.paulograbin.cloudportal.web.ConfigurationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -28,10 +28,13 @@ public class OlderAPIService {
     private final String BASE_API_URL = "https://portalapi.commerce.ondemand.com/v1/subscriptions/%%SUBSCRIPTION_CODE_PLACEHODER%%/";
     private final String BASE_API_URL_ANOTHER = "https://portalapi.commerce.ondemand.com/v1/";
 
+    private final ConfigurationService configurationService;
 
-    public OlderAPIService(@Value("${ccv2.subscriptionCode}") String subscriptionCode, @Value("${ccv2.api.token}") String apiToken) {
-        this.apiToken = apiToken;
-        this.subscriptionCode = subscriptionCode;
+
+    public OlderAPIService(ConfigurationService configurationService) {
+        this.configurationService = configurationService;
+        this.apiToken = this.configurationService.loadConfiguration().getAuthenticationToken();
+        this.subscriptionCode = this.configurationService.loadConfiguration().getSubscriptionCode();
 
         final var replacedTokenString = makeToken();
 

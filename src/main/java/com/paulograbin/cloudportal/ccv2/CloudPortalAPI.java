@@ -22,9 +22,9 @@ import com.paulograbin.cloudportal.ccv2.dto.DeploymentModeDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentProgressDTO;
 import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentDTO;
 import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentsDTO;
+import com.paulograbin.cloudportal.web.ConfigurationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
@@ -49,10 +49,18 @@ public class CloudPortalAPI {
     public String subscriptionCode;
     public String apiToken;
 
+    private final ConfigurationService configurationService;
 
-    public CloudPortalAPI(@Value("${ccv2.subscriptionCode}") String subscriptionCode, @Value("${ccv2.api.token}") String apiToken) {
-        this.apiToken = apiToken;
-        this.subscriptionCode = subscriptionCode;
+
+    public CloudPortalAPI(ConfigurationService configurationService) {
+        this.configurationService = configurationService;
+
+        this.apiToken = this.configurationService.loadConfiguration().getAuthenticationToken();
+        this.subscriptionCode = this.configurationService.loadConfiguration().getSubscriptionCode();
+
+        LOG.info("Creating API...");
+        LOG.info("Subs {}", subscriptionCode);
+        LOG.info("Token {}", apiToken);
 
         final var replacedTokenString = makeToken();
 

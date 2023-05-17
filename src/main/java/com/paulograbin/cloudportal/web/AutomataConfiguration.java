@@ -1,5 +1,6 @@
 package com.paulograbin.cloudportal.web;
 
+
 public class AutomataConfiguration {
 
     private String authenticationToken = "";
