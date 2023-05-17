@@ -48,14 +48,7 @@ public class RegularEventListener
     public void run() throws Exception {
         LOG.info("Running commandline runner...");
 
-//        miscService.teste();
-//        externo.makeSomeAsyncCalls(buildService);
-
         CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
-//
-//        while (!last10BuildsFuture.isDone()) {
-//        }
-//        LOG.info("Done waiting...");
 
 
         last10BuildsFuture.thenAccept(builds -> {
