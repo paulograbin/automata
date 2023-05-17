@@ -2,10 +2,9 @@ package com.paulograbin.cloudportal.event;
 
 import com.paulograbin.cloudportal.BuildService;
 import com.paulograbin.cloudportal.DeploymentService;
+import com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.dto.CreateBuildResponseDTO;
 import com.paulograbin.cloudportal.ccv2.dto.CreateDeploymentResponseDTO;
-import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailDTO;
-import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailsDTO;
 import com.paulograbin.cloudportal.model.AutomataDeploymentDetailDTO;
 import com.paulograbin.cloudportal.model.AutomataDeploymentDetailsDTO;
 import com.paulograbin.cloudportal.web.ConfigurationService;
@@ -15,10 +14,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-import java.nio.file.Path;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+
+import static org.springframework.util.CollectionUtils.isEmpty;
 
 
 @Profile("commandline")
@@ -66,18 +66,36 @@ public class CommandLineEventListener implements CommandLineRunner {
 
     private void monitorCurrentBuildsAndDeployments() throws ExecutionException, InterruptedException {
         CompletableFuture<AutomataDeploymentDetailsDTO> deploymentDetailsDTOCompletableFuture = deploymentService.fetchPendingDeployments();
+        CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
 
-        AutomataDeploymentDetailsDTO deploymentDetailsDTO = deploymentDetailsDTOCompletableFuture.get();
+        last10BuildsFuture.thenAccept(builds -> {
+            for (var recentBuild : builds.getValue()) {
+                if (recentBuild.getStatus().equalsIgnoreCase("BUILDING") || recentBuild.getStatus().equals("UNKNOWN")) {
+                    new Thread(() ->
+                    {
+                        LOG.info("WILL MONITOR BUILD {}", recentBuild.getCode());
+                        buildService.monitorBuild(recentBuild.getCode());
+                    }).start();
+                }
+            }
+        });
 
-        List<AutomataDeploymentDetailDTO> value = deploymentDetailsDTO.getValue();
+        AutomataDeploymentDetailsDTO pendingDeploymentsMessage = deploymentDetailsDTOCompletableFuture.get();
 
-        for (AutomataDeploymentDetailDTO deployment : value) {
-            LOG.info("Will monitor deployment {}", deployment.getCode());
+        if (!isEmpty(pendingDeploymentsMessage.getValue())) {
+            List<AutomataDeploymentDetailDTO> value = pendingDeploymentsMessage.getValue();
 
-            new Thread(() -> {
-                deploymentService.monitorDeployment(deployment.getCode());
+            for (AutomataDeploymentDetailDTO deployment : value) {
+                LOG.info("Will monitor deployment {}", deployment.getCode());
 
-            }).start();
+                new Thread(() -> {
+                    deploymentService.monitorDeployment(deployment.getCode());
+
+                }).start();
+            }
+        } else {
+            System.out.println("Found 0 pending deployments.");
+            System.exit(0);
         }
     }
 }
