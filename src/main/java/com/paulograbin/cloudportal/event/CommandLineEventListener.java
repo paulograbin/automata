@@ -51,14 +51,14 @@ public class CommandLineEventListener implements CommandLineRunner {
             LOG.info("Branch name {}", branchName);
             LOG.info("Environment code {}", environmentCode);
 
-//		CreateBuildResponseDTO createBuildResponse = buildService.createBuild(branchName);
-//		buildService.monitorBuild(createBuildResponse.getCode());
-//
-//		LOG.info("Send deployment request");
-//		CreateDeploymentResponseDTO createDeploymentResponseDTO = deploymentService.makeDeployment(createBuildResponse.getCode(), environmentCode);
-//
-//		LOG.info("Will start monitoring the deployment");
-//		deploymentService.monitorDeployment(createDeploymentResponseDTO.getCode());
+            CreateBuildResponseDTO createBuildResponse = buildService.createBuild(branchName);
+            buildService.monitorBuild(createBuildResponse.getCode());
+
+            LOG.info("Send deployment request");
+            CreateDeploymentResponseDTO createDeploymentResponseDTO = deploymentService.makeDeployment(createBuildResponse.getCode(), environmentCode);
+
+            LOG.info("Will start monitoring the deployment");
+            deploymentService.monitorDeployment(createDeploymentResponseDTO.getCode());
 
             System.exit(0);
         }
