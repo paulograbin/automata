@@ -41,10 +41,6 @@ public class CommandLineEventListener implements CommandLineRunner {
         if (args[0].equalsIgnoreCase("monitor")) {
             monitorCurrentBuildsAndDeployments();
         } else {
-
-            Path configurationPath = configurationService.getConfigurationPath();
-            LOG.info("Configuration path {}", configurationPath);
-
             String branchName = args[0];
             String environmentCode = args[1];
 
