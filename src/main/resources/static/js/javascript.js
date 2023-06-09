@@ -66,14 +66,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
   // }, 5000);
 });
 
-window.addEventListener('scroll', changeNavBarCSS, false);
-
 const changeNavBarCSS = () => {
   // console.log('changeNavBarCSS');
 
   const navBarElement = document.getElementById('NavBar');
   this.scrollY > 0 ? navBarElement.classList.add('fixed') : navBarElement.classList.remove('fixed');
 }
+
+window.addEventListener('scroll', changeNavBarCSS, false);
 
 console.log('timezone', Intl.DateTimeFormat().resolvedOptions().timeZone);
 console.log('navigator language', userLang = navigator.language || navigator.userLanguage);
