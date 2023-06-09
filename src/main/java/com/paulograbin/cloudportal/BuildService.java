@@ -97,7 +97,7 @@ public class BuildService {
     public void createBuildAndAlertWhenDone(String branch) throws InterruptedException {
         String formattedDate = new SimpleDateFormat("dd-MM-yy HH-mm").format(new Date());
 
-        String buildName = branch + " " + formattedDate;
+        String buildName = makeBuildName(branch, formattedDate);
         LOG.info("Build will have name {}", buildName);
 
         CreateBuildRequestDTO request = new CreateBuildRequestDTO()
@@ -155,7 +155,7 @@ public class BuildService {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yy HH-mm");
         String formattedDate = dateFormat.format(new Date());
 
-        String buildName = branch + " " + formattedDate;
+        String buildName = makeBuildName(branch, formattedDate);
         LOG.info("Build will have name {}", buildName);
 
         CreateBuildRequestDTO request = new CreateBuildRequestDTO()
@@ -167,5 +167,13 @@ public class BuildService {
         LOG.info("Build to be created {}", response.getCode());
 
         return response;
+    }
+
+    private static String makeBuildName(String branch, String formattedDate) {
+        String buildName = branch + " " + formattedDate;
+
+        buildName = buildName.replace("/", "-");
+
+        return buildName;
     }
 }
