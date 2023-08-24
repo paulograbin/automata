@@ -149,7 +149,7 @@ public class DeploymentService {
     public DeploymentDetailsDTO fetchDeploymentPerEnvironment(String environmentCode) {
         LOG.info("Fetching deployment for environment {}", environmentCode);
 
-        Map<String, String> params = new HashMap<>(3);
+        Map<String, String> params = new HashMap<>(4);
         params.put("environmentCode", environmentCode);
         params.put("$top", "1");
         params.put("$skip", "0");
