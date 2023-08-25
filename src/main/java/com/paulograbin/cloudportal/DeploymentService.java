@@ -146,7 +146,7 @@ public class DeploymentService {
         return CompletableFuture.completedFuture(meu);
     }
 
-    public DeploymentDetailsDTO fetchDeploymentPerEnvironment(String environmentCode) {
+    public DeploymentDetailsDTO fetchLastDeploymentPerEnvironment(String environmentCode) {
         LOG.info("Fetching deployment for environment {}", environmentCode);
 
         Map<String, String> params = new HashMap<>(4);

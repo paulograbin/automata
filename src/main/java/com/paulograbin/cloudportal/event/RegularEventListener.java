@@ -5,6 +5,7 @@ import com.paulograbin.cloudportal.DeploymentService;
 import com.paulograbin.cloudportal.EnvironmentService;
 import com.paulograbin.cloudportal.ccv2.MiscService;
 import com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO;
+import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentDTO;
 import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentsDTO;
@@ -43,6 +44,14 @@ public class RegularEventListener {
     public void run() throws Exception {
         LOG.info("Running commandline runner...");
 
+        DeploymentDetailsDTO deploymentDetailsDTO = deploymentService.fetchLastDeploymentPerEnvironment("P1");
+        List<DeploymentDetailDTO> list = deploymentDetailsDTO.getValue();
+
+        for (DeploymentDetailDTO deploymentDetailDTO : list) {
+            LOG.info("{}", deploymentDetailDTO);
+        }
+
+
         CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
 
 
@@ -72,7 +81,7 @@ public class RegularEventListener {
         CompletableFuture<EnvironmentsDTO> environmentsFuture = environmentService.fetchAllEnvironments();
         environmentsFuture.thenAccept(environments -> {
             for (EnvironmentDTO environment : environments.getValue()) {
-                com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailsDTO deployed = deploymentService.fetchDeploymentPerEnvironment(environment.getCode());
+                com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailsDTO deployed = deploymentService.fetchLastDeploymentPerEnvironment(environment.getCode());
 
                 List<com.paulograbin.cloudportal.ccv2.dto.DeploymentDetailDTO> deployedDetails = deployed.getValue();
 
