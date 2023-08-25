@@ -5,7 +5,7 @@ Automate the hell out of SAP CCv2 in your terminal or maybe in your browser
 Automata can operate in two modes:  
 1- Command line mode, where you just specific a branch to build and an environment to deploy to   
 ``` java -jar target/automata-0.0.1-SNAPSHOT.jar globale_experiment d1   
-``` mvn spring-boot:run -Dspring-boot.run.arguments="ccv2.subscriptionCode=8081 ccv2.api.token=bar globale_experiment d1"
+``` mvn spring-boot:run -Dspring-boot.run.arguments="globale_experiment d1"
 
 2- Web mode, where every its potential is fully unleashed
 
