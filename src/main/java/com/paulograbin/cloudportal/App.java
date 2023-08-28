@@ -42,7 +42,7 @@ public class App {
                     .web(WebApplicationType.NONE)
                     .profiles("commandline")
                     .headless(true)
-                    .build();
+                    .run(args);
         }
     }
 
