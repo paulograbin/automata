@@ -14,9 +14,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.springframework.util.CollectionUtils.isEmpty;
 
@@ -39,8 +38,11 @@ public class CommandLineEventListener implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         if (args[0].equalsIgnoreCase("monitor")) {
+            LOG.info("Will monitor current builds and deployments...");
             monitorCurrentBuildsAndDeployments();
         } else {
+            LOG.info("Will start new build/deployment...");
+
             String branchName = args[0];
             String environmentCode = args[1];
 
@@ -64,37 +66,48 @@ public class CommandLineEventListener implements CommandLineRunner {
         }
     }
 
-    private void monitorCurrentBuildsAndDeployments() throws ExecutionException, InterruptedException {
+    private void monitorCurrentBuildsAndDeployments() {
         CompletableFuture<AutomataDeploymentDetailsDTO> deploymentDetailsDTOCompletableFuture = deploymentService.fetchPendingDeployments();
         CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
+
+        AtomicBoolean waitingForBuildToComplete = new AtomicBoolean(false);
+        AtomicBoolean waitingForDeploymentToComplete = new AtomicBoolean(false);
 
         last10BuildsFuture.thenAccept(builds -> {
             for (var recentBuild : builds.getValue()) {
                 if (recentBuild.getStatus().equalsIgnoreCase("BUILDING") || recentBuild.getStatus().equals("UNKNOWN")) {
                     new Thread(() -> {
                         LOG.info("WILL MONITOR BUILD {}", recentBuild.getCode());
+                        waitingForBuildToComplete.set(true);
                         buildService.monitorBuild(recentBuild.getCode());
+                        waitingForBuildToComplete.set(false);
                     }).start();
                 }
             }
         });
 
-        AutomataDeploymentDetailsDTO pendingDeploymentsMessage = deploymentDetailsDTOCompletableFuture.get();
-
-        if (!isEmpty(pendingDeploymentsMessage.getValue())) {
-            List<AutomataDeploymentDetailDTO> value = pendingDeploymentsMessage.getValue();
-
-            for (AutomataDeploymentDetailDTO deployment : value) {
-                LOG.info("Will monitor deployment {}", deployment.getCode());
-
+        deploymentDetailsDTOCompletableFuture.thenAccept(deployments -> {
+            for (AutomataDeploymentDetailDTO deploy : deployments.getValue()) {
                 new Thread(() -> {
-                    deploymentService.monitorDeployment(deployment.getCode());
-
+                    LOG.info("Will monitor deployment {}", deploy.getCode());
+                    waitingForDeploymentToComplete.set(true);
+                    deploymentService.monitorDeployment(deploy.getCode());
+                    waitingForDeploymentToComplete.set(false);
                 }).start();
             }
-        } else {
-            System.out.println("Found 0 pending deployments.");
-            System.exit(0);
+        });
+
+        CompletableFuture.allOf(deploymentDetailsDTOCompletableFuture, last10BuildsFuture).join();
+
+        while (waitingForBuildToComplete.get() || waitingForDeploymentToComplete.get()) {
+            try {
+                LOG.info("Check sleep");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
+
+//        System.exit(0);
     }
 }
