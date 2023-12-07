@@ -51,9 +51,7 @@ public class RegularEventListener {
             LOG.info("{}", deploymentDetailDTO);
         }
 
-
         CompletableFuture<BuildDetailsDTO> last10BuildsFuture = buildService.getLast10Builds();
-
 
         last10BuildsFuture.thenAccept(builds -> {
             for (var recentBuild : builds.getValue()) {
@@ -62,6 +60,8 @@ public class RegularEventListener {
                         LOG.info("WILL MONITOR BUILD {}", recentBuild.getCode());
                         buildService.monitorBuild(recentBuild.getCode());
                     }).start();
+                } else {
+                    LOG.info("Found build in invalid state: {} - {}", recentBuild.getCode(), recentBuild.getStatus());
                 }
             }
         });
