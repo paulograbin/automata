@@ -1,13 +1,19 @@
 # automata
-Automate the hell out of SAP CCv2 in your terminal or maybe in your browser
+Automate the hell out of SAP CCv2 in your terminal or maybe in your browser.
+
+Automata uses SAP Cloud Portal APIs so that it helps you make builds and deployments without having to be 
+
 
 ## Running
-Automata can operate in two modes:  
-1- Command line mode, where you just specific a branch to build and an environment to deploy to   
+Automata can operate in three modes:    
+1- Monitor mode: Automata will monitor current deployment and builds and notify you about their progress  
+2- Command line mode, where you just specific a branch to build and an environment to deploy to, kick back and relax  
 ``` java -jar target/automata-0.0.1-SNAPSHOT.jar globale_experiment d1   
-``` mvn spring-boot:run -Dspring-boot.run.arguments="globale_experiment d1"
-
-2- Web mode, where every its potential is fully unleashed
+ mvn spring-boot:run -Dspring-boot.run.arguments="globale_experiment d1"   
+```
+ 
+ 
+3- Web mode, where its potential is fully unleashed and you have all kinds of dashboards about your environment
 
 
 
