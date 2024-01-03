@@ -101,7 +101,6 @@ public class CommandLineEventListener implements CommandLineRunner {
 
         while (waitingForBuildToComplete.get() || waitingForDeploymentToComplete.get()) {
             try {
-                LOG.info("Check sleep");
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
