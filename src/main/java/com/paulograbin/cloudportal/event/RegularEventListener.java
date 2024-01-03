@@ -29,15 +29,13 @@ public class RegularEventListener {
     private final DeploymentService deploymentService;
     private final EnvironmentService environmentService;
     private final MiscService miscService;
-    private final AsyncSampleService asyncSampleService;
 
 
-    public RegularEventListener(BuildService buildService, DeploymentService deploymentService, EnvironmentService environmentService, MiscService miscService, AsyncSampleService asyncSampleService) {
+    public RegularEventListener(BuildService buildService, DeploymentService deploymentService, EnvironmentService environmentService, MiscService miscService) {
         this.buildService = buildService;
         this.deploymentService = deploymentService;
         this.environmentService = environmentService;
         this.miscService = miscService;
-        this.asyncSampleService = asyncSampleService;
     }
 
     @EventListener(ApplicationReadyEvent.class)
