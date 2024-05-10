@@ -1,5 +1,6 @@
 package com.paulograbin.cloudportal;
 
+import com.paulograbin.cloudportal.build.BuildNameCreator;
 import com.paulograbin.cloudportal.ccv2.CloudPortalAPI;
 import com.paulograbin.cloudportal.ccv2.dto.BuildDetailDTO;
 import com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO;
@@ -27,9 +28,13 @@ public class BuildService {
     private final CloudPortalAPI cloudPortalAPI;
     private final AlertService alertService;
 
+    private final BuildNameCreator buildNameCreator;
+
     public BuildService(CloudPortalAPI cloudPortalAPI, AlertService alertService) {
         this.cloudPortalAPI = cloudPortalAPI;
         this.alertService = alertService;
+
+        this.buildNameCreator = new BuildNameCreator();
     }
 
     @Async
@@ -97,7 +102,7 @@ public class BuildService {
     public void createBuildAndAlertWhenDone(String branch) throws InterruptedException {
         String formattedDate = new SimpleDateFormat("dd-MM-yy HH-mm").format(new Date());
 
-        String buildName = makeBuildName(branch, formattedDate);
+        String buildName = buildNameCreator.makeBuildNameFromBranch(branch);
         LOG.info("Build will have name {}", buildName);
 
         CreateBuildRequestDTO request = new CreateBuildRequestDTO()
@@ -152,10 +157,7 @@ public class BuildService {
     }
 
     public CreateBuildResponseDTO createBuild(String branch) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yy HH-mm");
-        String formattedDate = dateFormat.format(new Date());
-
-        String buildName = makeBuildName(branch, formattedDate);
+        String buildName = buildNameCreator.makeBuildNameFromBranch(branch);
         LOG.info("Build will have name {}", buildName);
 
         CreateBuildRequestDTO request = new CreateBuildRequestDTO()
@@ -167,13 +169,5 @@ public class BuildService {
         LOG.info("Build to be created {}", response.getCode());
 
         return response;
-    }
-
-    private static String makeBuildName(String branch, String formattedDate) {
-        String buildName = branch + " " + formattedDate;
-
-        buildName = buildName.replace("/", "-");
-
-        return buildName;
     }
 }
