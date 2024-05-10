@@ -130,6 +130,18 @@
             <artifactId>digma-spring-boot-micrometer-tracing-autoconf</artifactId>
             <version>0.7.4</version>
         </dependency>
+
+        <dependency>
+            <groupId>nl.martijndwars</groupId>
+            <artifactId>web-push</artifactId>
+            <version>5.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.69</version>
+        </dependency>
     </dependencies>
 
     <build>
