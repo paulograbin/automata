@@ -1,32 +1,63 @@
 package com.paulograbin.cloudportal.ccv2.v1dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class CustomersDTO {
 
+    @SerializedName("code")
+    @Expose
     private String code;
+    @SerializedName("name")
+    @Expose
     private String name;
-    private String customerID;
+    @SerializedName("customerId")
+    @Expose
+    private String customerId;
+    @SerializedName("cloudPortalDeepLink")
+    @Expose
     private String cloudPortalDeepLink;
 
-    @JsonProperty("code")
-    public String getCode() { return code; }
-    @JsonProperty("code")
-    public void setCode(String value) { this.code = value; }
+    public String getCode() {
+        return code;
+    }
 
-    @JsonProperty("name")
-    public String getName() { return name; }
-    @JsonProperty("name")
-    public void setName(String value) { this.name = value; }
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-    @JsonProperty("customerId")
-    public String getCustomerID() { return customerID; }
-    @JsonProperty("customerId")
-    public void setCustomerID(String value) { this.customerID = value; }
+    public String getName() {
+        return name;
+    }
 
-    @JsonProperty("cloudPortalDeepLink")
-    public String getCloudPortalDeepLink() { return cloudPortalDeepLink; }
-    @JsonProperty("cloudPortalDeepLink")
-    public void setCloudPortalDeepLink(String value) { this.cloudPortalDeepLink = value; }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getCloudPortalDeepLink() {
+        return cloudPortalDeepLink;
+    }
+
+    public void setCloudPortalDeepLink(String cloudPortalDeepLink) {
+        this.cloudPortalDeepLink = cloudPortalDeepLink;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomersDTO{" +
+                "cloudPortalDeepLink='" + cloudPortalDeepLink + '\'' +
+                ", code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", customerId='" + customerId + '\'' +
+                '}';
+    }
 }
 

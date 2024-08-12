@@ -4,28 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CurrentUserDTO {
 
-    private Value value;
-
-    @JsonProperty("value")
-    public Value getValue() {
-        return value;
-    }
-
-    @JsonProperty("value")
-    public void setValue(Value value) {
-        this.value = value;
-    }
-
-    @Override
-    public String toString() {
-        return "CurrentUserDTO{" +
-                "value=" + value +
-                '}';
-    }
-}
-
-class Value {
-
     private String firstName;
     private String surname;
     private String username;
@@ -73,11 +51,6 @@ class Value {
 
     @Override
     public String toString() {
-        return "Value{" +
-                "firstName='" + firstName + '\'' +
-                ", surname='" + surname + '\'' +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Value{" + "firstName='" + firstName + '\'' + ", surname='" + surname + '\'' + ", username='" + username + '\'' + ", email='" + email + '\'' + '}';
     }
 }

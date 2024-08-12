@@ -1,26 +1,33 @@
 package com.paulograbin.cloudportal.ccv2.v1dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.util.List;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({"username", "permissionDTOS"})
 public class PermissionDTO {
-    private String scopeName;
-    private List<String> permissions;
-    private List<String> environments;
 
-    @JsonProperty("scopeName")
-    public String getScopeName() { return scopeName; }
-    @JsonProperty("scopeName")
-    public void setScopeName(String value) { this.scopeName = value; }
+    @JsonProperty("username")
+    private String username;
 
-    @JsonProperty("permissions")
-    public List<String> getPermissions() { return permissions; }
-    @JsonProperty("permissions")
-    public void setPermissions(List<String> value) { this.permissions = value; }
+    @JsonProperty("username")
+    public String getUsername() {
+        return username;
+    }
 
-    @JsonProperty("environments")
-    public List<String> getEnvironments() { return environments; }
-    @JsonProperty("environments")
-    public void setEnvironments(List<String> value) { this.environments = value; }
+    @JsonProperty("username")
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+
+    @Override
+    public String toString() {
+        return "PermissionDTO{" +
+                ", username='" + username + '\'' +
+                '}';
+    }
 }
