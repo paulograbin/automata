@@ -128,7 +128,6 @@ public class CloudPortalAPI {
         StringBuilder queryBuilder = new StringBuilder();
 
         params.forEach((name, values) -> {
-
             if (queryBuilder.isEmpty()) {
                 queryBuilder.append("?");
                 queryBuilder.append(name);
