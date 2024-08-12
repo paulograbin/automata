@@ -40,7 +40,7 @@ public class RegularEventListener {
 
     @EventListener(ApplicationReadyEvent.class)
     public void run() throws Exception {
-        LOG.info("Running commandline runner...");
+        LOG.info("Running regular runner...");
 
         DeploymentDetailsDTO deploymentDetailsDTO = deploymentService.fetchLastDeploymentPerEnvironment("P1");
         List<DeploymentDetailDTO> list = deploymentDetailsDTO.getValue();

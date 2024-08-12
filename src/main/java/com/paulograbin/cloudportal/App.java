@@ -27,7 +27,7 @@ public class App {
 
     public static void main(String[] args) {
         if (args[0].equalsIgnoreCase("web")) {
-            LOG.warn("Starting web mode");
+            LOG.info("Starting web mode");
 
             SpringApplication app = new SpringApplicationBuilder(App.class)
                     .profiles("web")

@@ -37,6 +37,8 @@ public class CommandLineEventListener implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        LOG.info("Running in command line mode");
+
         if (args[0].equalsIgnoreCase("monitor")) {
             LOG.info("Will monitor current builds and deployments...");
             monitorCurrentBuildsAndDeployments();
