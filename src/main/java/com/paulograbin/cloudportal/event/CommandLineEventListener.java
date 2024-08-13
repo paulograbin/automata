@@ -2,6 +2,7 @@ package com.paulograbin.cloudportal.event;
 
 import com.paulograbin.cloudportal.BuildService;
 import com.paulograbin.cloudportal.DeploymentService;
+import com.paulograbin.cloudportal.ccv2.MiscService;
 import com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.dto.CreateBuildResponseDTO;
 import com.paulograbin.cloudportal.ccv2.dto.CreateDeploymentResponseDTO;
@@ -27,11 +28,13 @@ public class CommandLineEventListener implements CommandLineRunner {
 
     private final BuildService buildService;
     private final DeploymentService deploymentService;
+    private final MiscService miscService;
     private final ConfigurationService configurationService;
 
-    public CommandLineEventListener(BuildService buildService, DeploymentService deploymentService, ConfigurationService configurationService) {
+    public CommandLineEventListener(BuildService buildService, DeploymentService deploymentService, MiscService miscService, ConfigurationService configurationService) {
         this.buildService = buildService;
         this.deploymentService = deploymentService;
+        this.miscService = miscService;
         this.configurationService = configurationService;
     }
 
@@ -41,7 +44,10 @@ public class CommandLineEventListener implements CommandLineRunner {
 
         if (args[0].equalsIgnoreCase("monitor")) {
             LOG.info("Will monitor current builds and deployments...");
-            monitorCurrentBuildsAndDeployments();
+//            monitorCurrentBuildsAndDeployments();
+
+            tryOldApiCalls();
+
         } else {
             LOG.info("Will start new build/deployment...");
 
@@ -66,6 +72,10 @@ public class CommandLineEventListener implements CommandLineRunner {
 
             System.exit(0);
         }
+    }
+
+    private void tryOldApiCalls() {
+        miscService.teste();
     }
 
     private void monitorCurrentBuildsAndDeployments() {
