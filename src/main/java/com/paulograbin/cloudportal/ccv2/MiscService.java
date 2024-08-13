@@ -17,15 +17,15 @@ public class MiscService {
         this.cloudPortalOperations = cloudPortalOperations;
     }
 
+
     @Async
     public void teste() {
-        LOG.info("Foi 11111......");
-        cloudPortalOperations.getPermissions();
-        LOG.info("Foi 22222......");
-        cloudPortalOperations.getCurrentUser();
-        LOG.info("Foi 33333......");
-        cloudPortalOperations.getCustomers();
+//        cloudPortalOperations.getPermissions();
+//        cloudPortalOperations.getCurrentUser();
+//        cloudPortalOperations.getCustomers();
 
-        LOG.info("Terminou...");
+        cloudPortalOperations.applyConfigurationsToEnvironment("d1");
+
+        LOG.info("Misc ended...");
     }
 }
