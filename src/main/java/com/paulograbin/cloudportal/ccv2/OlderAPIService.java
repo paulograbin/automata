@@ -73,7 +73,8 @@ public class OlderAPIService {
         HttpEntity<String> entity = new HttpEntity<>("{}", headers);
         Instant start = Instant.now();
 
-        String url = makeBaseUrl("https://portal.commerce.ondemand.com/v1/subscriptions/%%SUBSCRIPTION_CODE_PLACEHODER%%/environments/d1/applyconfiguration");
+        String url = makeBaseUrl("https://portal.commerce.ondemand.com/v1/subscriptions/%%SUBSCRIPTION_CODE_PLACEHODER%%/environments/%%ENVIRONMENT_CODE%%/applyconfiguration");
+        url = url.replace("%%ENVIRONMENT_CODE%%", environmentCode);
 
         try {
             ResponseEntity<String> exchange = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);

@@ -24,7 +24,7 @@ public class MiscService {
 //        cloudPortalOperations.getCurrentUser();
 //        cloudPortalOperations.getCustomers();
 
-        cloudPortalOperations.applyConfigurationsToEnvironment("d1");
+        cloudPortalOperations.applyConfigurationsToEnvironment("s1");
 
         LOG.info("Misc ended...");
     }
