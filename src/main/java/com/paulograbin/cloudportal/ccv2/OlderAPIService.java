@@ -7,11 +7,18 @@ import com.paulograbin.cloudportal.web.ConfigurationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.Arrays;
+import java.util.List;
 
 
 @Service
@@ -52,13 +59,39 @@ public class OlderAPIService {
         return baseUrl.replace("%%SUBSCRIPTION_CODE_PLACEHODER%%", subscriptionCode);
     }
 
+    public void applyConfigurationsToEnvironment(String environmentCode) {
+        applyPropertiesInternal(environmentCode);
+    }
+
+    private void applyPropertiesInternal(String environmentCode) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("accept", "application/json, text/plain, */*");
+        headers.set("accept-language", "en,en-US;q=0.9");
+        headers.set("content-type", "application/json");
+        headers.set("origin", "https://portal.commerce.ondemand.com");
+
+        HttpEntity<String> entity = new HttpEntity<>("{}", headers);
+        Instant start = Instant.now();
+
+        String url = makeBaseUrl("https://portal.commerce.ondemand.com/v1/subscriptions/%%SUBSCRIPTION_CODE_PLACEHODER%%/environments/d1/applyconfiguration");
+
+        try {
+            ResponseEntity<String> exchange = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
+            LOG.info("Apply properties successful with code {}", exchange.getStatusCode());
+        } catch (HttpClientErrorException e) {
+            LOG.info("Apply properties response failed with status code {}", e.getStatusCode());
+        }
+
+        long requestTime = Duration.between(start, Instant.now()).toMillis();
+        LOG.debug("Sever took {} ms to come back", requestTime);
+    }
+
 
     public void getPermissions() {
         LOG.info("Sending GET permissions request...");
         PermissionDTO permissions = sendRequestInternalOlderAPITyped("permissions", PermissionDTO.class);
 
         LOG.info("Get permissions response {}", permissions);
-
     }
 
     public void getCurrentUser() {
@@ -70,9 +103,24 @@ public class OlderAPIService {
 
     public void getCustomers() {
         LOG.info("Sending GET customer request...");
-        CustomersDTO customerResponse = sendRequestInternalOlderAPITyped("customers", CustomersDTO.class);
+        var customerResponse = getCustomers("customers");
 
-        LOG.info("Get customers {}", customerResponse);
+        LOG.info("Get customers returned {} entries", customerResponse.size());
+    }
+
+    private List<CustomersDTO> getCustomers(String urlPath) {
+        Instant start = Instant.now();
+
+        String url = makeBaseUrl(BASE_API_URL_ANOTHER);
+        String olderAPIReturn = restTemplate.getForObject(url + urlPath, String.class);
+
+        long requestTime = Duration.between(start, Instant.now()).toMillis();
+        LOG.debug("Sever took {} ms to come back", requestTime);
+
+        Gson gson = new Gson();
+        CustomersDTO[] customers = gson.fromJson(olderAPIReturn, CustomersDTO[].class);
+
+        return Arrays.asList(customers);
     }
 
     private <T> T sendRequestInternalOlderAPITyped(String urlPath, Class<T> returnType) {
@@ -83,10 +131,6 @@ public class OlderAPIService {
 
         long requestTime = Duration.between(start, Instant.now()).toMillis();
         LOG.debug("Sever took {} ms to come back", requestTime);
-
-        if (urlPath.equalsIgnoreCase("customers")) {
-            olderAPIReturn = "{ \"value\":" + olderAPIReturn + '}';
-        }
 
         Gson gson = new Gson();
         return gson.fromJson(olderAPIReturn, returnType);
