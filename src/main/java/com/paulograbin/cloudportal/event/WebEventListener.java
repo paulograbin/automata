@@ -22,15 +22,20 @@ public class WebEventListener {
     private static final Logger LOG = LoggerFactory.getLogger(WebEventListener.class);
 
     private final DeploymentService deploymentService;
+    private final MiscService miscService;
 
 
-    public WebEventListener(BuildService buildService, DeploymentService deploymentService, EnvironmentService environmentService, MiscService miscService) {
+    public WebEventListener(BuildService buildService, DeploymentService deploymentService, EnvironmentService environmentService, MiscService miscService, MiscService miscService) {
         this.deploymentService = deploymentService;
+        this.miscService = miscService;
     }
 
     @EventListener(ApplicationReadyEvent.class)
     public void run() throws Exception {
         LOG.info("Running web runner...");
+
+        miscService.testOldAPI();
+
 
         String environmentCode = "P1";
         DeploymentDetailsDTO deploymentDetailsDTO = deploymentService.fetchLastDeploymentPerEnvironment(environmentCode);
