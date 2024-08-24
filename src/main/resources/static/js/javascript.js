@@ -42,7 +42,7 @@ async function registerForNotifications() {
   // }
 }
 
-document.addEventListener("DOMContentLoaded", function (e) {
+document.addEventListener("DOMContentLoaded", async function (e) {
   console.log('Document ready!');
 
   registerForNotifications();
