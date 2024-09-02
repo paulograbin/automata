@@ -25,7 +25,7 @@ public class WebEventListener {
     private final MiscService miscService;
 
 
-    public WebEventListener(BuildService buildService, DeploymentService deploymentService, EnvironmentService environmentService, MiscService miscService, MiscService miscService) {
+    public WebEventListener(BuildService buildService, DeploymentService deploymentService, EnvironmentService environmentService, MiscService miscService) {
         this.deploymentService = deploymentService;
         this.miscService = miscService;
     }
