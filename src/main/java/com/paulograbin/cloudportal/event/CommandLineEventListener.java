@@ -1,11 +1,15 @@
 package com.paulograbin.cloudportal.event;
 
+import com.paulograbin.cloudportal.BackupService;
 import com.paulograbin.cloudportal.BuildService;
 import com.paulograbin.cloudportal.DeploymentService;
+import com.paulograbin.cloudportal.ccv2.CloudPortalAPI;
 import com.paulograbin.cloudportal.ccv2.MiscService;
 import com.paulograbin.cloudportal.ccv2.dto.BuildDetailsDTO;
 import com.paulograbin.cloudportal.ccv2.dto.CreateBuildResponseDTO;
 import com.paulograbin.cloudportal.ccv2.dto.CreateDeploymentResponseDTO;
+import com.paulograbin.cloudportal.ccv2.dto.DatabackupDetailsDTO;
+import com.paulograbin.cloudportal.ccv2.v1dto.EnvironmentsDTO;
 import com.paulograbin.cloudportal.model.AutomataDeploymentDetailDTO;
 import com.paulograbin.cloudportal.model.AutomataDeploymentDetailsDTO;
 import com.paulograbin.cloudportal.web.ConfigurationService;
@@ -26,16 +30,21 @@ import static org.springframework.util.CollectionUtils.isEmpty;
 public class CommandLineEventListener implements CommandLineRunner {
     private static final Logger LOG = LoggerFactory.getLogger(CommandLineEventListener.class);
 
+    private final BackupService backupService;
     private final BuildService buildService;
     private final DeploymentService deploymentService;
     private final MiscService miscService;
     private final ConfigurationService configurationService;
+    private final CloudPortalAPI cloudPortalAPI;
 
-    public CommandLineEventListener(BuildService buildService, DeploymentService deploymentService, MiscService miscService, ConfigurationService configurationService) {
+
+    public CommandLineEventListener(BackupService backupService, BuildService buildService, DeploymentService deploymentService, MiscService miscService, ConfigurationService configurationService, CloudPortalAPI cloudPortalAPI) {
+        this.backupService = backupService;
         this.buildService = buildService;
         this.deploymentService = deploymentService;
         this.miscService = miscService;
         this.configurationService = configurationService;
+        this.cloudPortalAPI = cloudPortalAPI;
     }
 
     @Override
@@ -44,10 +53,9 @@ public class CommandLineEventListener implements CommandLineRunner {
 
         if (args[0].equalsIgnoreCase("monitor")) {
             LOG.info("Will monitor current builds and deployments...");
-//            monitorCurrentBuildsAndDeployments();
+            monitorCurrentBuildsAndDeployments();
 
-            tryOldApiCalls();
-
+//            tryOldApiCalls();
         } else {
             LOG.info("Will start new build/deployment...");
 
