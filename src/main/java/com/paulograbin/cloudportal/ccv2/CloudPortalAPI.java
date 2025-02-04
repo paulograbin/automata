@@ -85,15 +85,31 @@ public class CloudPortalAPI {
 
 
     public <T> T sendPostRequest(String s, Object request, Class<T> responseType) {
-        Instant start = Instant.now();
+        try {
+            Instant start = Instant.now();
 
-        String url = makeBaseUrl(BASE_API_URL);
-        T response = restTemplate.postForObject(url + s, request, responseType);
+            String url = makeBaseUrl(BASE_API_URL);
+            T response = restTemplate.postForObject(url + s, request, responseType);
 
-        long requestTime = Duration.between(start, Instant.now()).toMillis();
-        LOG.debug("Sever took {} ms to come back", requestTime);
+            long requestTime = Duration.between(start, Instant.now()).toMillis();
+            LOG.debug("Sever took {} ms to come back", requestTime);
 
-        return response;
+            return response;
+        } catch (RuntimeException e) {
+            LOG.error("Deu problema {}", e.getMessage());
+            e.printStackTrace();
+        }
+
+//        Instant start = Instant.now();
+//
+//        String url = makeBaseUrl(BASE_API_URL);
+//        T response = restTemplate.postForObject(url + s, request, responseType);
+//
+//        long requestTime = Duration.between(start, Instant.now()).toMillis();
+//        LOG.debug("Sever took {} ms to come back", requestTime);
+//
+//        return response;
+        return null;
     }
 
 
@@ -121,6 +137,11 @@ public class CloudPortalAPI {
 
     public BuildDetailsDTO getAllBuilds() {
         return sendRequestInternal("builds", BuildDetailsDTO.class);
+    }
+
+
+    public DatabackupDetailsDTO getDataBackups(String environmentCode) {
+        return sendRequestInternal("databackups", DatabackupDetailsDTO.class);
     }
 
 
@@ -228,9 +249,6 @@ public class CloudPortalAPI {
     }
 
 
-    public DatabackupDetailsDTO getDataBackups() {
-        throw new UnsupportedOperationException();
-    }
 
 
     public DatarestoreDetailDTO getDataRestore() {
@@ -293,6 +311,9 @@ public class CloudPortalAPI {
         String url = makeBaseUrl(BASE_API_URL);
         url = url.replace("v2", "v1");
         String olderAPIReturn = restTemplate.getForObject(url + urlPath, String.class);
+
+        System.out.println("URL " + url + urlPath);
+        System.out.println("Old API return " + olderAPIReturn);
 
         alertForErrors(olderAPIReturn);
 
