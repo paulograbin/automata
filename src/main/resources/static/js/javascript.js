@@ -108,8 +108,7 @@ function sendSubscriptionToServer(subscription) {
     });
 }
 
-
-document.addEventListener("DOMContentLoaded", function (e) {
+document.addEventListener("DOMContentLoaded", async function (e) {
     console.log('Document ready!');
 
     initServiceWorker();

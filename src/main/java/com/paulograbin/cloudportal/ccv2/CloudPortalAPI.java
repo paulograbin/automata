@@ -64,14 +64,8 @@ public class CloudPortalAPI {
 
         final var replacedTokenString = makeToken();
 
-//        Proxy localhost = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("localhost", 8080));
-//        SimpleClientHttpRequestFactory simpleClientHttpRequestFactory = new SimpleClientHttpRequestFactory();
-
-//        simpleClientHttpRequestFactory.setProxy(localhost);
-
         restTemplate = new RestTemplateBuilder()
                 .defaultHeader("Authorization", replacedTokenString)
-//                .requestFactory(() -> simpleClientHttpRequestFactory)
                 .build();
     }
 

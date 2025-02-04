@@ -19,12 +19,15 @@ public class MiscService {
 
 
     @Async
-    public void teste() {
+    public void testOldAPI() {
+        LOG.info("Misc ended...");
+
+
 //        cloudPortalOperations.getPermissions();
 //        cloudPortalOperations.getCurrentUser();
 //        cloudPortalOperations.getCustomers();
 
-        cloudPortalOperations.applyConfigurationsToEnvironment("s1");
+//        cloudPortalOperations.applyConfigurationsToEnvironment("s1");
 
         LOG.info("Misc ended...");
     }

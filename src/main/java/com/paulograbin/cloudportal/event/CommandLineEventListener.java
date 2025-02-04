@@ -83,7 +83,7 @@ public class CommandLineEventListener implements CommandLineRunner {
     }
 
     private void tryOldApiCalls() {
-        miscService.teste();
+        miscService.testOldAPI();
     }
 
     private void monitorCurrentBuildsAndDeployments() {
