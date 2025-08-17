@@ -8,24 +8,26 @@
 #
 #RUN mvn install -DskipTests
 
-
-
-FROM paulograbin/automata_base as build
+FROM maven:3.9-amazoncorretto-21 as build
 
 WORKDIR /opt/confirmation
+
+ADD . $HOME
+RUN --mount=type=cache,target=/root/.m2
+
 COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
-RUN mvn package -DskipTests
+RUN mvn install -DskipTests
 #RUN #mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 RUN mkdir target/extracted
 RUN java -Djarmode=layertools -jar target/automata-0.0.1-SNAPSHOT.jar extract --destination target/extracted
 
 
-FROM openjdk:19-rc-oracle as deploy
+FROM eclipse-temurin:21-jre-jammy as deploy
 
 EXPOSE 3000
 
@@ -40,7 +42,7 @@ COPY --from=build /opt/confirmation/target/extracted/dependencies/ ./
 COPY --from=build /opt/confirmation/target/extracted/snapshot-dependencies/ ./
 COPY --from=build /opt/confirmation/target/extracted/spring-boot-loader/ ./
 COPY --from=build /opt/confirmation/target/extracted/application/ ./
-ENTRYPOINT ["java","org.springframework.boot.loader.JarLauncher"]
+ENTRYPOINT ["java","org.springframework.boot.loader.launch.JarLauncher"]
 
 
 #COPY --from=build /opt/confirmation/target/automata-0.0.1-SNAPSHOT.jar .
