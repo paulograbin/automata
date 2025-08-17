@@ -34,7 +34,7 @@ public class ConfigurationService {
             if (Files.exists(path)) {
                 LOG.info("Config file exist!");
             } else {
-                LOG.info("Config file was not found or its empty, please check {}", path);
+                LOG.error("Config file was not found or its empty, please check {}", path);
                 FileUtils.touch(configFile);
 
                 automataConfiguration = new AutomataConfiguration();
