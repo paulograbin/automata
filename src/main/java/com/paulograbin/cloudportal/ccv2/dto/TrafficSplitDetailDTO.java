@@ -86,10 +86,7 @@ public class TrafficSplitDetailDTO {
    * @return endpoints
   */
   @Valid 
-<<<<<<< HEAD
   
-=======
->>>>>>> refs/remotes/origin/main
   public List<TrafficPercentageDTO> getEndpoints() {
     return endpoints;
   }
@@ -126,10 +123,7 @@ public class TrafficSplitDetailDTO {
    * @return lastModifiedBy
   */
   
-<<<<<<< HEAD
   
-=======
->>>>>>> refs/remotes/origin/main
   public String getLastModifiedBy() {
     return lastModifiedBy;
   }
@@ -148,10 +142,7 @@ public class TrafficSplitDetailDTO {
    * @return subscriptionCode
   */
   
-<<<<<<< HEAD
   
-=======
->>>>>>> refs/remotes/origin/main
   public String getSubscriptionCode() {
     return subscriptionCode;
   }
@@ -170,10 +161,7 @@ public class TrafficSplitDetailDTO {
    * @return deploymentCode
   */
   @NotNull 
-<<<<<<< HEAD
   
-=======
->>>>>>> refs/remotes/origin/main
   public String getDeploymentCode() {
     return deploymentCode;
   }
@@ -192,10 +180,7 @@ public class TrafficSplitDetailDTO {
    * @return code
   */
   
-<<<<<<< HEAD
   
-=======
->>>>>>> refs/remotes/origin/main
   public String getCode() {
     return code;
   }
@@ -253,3 +238,4 @@ public class TrafficSplitDetailDTO {
     return o.toString().replace("\n", "\n    ");
   }
 }
+

@@ -12,10 +12,7 @@ import java.util.Objects;
  * Datarestore
  */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/remotes/origin/main
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class DatarestoreDetailDTO {
 
@@ -48,10 +45,7 @@ public class DatarestoreDetailDTO {
    * @return datarestoreCode
   */
   
-<<<<<<< HEAD
   
-=======
->>>>>>> refs/remotes/origin/main
   public String getDatarestoreCode() {
     return datarestoreCode;
   }
@@ -70,11 +64,7 @@ public class DatarestoreDetailDTO {
    * @return name
   */
   
-<<<<<<< HEAD
   
-=======
-+++++++ REPLACE------- SEARCH
->>>>>>> refs/remotes/origin/main
   public String getName() {
     return name;
   }
@@ -112,12 +102,8 @@ public class DatarestoreDetailDTO {
    * @return databackupCode
   */
   
-<<<<<<< HEAD
   
   public String getDatabackupCode() {
-=======
-   public String getDatabackupCode() {
->>>>>>> refs/remotes/origin/main
     return databackupCode;
   }
 
@@ -135,10 +121,7 @@ public class DatarestoreDetailDTO {
    * @return createdBy
   */
   
-<<<<<<< HEAD
   
-=======
->>>>>>> refs/remotes/origin/main
   public String getCreatedBy() {
     return createdBy;
   }
@@ -157,10 +140,7 @@ public class DatarestoreDetailDTO {
    * @return createdTimestamp
   */
   @Valid 
-<<<<<<< HEAD
   
-=======
->>>>>>> refs/remotes/origin/main
   public OffsetDateTime getCreatedTimestamp() {
     return createdTimestamp;
   }

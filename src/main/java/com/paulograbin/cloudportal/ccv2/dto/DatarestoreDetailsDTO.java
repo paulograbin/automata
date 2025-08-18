@@ -40,10 +40,7 @@ public class DatarestoreDetailsDTO {
    * @return value
   */
   @Valid 
-<<<<<<< HEAD
   
-=======
->>>>>>> refs/remotes/origin/main
   public List<DatarestoreDetailDTO> getValue() {
     return value;
   }
@@ -109,3 +106,4 @@ public class DatarestoreDetailsDTO {
     return o.toString().replace("\n", "\n    ");
   }
 }
+

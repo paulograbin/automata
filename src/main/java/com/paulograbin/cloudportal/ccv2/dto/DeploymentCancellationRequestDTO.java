@@ -10,6 +10,7 @@ import java.util.Objects;
  * Entity to be used to cancel a deployment
  */
 
+
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class DeploymentCancellationRequestDTO {
 
@@ -29,6 +30,7 @@ public class DeploymentCancellationRequestDTO {
    * @return rollbackDatabase
   */
   
+  
   public Boolean getRollbackDatabase() {
     return rollbackDatabase;
   }
@@ -47,6 +49,7 @@ public class DeploymentCancellationRequestDTO {
    * @return cancelReason
   */
   @Size(min = 4, max = 255) 
+  
   public String getCancelReason() {
     return cancelReason;
   }
