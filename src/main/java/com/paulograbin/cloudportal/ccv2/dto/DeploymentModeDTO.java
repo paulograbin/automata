@@ -3,7 +3,7 @@ package com.paulograbin.cloudportal.ccv2.dto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -15,7 +15,6 @@ import java.util.Objects;
  * Details of a deploymentmodes per environment
  */
 
-@Schema(name = "DeploymentModeDTO", description = "Details of a deploymentmodes per environment")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class DeploymentModeDTO {
 

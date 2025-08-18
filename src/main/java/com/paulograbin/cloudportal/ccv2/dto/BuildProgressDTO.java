@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -13,7 +13,6 @@ import java.util.Objects;
  * Build progress
  */
 
-@Schema(name = "BuildProgressDTO", description = "Build progress")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class BuildProgressDTO {
 
@@ -49,7 +48,6 @@ public class BuildProgressDTO {
    * @return subscriptionCode
   */
   
-  @Schema(name = "subscriptionCode", description = "Code of the subscription", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getSubscriptionCode() {
     return subscriptionCode;
   }
@@ -68,7 +66,6 @@ public class BuildProgressDTO {
    * @return buildCode
   */
   
-  @Schema(name = "buildCode", description = "Code of the build", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getBuildCode() {
     return buildCode;
   }
@@ -106,7 +103,6 @@ public class BuildProgressDTO {
    * @return numberOfTasks
   */
   
-  @Schema(name = "numberOfTasks", description = "Total number of tasks that will be executed", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public Integer getNumberOfTasks() {
     return numberOfTasks;
   }
@@ -125,7 +121,6 @@ public class BuildProgressDTO {
    * @return percentage
   */
   
-  @Schema(name = "percentage", description = "Progress percentage", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public Integer getPercentage() {
     return percentage;
   }
@@ -171,7 +166,6 @@ public class BuildProgressDTO {
    * @return startedTasks
   */
   @Valid 
-  @Schema(name = "startedTasks", description = "List of started tasks of this progress", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public List<BuildProgressStartedTaskDTO> getStartedTasks() {
     return startedTasks;
   }

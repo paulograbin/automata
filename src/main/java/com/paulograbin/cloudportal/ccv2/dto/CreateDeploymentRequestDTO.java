@@ -3,7 +3,7 @@ package com.paulograbin.cloudportal.ccv2.dto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.constraints.NotNull;
 

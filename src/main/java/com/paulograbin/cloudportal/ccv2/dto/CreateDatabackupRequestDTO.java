@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 
 import java.util.Objects;
@@ -10,7 +10,6 @@ import java.util.Objects;
  * Create Databackup request
  */
 
-@Schema(name = "CreateDatabackupRequestDTO", description = "Create Databackup request")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class CreateDatabackupRequestDTO {
 
@@ -27,7 +26,6 @@ public class CreateDatabackupRequestDTO {
    * @return description
   */
   
-  @Schema(name = "description", description = "Description", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getDescription() {
     return description;
   }

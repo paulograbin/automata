@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 
 import java.util.Objects;
@@ -10,7 +10,6 @@ import java.util.Objects;
  * Problem detail message (https://tools.ietf.org/html/rfc7807)
  */
 
-@Schema(name = "ErrorDTO", description = "Problem detail message (https://tools.ietf.org/html/rfc7807)")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class ErrorDTO {
 
@@ -30,7 +29,6 @@ public class ErrorDTO {
    * @return title
   */
   
-  @Schema(name = "title", accessMode = Schema.AccessMode.READ_ONLY, description = "Human-readable summary of the problem type", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getTitle() {
     return title;
   }

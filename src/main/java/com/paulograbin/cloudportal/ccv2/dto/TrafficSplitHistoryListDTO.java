@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -13,7 +13,6 @@ import java.util.Objects;
  * Traffic Split Audit History response DTO.
  */
 
-@Schema(name = "TrafficSplitHistoryListDTO", description = "Traffic Split Audit History response DTO.")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class TrafficSplitHistoryListDTO {
 
@@ -42,7 +41,6 @@ public class TrafficSplitHistoryListDTO {
    * @return value
   */
   @Valid 
-  @Schema(name = "value", description = "Array of traffic split history detail", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public List<TrafficSplitDetailDTO> getValue() {
     return value;
   }
@@ -61,7 +59,6 @@ public class TrafficSplitHistoryListDTO {
    * @return count
   */
   
-  @Schema(name = "count", description = "The total number of traffic split", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public Integer getCount() {
     return count;
   }

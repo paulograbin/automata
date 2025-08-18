@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.annotation.Generated;
 
 import java.util.Objects;
@@ -30,7 +29,6 @@ public class CreateDatarestoreRequestDTO {
    * @return databackupCode
   */
   
-  @Schema(name = "databackupCode", description = "Databackup code", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getDatabackupCode() {
     return databackupCode;
   }
@@ -49,7 +47,6 @@ public class CreateDatarestoreRequestDTO {
    * @return sourceEnvironmentCode
   */
   
-  @Schema(name = "sourceEnvironmentCode", description = "Source environment (where the databackup was created)", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getSourceEnvironmentCode() {
     return sourceEnvironmentCode;
   }

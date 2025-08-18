@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -13,7 +13,6 @@ import java.util.Objects;
  * Collection of build details
  */
 
-@Schema(name = "BuildDetailsDTO", description = "Collection of build details")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class BuildDetailsDTO {
 
@@ -42,7 +41,6 @@ public class BuildDetailsDTO {
    * @return value
   */
   @Valid 
-  @Schema(name = "value", description = "Array of build details", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public List<BuildDetailDTO> getValue() {
     return value;
   }
@@ -61,7 +59,6 @@ public class BuildDetailsDTO {
    * @return count
   */
   
-  @Schema(name = "count", description = "The total number of builds", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public Integer getCount() {
     return count;
   }

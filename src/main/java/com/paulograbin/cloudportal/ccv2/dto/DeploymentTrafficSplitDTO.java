@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -13,7 +13,6 @@ import java.util.Objects;
  * Traffic split DTO for deployment detail.
  */
 
-@Schema(name = "DeploymentTrafficSplitDTO", description = "Traffic split DTO for deployment detail.")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class DeploymentTrafficSplitDTO {
 
@@ -43,7 +42,6 @@ public class DeploymentTrafficSplitDTO {
    * @return services
   */
   @Valid 
-  @Schema(name = "services", description = "Traffic Split for services", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public List<TrafficPercentageDTO> getServices() {
     return services;
   }

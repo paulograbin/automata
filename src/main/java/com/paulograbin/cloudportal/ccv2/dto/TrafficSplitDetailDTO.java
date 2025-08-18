@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -16,7 +16,6 @@ import java.util.Objects;
  * Traffic Split detail DTO.
  */
 
-@Schema(name = "TrafficSplitDetailDTO", description = "Traffic Split detail DTO.")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class TrafficSplitDetailDTO {
 
@@ -62,7 +61,6 @@ public class TrafficSplitDetailDTO {
    * @return services
   */
   @Valid 
-  @Schema(name = "services", description = "Traffic Split for services", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public List<TrafficPercentageDTO> getServices() {
     return services;
   }
@@ -108,7 +106,6 @@ public class TrafficSplitDetailDTO {
    * @return lastModifiedTimestamp
   */
   @Valid 
-  @Schema(name = "lastModifiedTimestamp", description = "last Modified Timestamp", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public OffsetDateTime getLastModifiedTimestamp() {
     return lastModifiedTimestamp;
   }

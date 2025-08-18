@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -13,7 +13,6 @@ import java.util.Objects;
  * Traffic percentage Request DTO.
  */
 
-@Schema(name = "TrafficPercentageRequestDTO", description = "Traffic percentage Request DTO.")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class TrafficPercentageRequestDTO {
 
@@ -33,7 +32,6 @@ public class TrafficPercentageRequestDTO {
    * @return code
   */
   @NotNull 
-  @Schema(name = "code", description = "Code of the traffic split entity. eg. service code, endpoint code", requiredMode = Schema.RequiredMode.REQUIRED)
   public String getCode() {
     return code;
   }
@@ -54,7 +52,6 @@ public class TrafficPercentageRequestDTO {
    * @return percentage
   */
   @NotNull @Min(0) @Max(100) 
-  @Schema(name = "percentage", description = "Percentage of the traffic split", requiredMode = Schema.RequiredMode.REQUIRED)
   public Integer getPercentage() {
     return percentage;
   }

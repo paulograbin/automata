@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -13,7 +13,6 @@ import java.util.Objects;
  * Started task of a build progress
  */
 
-@Schema(name = "BuildProgressStartedTaskDTO", description = "Started task of a build progress")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class BuildProgressStartedTaskDTO {
 
@@ -37,7 +36,6 @@ public class BuildProgressStartedTaskDTO {
    * @return task
   */
   
-  @Schema(name = "task", description = "Name of the task", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getTask() {
     return task;
   }
@@ -56,7 +54,6 @@ public class BuildProgressStartedTaskDTO {
    * @return name
   */
   
-  @Schema(name = "name", description = "Business name of the task", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getName() {
     return name;
   }
@@ -75,7 +72,6 @@ public class BuildProgressStartedTaskDTO {
    * @return startTimestamp
   */
   @Valid 
-  @Schema(name = "startTimestamp", description = "Start timestamp of the task", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public OffsetDateTime getStartTimestamp() {
     return startTimestamp;
   }

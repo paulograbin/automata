@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentCancelationDetailDTO;
 import com.paulograbin.cloudportal.ccv2.dto.DeploymentTrafficSplitDTO;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -302,7 +302,6 @@ public class AutomataDeploymentDetailDTO {
      * @return databaseUpdateMode
      */
 
-    @Schema(name = "databaseUpdateMode", description = "Database action used in the deployment", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     public DatabaseUpdateModeEnum getDatabaseUpdateMode() {
         return databaseUpdateMode;
     }

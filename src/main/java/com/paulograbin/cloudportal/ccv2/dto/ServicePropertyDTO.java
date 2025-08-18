@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -38,7 +38,6 @@ public class ServicePropertyDTO {
    * @return key
   */
   @NotNull 
-  @Schema(name = "key", description = "Property name", requiredMode = Schema.RequiredMode.REQUIRED)
   public String getKey() {
     return key;
   }
@@ -57,7 +56,6 @@ public class ServicePropertyDTO {
    * @return value
   */
   @NotNull 
-  @Schema(name = "value", description = "Property value", requiredMode = Schema.RequiredMode.REQUIRED)
   public Object getValue() {
     return value;
   }
@@ -84,7 +82,6 @@ public class ServicePropertyDTO {
    * @return flags
   */
   
-  @Schema(name = "flags", description = "Array of build details", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public List<String> getFlags() {
     return flags;
   }

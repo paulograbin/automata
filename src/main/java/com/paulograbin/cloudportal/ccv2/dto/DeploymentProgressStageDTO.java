@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -91,7 +91,6 @@ public class DeploymentProgressStageDTO {
    * @return startTimestamp
   */
   @Valid 
-  @Schema(name = "startTimestamp", description = "Start timestamp of the stage", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public OffsetDateTime getStartTimestamp() {
     return startTimestamp;
   }

@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -39,7 +39,6 @@ public class DeploymentDecisionsDTO {
    * @return deploymentDecisions
   */
   @Valid 
-  @Schema(name = "deploymentDecisions", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public List<DeploymentDecisionDTO> getDeploymentDecisions() {
     return deploymentDecisions;
   }

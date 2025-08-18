@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -13,7 +13,6 @@ import java.util.Objects;
  * Databackup
  */
 
-@Schema(name = "DatabackupDetailDTO", description = "Databackup")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class DatabackupDetailDTO {
 
@@ -55,7 +54,6 @@ public class DatabackupDetailDTO {
    * @return databackupCode
   */
   
-  @Schema(name = "databackupCode", description = "Databackup Code", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getDatabackupCode() {
     return databackupCode;
   }
@@ -74,7 +72,6 @@ public class DatabackupDetailDTO {
    * @return name
   */
   
-  @Schema(name = "name", description = "Name", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getName() {
     return name;
   }
@@ -93,7 +90,6 @@ public class DatabackupDetailDTO {
    * @return buildCode
   */
   
-  @Schema(name = "buildCode", description = "Build code", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getBuildCode() {
     return buildCode;
   }
@@ -112,7 +108,6 @@ public class DatabackupDetailDTO {
    * @return status
   */
   
-  @Schema(name = "status", description = "Status", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getStatus() {
     return status;
   }
@@ -131,7 +126,6 @@ public class DatabackupDetailDTO {
    * @return description
   */
   
-  @Schema(name = "description", description = "Description", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getDescription() {
     return description;
   }
@@ -150,7 +144,6 @@ public class DatabackupDetailDTO {
    * @return createdBy
   */
   
-  @Schema(name = "createdBy", description = "User that created the databackup", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getCreatedBy() {
     return createdBy;
   }
@@ -169,7 +162,6 @@ public class DatabackupDetailDTO {
    * @return createdTimestamp
   */
   @Valid 
-  @Schema(name = "createdTimestamp", description = "Databackup creation timestamp", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public OffsetDateTime getCreatedTimestamp() {
     return createdTimestamp;
   }
@@ -188,7 +180,6 @@ public class DatabackupDetailDTO {
    * @return canBeRestored
   */
   
-  @Schema(name = "canBeRestored", description = "Can be restored", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public Boolean getCanBeRestored() {
     return canBeRestored;
   }
@@ -207,7 +198,6 @@ public class DatabackupDetailDTO {
    * @return canBeDeleted
   */
   
-  @Schema(name = "canBeDeleted", description = "Can be deleted", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public Boolean getCanBeDeleted() {
     return canBeDeleted;
   }

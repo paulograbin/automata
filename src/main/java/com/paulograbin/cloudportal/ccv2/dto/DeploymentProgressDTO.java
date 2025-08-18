@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -81,7 +81,6 @@ public class DeploymentProgressDTO {
    * @return deploymentStatus
   */
   
-  @Schema(name = "deploymentStatus", description = "Status of the current deployment, possible values are \"SCHEDULED\",\"DEPLOYING\",\"DEPLOYED\",\"UNDEPLOYED\" or \"FAIL\"", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getDeploymentStatus() {
     return deploymentStatus;
   }

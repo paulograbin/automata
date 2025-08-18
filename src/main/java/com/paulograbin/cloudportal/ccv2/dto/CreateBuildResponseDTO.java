@@ -1,7 +1,7 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
+;
 import jakarta.annotation.Generated;
 import jakarta.validation.constraints.NotNull;
 
@@ -50,7 +50,6 @@ public class CreateBuildResponseDTO {
    * @return code
   */
   @NotNull 
-  @Schema(name = "code", description = "Build code", requiredMode = Schema.RequiredMode.REQUIRED)
   public String getCode() {
     return code;
   }

@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.annotation.Generated;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,7 +10,6 @@ import java.util.Objects;
  * Entity to be used to start new builds
  */
 
-@Schema(name = "CreateBuildRequestDTO", description = "Entity to be used to start new builds")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class CreateBuildRequestDTO {
 
@@ -34,7 +32,6 @@ public class CreateBuildRequestDTO {
    * @return applicationCode
   */
   
-  @Schema(name = "applicationCode", description = "Code of the application", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getApplicationCode() {
     return applicationCode;
   }
@@ -53,7 +50,6 @@ public class CreateBuildRequestDTO {
    * @return branch
   */
   @NotNull 
-  @Schema(name = "branch", description = "Branch name of the application", requiredMode = Schema.RequiredMode.REQUIRED)
   public String getBranch() {
     return branch;
   }
@@ -72,7 +68,6 @@ public class CreateBuildRequestDTO {
    * @return name
   */
   @NotNull 
-  @Schema(name = "name", description = "Name of the build", requiredMode = Schema.RequiredMode.REQUIRED)
   public String getName() {
     return name;
   }
