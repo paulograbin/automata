@@ -13,7 +13,6 @@ import java.util.Objects;
  * Collection of datarestores
  */
 
-@Schema(name = "DatarestoreDetailsDTO", description = "Collection of datarestores")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class DatarestoreDetailsDTO {
 
@@ -42,7 +41,6 @@ public class DatarestoreDetailsDTO {
    * @return value
   */
   @Valid 
-  @Schema(name = "value", description = "Array of datarestores", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public List<DatarestoreDetailDTO> getValue() {
     return value;
   }
@@ -61,7 +59,6 @@ public class DatarestoreDetailsDTO {
    * @return count
   */
   
-  @Schema(name = "count", description = "The total number of datarestores", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public Integer getCount() {
     return count;
   }
@@ -109,4 +106,3 @@ public class DatarestoreDetailsDTO {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -16,7 +16,6 @@ import java.util.Objects;
  * Traffic Split detail DTO.
  */
 
-@Schema(name = "TrafficSplitDetailDTO", description = "Traffic Split detail DTO.")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class TrafficSplitDetailDTO {
 
@@ -62,7 +61,6 @@ public class TrafficSplitDetailDTO {
    * @return services
   */
   @Valid 
-  @Schema(name = "services", description = "Traffic Split for services", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public List<TrafficPercentageDTO> getServices() {
     return services;
   }
@@ -89,7 +87,6 @@ public class TrafficSplitDetailDTO {
    * @return endpoints
   */
   @Valid 
-  @Schema(name = "endpoints", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public List<TrafficPercentageDTO> getEndpoints() {
     return endpoints;
   }
@@ -108,7 +105,6 @@ public class TrafficSplitDetailDTO {
    * @return lastModifiedTimestamp
   */
   @Valid 
-  @Schema(name = "lastModifiedTimestamp", description = "last Modified Timestamp", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public OffsetDateTime getLastModifiedTimestamp() {
     return lastModifiedTimestamp;
   }
@@ -127,7 +123,6 @@ public class TrafficSplitDetailDTO {
    * @return lastModifiedBy
   */
   
-  @Schema(name = "lastModifiedBy", description = "last Modified user", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getLastModifiedBy() {
     return lastModifiedBy;
   }
@@ -146,7 +141,6 @@ public class TrafficSplitDetailDTO {
    * @return subscriptionCode
   */
   
-  @Schema(name = "subscriptionCode", description = "Code of the subscription", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getSubscriptionCode() {
     return subscriptionCode;
   }
@@ -165,7 +159,6 @@ public class TrafficSplitDetailDTO {
    * @return deploymentCode
   */
   @NotNull 
-  @Schema(name = "deploymentCode", description = "Code of the deployment", requiredMode = Schema.RequiredMode.REQUIRED)
   public String getDeploymentCode() {
     return deploymentCode;
   }
@@ -184,7 +177,6 @@ public class TrafficSplitDetailDTO {
    * @return code
   */
   
-  @Schema(name = "code", description = "unique code of traffic split", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getCode() {
     return code;
   }
@@ -242,4 +234,3 @@ public class TrafficSplitDetailDTO {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -11,7 +11,6 @@ import java.util.Objects;
  * Create datarestore response
  */
 
-@Schema(name = "CreateDatarestoreResponseDTO", description = "Create datarestore response")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class CreateDatarestoreResponseDTO {
 
@@ -34,7 +33,6 @@ public class CreateDatarestoreResponseDTO {
    * @return subscriptionCode
   */
   
-  @Schema(name = "subscriptionCode", description = "Code of the subscription", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getSubscriptionCode() {
     return subscriptionCode;
   }
@@ -53,7 +51,6 @@ public class CreateDatarestoreResponseDTO {
    * @return environmentCode
   */
   
-  @Schema(name = "environmentCode", description = "Code of the environment", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getEnvironmentCode() {
     return environmentCode;
   }
@@ -72,7 +69,6 @@ public class CreateDatarestoreResponseDTO {
    * @return datarestoreCode
   */
   @NotNull 
-  @Schema(name = "datarestoreCode", description = "Datarestore code", requiredMode = Schema.RequiredMode.REQUIRED)
   public String getDatarestoreCode() {
     return datarestoreCode;
   }
@@ -122,4 +118,3 @@ public class CreateDatarestoreResponseDTO {
     return o.toString().replace("\n", "\n    ");
   }
 }
-
