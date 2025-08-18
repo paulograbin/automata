@@ -10,7 +10,10 @@ import java.util.Objects;
  * Create deployment response
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/main
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class CreateDeploymentResponseDTO {
 
@@ -30,7 +33,10 @@ public class CreateDeploymentResponseDTO {
    * @return subscriptionCode
   */
   
+<<<<<<< HEAD
   
+=======
+>>>>>>> refs/remotes/origin/main
   public String getSubscriptionCode() {
     return subscriptionCode;
   }
@@ -49,7 +55,10 @@ public class CreateDeploymentResponseDTO {
    * @return code
   */
   @NotNull 
+<<<<<<< HEAD
   
+=======
+>>>>>>> refs/remotes/origin/main
   public String getCode() {
     return code;
   }
@@ -97,4 +106,3 @@ public class CreateDeploymentResponseDTO {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

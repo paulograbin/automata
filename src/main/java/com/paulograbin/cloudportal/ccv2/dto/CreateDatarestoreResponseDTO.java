@@ -50,7 +50,10 @@ public class CreateDatarestoreResponseDTO {
    * @return environmentCode
   */
   
+<<<<<<< HEAD
   
+=======
+>>>>>>> refs/remotes/origin/main
   public String getEnvironmentCode() {
     return environmentCode;
   }
@@ -69,7 +72,10 @@ public class CreateDatarestoreResponseDTO {
    * @return datarestoreCode
   */
   @NotNull 
+<<<<<<< HEAD
   
+=======
+>>>>>>> refs/remotes/origin/main
   public String getDatarestoreCode() {
     return datarestoreCode;
   }
@@ -119,4 +125,3 @@ public class CreateDatarestoreResponseDTO {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

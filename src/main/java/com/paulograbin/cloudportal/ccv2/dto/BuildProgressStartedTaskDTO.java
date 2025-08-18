@@ -120,4 +120,3 @@ public class BuildProgressStartedTaskDTO {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

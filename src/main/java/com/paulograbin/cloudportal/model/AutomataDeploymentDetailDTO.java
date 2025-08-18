@@ -320,7 +320,10 @@ public class AutomataDeploymentDetailDTO {
      * @return strategy
      */
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> refs/remotes/origin/main
     public StrategyEnum getStrategy() {
         return strategy;
     }
@@ -340,7 +343,10 @@ public class AutomataDeploymentDetailDTO {
      * @return scheduledTimestamp
      */
     @Valid
+<<<<<<< HEAD
     
+=======
+>>>>>>> refs/remotes/origin/main
     public OffsetDateTime getScheduledTimestamp() {
         return scheduledTimestamp;
     }
@@ -360,7 +366,10 @@ public class AutomataDeploymentDetailDTO {
      * @return deployedTimestamp
      */
     @Valid
+<<<<<<< HEAD
     
+=======
+>>>>>>> refs/remotes/origin/main
     public OffsetDateTime getDeployedTimestamp() {
         return deployedTimestamp;
     }
@@ -380,7 +389,10 @@ public class AutomataDeploymentDetailDTO {
      * @return failedTimestamp
      */
     @Valid
+<<<<<<< HEAD
     
+=======
+>>>>>>> refs/remotes/origin/main
     public OffsetDateTime getFailedTimestamp() {
         return failedTimestamp;
     }
@@ -400,7 +412,10 @@ public class AutomataDeploymentDetailDTO {
      * @return undeployedTimestamp
      */
     @Valid
+<<<<<<< HEAD
     
+=======
+>>>>>>> refs/remotes/origin/main
     public OffsetDateTime getUndeployedTimestamp() {
         return undeployedTimestamp;
     }
@@ -414,7 +429,10 @@ public class AutomataDeploymentDetailDTO {
         return this;
     }
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> refs/remotes/origin/main
     public String getStatus() {
         return status;
     }
@@ -428,7 +446,10 @@ public class AutomataDeploymentDetailDTO {
         return this;
     }
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> refs/remotes/origin/main
     public String getCanceledBy() {
         return canceledBy;
     }
@@ -444,7 +465,10 @@ public class AutomataDeploymentDetailDTO {
 
 
     @Valid
+<<<<<<< HEAD
     
+=======
+>>>>>>> refs/remotes/origin/main
     public OffsetDateTime getCanceledTimestamp() {
         return canceledTimestamp;
     }
@@ -460,7 +484,10 @@ public class AutomataDeploymentDetailDTO {
 
 
     @Valid
+<<<<<<< HEAD
     
+=======
+>>>>>>> refs/remotes/origin/main
     public OffsetDateTime getCancellationFinishedTimestamp() {
         return cancellationFinishedTimestamp;
     }
@@ -474,7 +501,10 @@ public class AutomataDeploymentDetailDTO {
         return this;
     }
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> refs/remotes/origin/main
     public Boolean getCancellationFailed() {
         return cancellationFailed;
     }
@@ -489,7 +519,10 @@ public class AutomataDeploymentDetailDTO {
     }
 
     @Valid
+<<<<<<< HEAD
     
+=======
+>>>>>>> refs/remotes/origin/main
     public DeploymentCancelationDetailDTO getCancelation() {
         return cancelation;
     }
@@ -503,7 +536,10 @@ public class AutomataDeploymentDetailDTO {
         return this;
     }
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> refs/remotes/origin/main
     public Boolean getIsCanaryAvailable() {
         return isCanaryAvailable;
     }
@@ -517,7 +553,10 @@ public class AutomataDeploymentDetailDTO {
         return this;
     }
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> refs/remotes/origin/main
     public String getPreviousDeploymentCode() {
         return previousDeploymentCode;
     }
@@ -650,4 +689,3 @@ public class AutomataDeploymentDetailDTO {
         return o.toString().replace("\n", "\n    ");
     }
 }
-
