@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 
 import java.util.Objects;
@@ -10,7 +9,7 @@ import java.util.Objects;
  * Property key and value pair
  */
 
-@Schema(name = "PropertyDTO", description = "Property key and value pair")
+
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class PropertyDTO {
 
@@ -30,7 +29,7 @@ public class PropertyDTO {
    * @return key
   */
   
-  @Schema(name = "key", description = "Property key", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getKey() {
     return key;
   }
@@ -49,7 +48,7 @@ public class PropertyDTO {
    * @return value
   */
   
-  @Schema(name = "value", description = "Property value", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getValue() {
     return value;
   }

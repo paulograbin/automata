@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -13,7 +12,7 @@ import java.util.Objects;
  * Entity to be used describe a deployment cancelation
  */
 
-@Schema(name = "DeploymentCancelationDetailDTO", description = "Entity to be used describe a deployment cancelation")
+
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class DeploymentCancelationDetailDTO {
 
@@ -47,7 +46,7 @@ public class DeploymentCancelationDetailDTO {
    * @return canceledBy
   */
   
-  @Schema(name = "canceledBy", description = "User that canceled the deployment", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getCanceledBy() {
     return canceledBy;
   }
@@ -66,7 +65,7 @@ public class DeploymentCancelationDetailDTO {
    * @return startTimestamp
   */
   @Valid 
-  @Schema(name = "startTimestamp", description = "Time the cancelation was requested", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getStartTimestamp() {
     return startTimestamp;
   }
@@ -85,7 +84,7 @@ public class DeploymentCancelationDetailDTO {
    * @return finishedTimestamp
   */
   @Valid 
-  @Schema(name = "finishedTimestamp", description = "Time the cancelation finished", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getFinishedTimestamp() {
     return finishedTimestamp;
   }
@@ -104,7 +103,7 @@ public class DeploymentCancelationDetailDTO {
    * @return failed
   */
   
-  @Schema(name = "failed", description = "Flag to indicate if the deployment cancelation failed", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public Boolean getFailed() {
     return failed;
   }
@@ -123,7 +122,7 @@ public class DeploymentCancelationDetailDTO {
    * @return rollbackDatabase
   */
   
-  @Schema(name = "rollbackDatabase", description = "Optional flag to indicate if the database should be rolled back", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public Boolean getRollbackDatabase() {
     return rollbackDatabase;
   }
@@ -142,7 +141,7 @@ public class DeploymentCancelationDetailDTO {
    * @return cancelReason
   */
   
-  @Schema(name = "cancelReason", description = "Reason for cancelling a deployment", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getCancelReason() {
     return cancelReason;
   }

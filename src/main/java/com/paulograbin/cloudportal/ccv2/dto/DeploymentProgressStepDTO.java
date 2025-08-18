@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -15,7 +14,7 @@ import java.util.Objects;
  * One step in a deployment progress stage
  */
 
-@Schema(name = "DeploymentProgressStepDTO", description = "One step in a deployment progress stage")
+
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class DeploymentProgressStepDTO {
 
@@ -53,7 +52,7 @@ public class DeploymentProgressStepDTO {
    * @return code
   */
   
-  @Schema(name = "code", description = "Unique code of the step", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getCode() {
     return code;
   }
@@ -72,7 +71,7 @@ public class DeploymentProgressStepDTO {
    * @return name
   */
   
-  @Schema(name = "name", description = "Name of the step", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getName() {
     return name;
   }
@@ -91,7 +90,7 @@ public class DeploymentProgressStepDTO {
    * @return startTimestamp
   */
   @Valid 
-  @Schema(name = "startTimestamp", description = "Start timestamp of the step", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getStartTimestamp() {
     return startTimestamp;
   }
@@ -110,7 +109,7 @@ public class DeploymentProgressStepDTO {
    * @return endTimestamp
   */
   @Valid 
-  @Schema(name = "endTimestamp", description = "End timestamp of the step", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getEndTimestamp() {
     return endTimestamp;
   }
@@ -129,7 +128,7 @@ public class DeploymentProgressStepDTO {
    * @return message
   */
   
-  @Schema(name = "message", description = "Optional message for the step describing what happened", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getMessage() {
     return message;
   }
@@ -148,7 +147,7 @@ public class DeploymentProgressStepDTO {
    * @return status
   */
   
-  @Schema(name = "status", description = "Current status of the step, possible values are \"PENDING\",\"RUNNING\",\"DONE\" or \"FAIL\"", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getStatus() {
     return status;
   }
@@ -175,7 +174,7 @@ public class DeploymentProgressStepDTO {
    * @return children
   */
   @Valid 
-  @Schema(name = "children", description = "One or multiple deployment progress steps", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public List<DeploymentProgressStepDTO> getChildren() {
     return children;
   }

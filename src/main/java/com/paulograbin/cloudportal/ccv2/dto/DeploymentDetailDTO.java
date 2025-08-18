@@ -3,7 +3,6 @@ package com.paulograbin.cloudportal.ccv2.dto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -216,7 +215,7 @@ public class DeploymentDetailDTO {
    * @return code
   */
   
-  @Schema(name = "code", description = "Deployment code", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getCode() {
     return code;
   }
@@ -253,7 +252,7 @@ public class DeploymentDetailDTO {
    * @return createdBy
   */
   
-  @Schema(name = "createdBy", description = "User that created the deployment", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getCreatedBy() {
     return createdBy;
   }
@@ -272,7 +271,7 @@ public class DeploymentDetailDTO {
    * @return createdTimestamp
   */
   @Valid 
-  @Schema(name = "createdTimestamp", description = "Deployment creation timestamp", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getCreatedTimestamp() {
     return createdTimestamp;
   }
@@ -291,7 +290,7 @@ public class DeploymentDetailDTO {
    * @return buildCode
   */
   
-  @Schema(name = "buildCode", description = "Code of the deployed build", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getBuildCode() {
     return buildCode;
   }
@@ -310,7 +309,7 @@ public class DeploymentDetailDTO {
    * @return environmentCode
   */
   
-  @Schema(name = "environmentCode", description = "Code of the environment where the build will be deployed to", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getEnvironmentCode() {
     return environmentCode;
   }
@@ -329,7 +328,7 @@ public class DeploymentDetailDTO {
    * @return databaseUpdateMode
   */
   
-  @Schema(name = "databaseUpdateMode", description = "Database action used in the deployment", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public DatabaseUpdateModeEnum getDatabaseUpdateMode() {
     return databaseUpdateMode;
   }
@@ -348,7 +347,7 @@ public class DeploymentDetailDTO {
    * @return strategy
   */
   
-  @Schema(name = "strategy", description = "Strategy for the deployment. Could be rolling-update or re-create", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public StrategyEnum getStrategy() {
     return strategy;
   }
@@ -367,7 +366,7 @@ public class DeploymentDetailDTO {
    * @return scheduledTimestamp
   */
   @Valid 
-  @Schema(name = "scheduledTimestamp", description = "Time the deployment is scheduled for. If not provided current timestamp is used.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getScheduledTimestamp() {
     return scheduledTimestamp;
   }
@@ -386,7 +385,7 @@ public class DeploymentDetailDTO {
    * @return deployedTimestamp
   */
   @Valid 
-  @Schema(name = "deployedTimestamp", description = "Time the deployment was successful", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getDeployedTimestamp() {
     return deployedTimestamp;
   }
@@ -405,7 +404,7 @@ public class DeploymentDetailDTO {
    * @return failedTimestamp
   */
   @Valid 
-  @Schema(name = "failedTimestamp", description = "Time the deployment failed", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getFailedTimestamp() {
     return failedTimestamp;
   }
@@ -424,7 +423,7 @@ public class DeploymentDetailDTO {
    * @return undeployedTimestamp
   */
   @Valid 
-  @Schema(name = "undeployedTimestamp", description = "Time the deployment was un-deployed and replaced", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getUndeployedTimestamp() {
     return undeployedTimestamp;
   }
@@ -443,7 +442,7 @@ public class DeploymentDetailDTO {
    * @return status
   */
   
-  @Schema(name = "status", description = "Status of the deployment, possible values are \"SCHEDULED\",\"DEPLOYING\",\"DEPLOYED\",\"UNDEPLOYED\" or \"FAIL\"", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getStatus() {
     return status;
   }
@@ -462,7 +461,7 @@ public class DeploymentDetailDTO {
    * @return canceledBy
   */
   
-  @Schema(name = "canceledBy", description = "User that canceled the deployment. This property was moved under `cancelation`.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getCanceledBy() {
     return canceledBy;
   }
@@ -481,7 +480,7 @@ public class DeploymentDetailDTO {
    * @return canceledTimestamp
   */
   @Valid 
-  @Schema(name = "canceledTimestamp", description = "Time the cancelation was requested. This property was moved under `cancelation`.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getCanceledTimestamp() {
     return canceledTimestamp;
   }
@@ -500,7 +499,7 @@ public class DeploymentDetailDTO {
    * @return cancellationFinishedTimestamp
   */
   @Valid 
-  @Schema(name = "cancellationFinishedTimestamp", description = "Time the cancelation finished. This property was moved under `cancelation`.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getCancellationFinishedTimestamp() {
     return cancellationFinishedTimestamp;
   }
@@ -519,7 +518,7 @@ public class DeploymentDetailDTO {
    * @return cancellationFailed
   */
   
-  @Schema(name = "cancellationFailed", description = "Flag to indicate if the deployment cancelation failed. This property was moved under `cancelation`.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public Boolean getCancellationFailed() {
     return cancellationFailed;
   }
@@ -538,7 +537,7 @@ public class DeploymentDetailDTO {
    * @return cancelation
   */
   @Valid 
-  @Schema(name = "cancelation", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public DeploymentCancelationDetailDTO getCancelation() {
     return cancelation;
   }
@@ -557,7 +556,7 @@ public class DeploymentDetailDTO {
    * @return isCanaryAvailable
   */
   
-  @Schema(name = "isCanaryAvailable", description = "true if canary is available", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public Boolean getIsCanaryAvailable() {
     return isCanaryAvailable;
   }
@@ -576,7 +575,7 @@ public class DeploymentDetailDTO {
    * @return previousDeploymentCode
   */
   
-  @Schema(name = "previousDeploymentCode", description = "Code of the previous deployment", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getPreviousDeploymentCode() {
     return previousDeploymentCode;
   }
@@ -595,7 +594,7 @@ public class DeploymentDetailDTO {
    * @return expireAtTimestamp
   */
   @Valid 
-  @Schema(name = "expireAtTimestamp", description = "Time before which user can make decision on the deployment, after the given time deployment will be automatically rejected.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getExpireAtTimestamp() {
     return expireAtTimestamp;
   }
@@ -614,7 +613,7 @@ public class DeploymentDetailDTO {
    * @return canaryStatus
   */
   
-  @Schema(name = "canaryStatus", description = "Deployment Canary status", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public CanaryStatusEnum getCanaryStatus() {
     return canaryStatus;
   }
@@ -633,7 +632,7 @@ public class DeploymentDetailDTO {
    * @return trafficSplit
   */
   @Valid 
-  @Schema(name = "trafficSplit", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public DeploymentTrafficSplitDTO getTrafficSplit() {
     return trafficSplit;
   }

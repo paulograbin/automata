@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -13,7 +12,7 @@ import java.util.Objects;
  * Datarestore
  */
 
-@Schema(name = "DatarestoreDetailDTO", description = "Datarestore")
+
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class DatarestoreDetailDTO {
 
@@ -46,7 +45,7 @@ public class DatarestoreDetailDTO {
    * @return datarestoreCode
   */
   
-  @Schema(name = "datarestoreCode", description = "Datarestore Code", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getDatarestoreCode() {
     return datarestoreCode;
   }
@@ -65,7 +64,7 @@ public class DatarestoreDetailDTO {
    * @return name
   */
   
-  @Schema(name = "name", description = "Name", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getName() {
     return name;
   }
@@ -84,7 +83,7 @@ public class DatarestoreDetailDTO {
    * @return status
   */
   
-  @Schema(name = "status", description = "Status", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getStatus() {
     return status;
   }
@@ -103,7 +102,7 @@ public class DatarestoreDetailDTO {
    * @return databackupCode
   */
   
-  @Schema(name = "databackupCode", description = "Databackup that is the source of the datarestore", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getDatabackupCode() {
     return databackupCode;
   }
@@ -122,7 +121,7 @@ public class DatarestoreDetailDTO {
    * @return createdBy
   */
   
-  @Schema(name = "createdBy", description = "User that started (created) the datarestore", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getCreatedBy() {
     return createdBy;
   }
@@ -141,7 +140,7 @@ public class DatarestoreDetailDTO {
    * @return createdTimestamp
   */
   @Valid 
-  @Schema(name = "createdTimestamp", description = "Datarestore creation timestamp", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getCreatedTimestamp() {
     return createdTimestamp;
   }

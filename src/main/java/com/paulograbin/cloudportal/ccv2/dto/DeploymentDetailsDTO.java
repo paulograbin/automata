@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -59,7 +58,7 @@ public class DeploymentDetailsDTO {
    * @return count
   */
   
-  @Schema(name = "count", description = "The total number of deployments", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public Integer getCount() {
     return count;
   }

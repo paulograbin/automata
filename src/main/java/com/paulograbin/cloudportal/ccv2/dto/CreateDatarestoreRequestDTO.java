@@ -9,7 +9,7 @@ import java.util.Objects;
  * Create datarestore request
  */
 
-@Schema(name = "CreateDatarestoreRequestDTO", description = "Create datarestore request")
+
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class CreateDatarestoreRequestDTO {
 

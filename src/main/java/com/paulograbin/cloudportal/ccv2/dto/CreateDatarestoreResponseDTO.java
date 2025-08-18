@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.constraints.NotNull;
 
@@ -51,7 +50,7 @@ public class CreateDatarestoreResponseDTO {
    * @return environmentCode
   */
   
-  @Schema(name = "environmentCode", description = "Code of the environment", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getEnvironmentCode() {
     return environmentCode;
   }
@@ -70,7 +69,7 @@ public class CreateDatarestoreResponseDTO {
    * @return datarestoreCode
   */
   @NotNull 
-  @Schema(name = "datarestoreCode", description = "Datarestore code", requiredMode = Schema.RequiredMode.REQUIRED)
+  
   public String getDatarestoreCode() {
     return datarestoreCode;
   }

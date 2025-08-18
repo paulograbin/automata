@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -87,7 +86,7 @@ public class TrafficSplitDetailDTO {
    * @return endpoints
   */
   @Valid 
-  @Schema(name = "endpoints", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public List<TrafficPercentageDTO> getEndpoints() {
     return endpoints;
   }
@@ -124,7 +123,7 @@ public class TrafficSplitDetailDTO {
    * @return lastModifiedBy
   */
   
-  @Schema(name = "lastModifiedBy", description = "last Modified user", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getLastModifiedBy() {
     return lastModifiedBy;
   }
@@ -143,7 +142,7 @@ public class TrafficSplitDetailDTO {
    * @return subscriptionCode
   */
   
-  @Schema(name = "subscriptionCode", description = "Code of the subscription", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getSubscriptionCode() {
     return subscriptionCode;
   }
@@ -162,7 +161,7 @@ public class TrafficSplitDetailDTO {
    * @return deploymentCode
   */
   @NotNull 
-  @Schema(name = "deploymentCode", description = "Code of the deployment", requiredMode = Schema.RequiredMode.REQUIRED)
+  
   public String getDeploymentCode() {
     return deploymentCode;
   }
@@ -181,7 +180,7 @@ public class TrafficSplitDetailDTO {
    * @return code
   */
   
-  @Schema(name = "code", description = "unique code of traffic split", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getCode() {
     return code;
   }

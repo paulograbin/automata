@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -13,7 +12,7 @@ import java.util.Objects;
  * Deployment progress insight with several stages
  */
 
-@Schema(name = "DeploymentProgressDTO", description = "Deployment progress insight with several stages")
+
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class DeploymentProgressDTO {
 
@@ -43,7 +42,7 @@ public class DeploymentProgressDTO {
    * @return subscriptionCode
   */
   
-  @Schema(name = "subscriptionCode", description = "Code of the subscription", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getSubscriptionCode() {
     return subscriptionCode;
   }
@@ -62,7 +61,7 @@ public class DeploymentProgressDTO {
    * @return deploymentCode
   */
   
-  @Schema(name = "deploymentCode", description = "Code of the deployment", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getDeploymentCode() {
     return deploymentCode;
   }
@@ -99,7 +98,7 @@ public class DeploymentProgressDTO {
    * @return percentage
   */
   
-  @Schema(name = "percentage", description = "Completion percentage calculated by checking how many items are now running/finished/failed", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public Integer getPercentage() {
     return percentage;
   }
@@ -126,7 +125,7 @@ public class DeploymentProgressDTO {
    * @return stages
   */
   @Valid 
-  @Schema(name = "stages", description = "One or multiple deployment progress stages with individual steps", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public List<DeploymentProgressStageDTO> getStages() {
     return stages;
   }

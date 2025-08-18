@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -15,7 +14,7 @@ import java.util.Objects;
  * One deployment progress stage
  */
 
-@Schema(name = "DeploymentProgressStageDTO", description = "One deployment progress stage")
+
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class DeploymentProgressStageDTO {
 
@@ -53,7 +52,7 @@ public class DeploymentProgressStageDTO {
    * @return name
   */
   
-  @Schema(name = "name", description = "Name of the stage", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getName() {
     return name;
   }
@@ -72,7 +71,7 @@ public class DeploymentProgressStageDTO {
    * @return type
   */
   
-  @Schema(name = "type", description = "Type of the stage", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getType() {
     return type;
   }
@@ -109,7 +108,7 @@ public class DeploymentProgressStageDTO {
    * @return endTimestamp
   */
   @Valid 
-  @Schema(name = "endTimestamp", description = "End timestamp of the stage", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getEndTimestamp() {
     return endTimestamp;
   }
@@ -128,7 +127,7 @@ public class DeploymentProgressStageDTO {
    * @return status
   */
   
-  @Schema(name = "status", description = "Current status of the stage, possible values are \"PENDING\",\"RUNNING\",\"DONE\" or \"FAIL\"", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getStatus() {
     return status;
   }
@@ -147,7 +146,7 @@ public class DeploymentProgressStageDTO {
    * @return logLink
   */
   
-  @Schema(name = "logLink", description = "Link to logs of the stage", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getLogLink() {
     return logLink;
   }
@@ -174,7 +173,7 @@ public class DeploymentProgressStageDTO {
    * @return steps
   */
   @Valid 
-  @Schema(name = "steps", description = "One or multiple deployment progress steps", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public List<DeploymentProgressStepDTO> getSteps() {
     return steps;
   }

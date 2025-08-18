@@ -3,7 +3,6 @@ package com.paulograbin.cloudportal.ccv2.dto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -118,7 +117,7 @@ public class DeploymentModeDTO {
    * @return dataMigrationMode
   */
   
-  @Schema(name = "dataMigrationMode", description = "Data migration modes", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public List<DataMigrationModeEnum> getDataMigrationMode() {
     return dataMigrationMode;
   }
@@ -145,7 +144,7 @@ public class DeploymentModeDTO {
    * @return deploymentMode
   */
   
-  @Schema(name = "deploymentMode", description = "deployment modes", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public List<DeploymentModeEnum> getDeploymentMode() {
     return deploymentMode;
   }

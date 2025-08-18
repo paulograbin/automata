@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 
 import java.util.Objects;
@@ -47,7 +46,7 @@ public class ErrorDTO {
    * @return detail
   */
   
-  @Schema(name = "detail", accessMode = Schema.AccessMode.READ_ONLY, description = "Human-readable explanation specific to this occurrence of the problem", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getDetail() {
     return detail;
   }

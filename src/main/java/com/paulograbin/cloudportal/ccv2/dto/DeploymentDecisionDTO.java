@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -63,7 +62,7 @@ public class DeploymentDecisionDTO {
    * @return type
   */
   @Valid 
-  @Schema(name = "type", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public DeploymentDecision getType() {
     return type;
   }
@@ -82,7 +81,7 @@ public class DeploymentDecisionDTO {
    * @return subscriptionCode
   */
   
-  @Schema(name = "subscriptionCode", description = "subscription code", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getSubscriptionCode() {
     return subscriptionCode;
   }
@@ -101,7 +100,7 @@ public class DeploymentDecisionDTO {
    * @return deploymentCode
   */
   
-  @Schema(name = "deploymentCode", description = "deployment code", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getDeploymentCode() {
     return deploymentCode;
   }
@@ -120,7 +119,7 @@ public class DeploymentDecisionDTO {
    * @return createdTimestamp
   */
   @Valid 
-  @Schema(name = "createdTimestamp", description = "date time when decision was made", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getCreatedTimestamp() {
     return createdTimestamp;
   }
@@ -139,7 +138,7 @@ public class DeploymentDecisionDTO {
    * @return createdBy
   */
   
-  @Schema(name = "createdBy", description = "userId who made the decision", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getCreatedBy() {
     return createdBy;
   }

@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -68,7 +67,7 @@ public class DeploymentTrafficSplitDTO {
    * @return endpoints
   */
   @Valid 
-  @Schema(name = "endpoints", description = "Traffic Split for endpoints", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public List<TrafficPercentageDTO> getEndpoints() {
     return endpoints;
   }

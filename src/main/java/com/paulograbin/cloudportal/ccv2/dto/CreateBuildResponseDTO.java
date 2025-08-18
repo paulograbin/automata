@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,7 +10,7 @@ import java.util.Objects;
  * Create build response
  */
 
-@Schema(name = "CreateBuildResponseDTO", description = "Create build response")
+
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class CreateBuildResponseDTO {
 
@@ -31,7 +30,7 @@ public class CreateBuildResponseDTO {
    * @return subscriptionCode
   */
   
-  @Schema(name = "subscriptionCode", description = "Code of the subscription", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getSubscriptionCode() {
     return subscriptionCode;
   }

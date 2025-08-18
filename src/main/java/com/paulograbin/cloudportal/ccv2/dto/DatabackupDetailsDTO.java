@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -41,7 +40,7 @@ public class DatabackupDetailsDTO {
    * @return value
   */
   @Valid 
-  @Schema(name = "value", description = "Array of databackup details", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public List<DatabackupDetailDTO> getValue() {
     return value;
   }
@@ -60,7 +59,7 @@ public class DatabackupDetailsDTO {
    * @return count
   */
   
-  @Schema(name = "count", description = "The total number of databackups", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public Integer getCount() {
     return count;
   }

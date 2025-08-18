@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -41,7 +40,7 @@ public class DatarestoreDetailsDTO {
    * @return value
   */
   @Valid 
-  @Schema(name = "value", description = "Array of datarestores", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public List<DatarestoreDetailDTO> getValue() {
     return value;
   }

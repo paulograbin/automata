@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -13,7 +12,7 @@ import java.util.Objects;
  * Deployment decisions
  */
 
-@Schema(name = "DeploymentDecisionsDTO", description = "Deployment decisions")
+
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class DeploymentDecisionsDTO {
 

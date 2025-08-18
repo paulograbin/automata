@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.constraints.Size;
 
@@ -11,7 +10,6 @@ import java.util.Objects;
  * Entity to be used to cancel a deployment
  */
 
-@Schema(name = "DeploymentCancellationRequestDTO", description = "Entity to be used to cancel a deployment")
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class DeploymentCancellationRequestDTO {
 
@@ -31,7 +29,6 @@ public class DeploymentCancellationRequestDTO {
    * @return rollbackDatabase
   */
   
-  @Schema(name = "rollbackDatabase", description = "Optional flag to indicate if the database should be rolled back", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public Boolean getRollbackDatabase() {
     return rollbackDatabase;
   }
@@ -50,7 +47,6 @@ public class DeploymentCancellationRequestDTO {
    * @return cancelReason
   */
   @Size(min = 4, max = 255) 
-  @Schema(name = "cancelReason", description = "Reason for cancelling a deployment", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getCancelReason() {
     return cancelReason;
   }

@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -157,7 +156,7 @@ public class BuildDetailDTO {
    * @return code
   */
   
-  @Schema(name = "code", description = "Build code", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getCode() {
     return code;
   }
@@ -194,7 +193,7 @@ public class BuildDetailDTO {
    * @return buildEndTimestamp
   */
   @Valid 
-  @Schema(name = "buildEndTimestamp", description = "Build end timestamp", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public OffsetDateTime getBuildEndTimestamp() {
     return buildEndTimestamp;
   }
@@ -213,7 +212,7 @@ public class BuildDetailDTO {
    * @return buildVersion
   */
   
-  @Schema(name = "buildVersion", description = "Build version", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getBuildVersion() {
     return buildVersion;
   }
@@ -232,7 +231,7 @@ public class BuildDetailDTO {
    * @return createdBy
   */
   
-  @Schema(name = "createdBy", description = "Initiator of the build", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getCreatedBy() {
     return createdBy;
   }
@@ -277,7 +276,7 @@ public class BuildDetailDTO {
    * @return properties
   */
   @Valid 
-  @Schema(name = "properties", description = "Properties that are used for this build", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public List<PropertyDTO> getProperties() {
     return properties;
   }

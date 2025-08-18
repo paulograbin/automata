@@ -3,7 +3,6 @@ package com.paulograbin.cloudportal.ccv2.dto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.constraints.NotNull;
 
@@ -13,7 +12,7 @@ import java.util.Objects;
  * Entity to be used to start a new deployment
  */
 
-@Schema(name = "CreateDeploymentRequestDTO", description = "Entity to be used to start a new deployment")
+
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class CreateDeploymentRequestDTO {
 
@@ -113,7 +112,7 @@ public class CreateDeploymentRequestDTO {
    * @return buildCode
   */
   @NotNull 
-  @Schema(name = "buildCode", description = "Code of the build to be deployed", requiredMode = Schema.RequiredMode.REQUIRED)
+  
   public String getBuildCode() {
     return buildCode;
   }
@@ -132,7 +131,7 @@ public class CreateDeploymentRequestDTO {
    * @return environmentCode
   */
   @NotNull 
-  @Schema(name = "environmentCode", description = "Code of the environment where the build will be deployed to", requiredMode = Schema.RequiredMode.REQUIRED)
+  
   public String getEnvironmentCode() {
     return environmentCode;
   }
@@ -151,7 +150,7 @@ public class CreateDeploymentRequestDTO {
    * @return databaseUpdateMode
   */
   @NotNull 
-  @Schema(name = "databaseUpdateMode", description = "Database action used in the deployment", requiredMode = Schema.RequiredMode.REQUIRED)
+  
   public DatabaseUpdateModeEnum getDatabaseUpdateMode() {
     return databaseUpdateMode;
   }
@@ -170,7 +169,7 @@ public class CreateDeploymentRequestDTO {
    * @return strategy
   */
   @NotNull 
-  @Schema(name = "strategy", description = "Strategy for the deployment. Could be rolling-update or re-create", requiredMode = Schema.RequiredMode.REQUIRED)
+  
   public StrategyEnum getStrategy() {
     return strategy;
   }

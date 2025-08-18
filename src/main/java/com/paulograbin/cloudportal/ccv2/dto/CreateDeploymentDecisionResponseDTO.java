@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -11,7 +10,7 @@ import java.util.Objects;
  * Deployment decision response
  */
 
-@Schema(name = "CreateDeploymentDecisionResponseDTO", description = "Deployment decision response")
+
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-01T15:22:33.524558250-03:00[America/Sao_Paulo]")
 public class CreateDeploymentDecisionResponseDTO {
 
@@ -31,7 +30,7 @@ public class CreateDeploymentDecisionResponseDTO {
    * @return newDeploymentCode
   */
   
-  @Schema(name = "newDeploymentCode", description = "Code of the new deployment, will have a value only when the decision is not REJECT.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getNewDeploymentCode() {
     return newDeploymentCode;
   }
@@ -50,7 +49,7 @@ public class CreateDeploymentDecisionResponseDTO {
    * @return decison
   */
   @Valid 
-  @Schema(name = "decison", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public DeploymentDecision getDecison() {
     return decison;
   }

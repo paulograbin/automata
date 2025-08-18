@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -53,7 +52,7 @@ public class TrafficPercentageDTO {
    * @return name
   */
   
-  @Schema(name = "name", description = "name of the traffic split entity. eg. service name, endpoint name", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getName() {
     return name;
   }

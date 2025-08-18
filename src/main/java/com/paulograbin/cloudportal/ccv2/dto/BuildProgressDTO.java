@@ -1,7 +1,6 @@
 package com.paulograbin.cloudportal.ccv2.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 
@@ -84,7 +83,7 @@ public class BuildProgressDTO {
    * @return errorMessage
   */
   
-  @Schema(name = "errorMessage", description = "Human readable error message", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getErrorMessage() {
     return errorMessage;
   }
@@ -139,7 +138,7 @@ public class BuildProgressDTO {
    * @return buildStatus
   */
   
-  @Schema(name = "buildStatus", description = "Current status of the build , possible values are \"BUILDING\",\"SUCCESS\",\"FAIL\",\"SCHEDULED\",\"DELETED\" or \"UNKNOWN\"", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
   public String getBuildStatus() {
     return buildStatus;
   }
